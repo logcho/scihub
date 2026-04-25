@@ -1,0 +1,13 @@
+[debug] downloaded https://repo1.maven.org/maven2/com/typesafe/play/sbt-plugin_2.12_1.0/2.6.13/sbt-plugin-2.6.13.pom
+[debug] downloaded https://repo1.maven.org/maven2/com/typesafe/play/sbt-plugin_2.12_1.0/2.6.13/sbt-plugin-2.6.13.pom.sha1
+[debug] downloaded https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.play/sbt-plugin/scala_2.12/sbt_1.0/2.6.13/ivys/ivy.xml
+[debug] downloaded https://repo1.maven.org/maven2/com/typesafe/play/sbt-routes-compiler_2.12/2.6.13/sbt-routes-compiler_2.12-2.6.13.pom
+[debug] downloaded https://repo1.maven.org/maven2/com/typesafe/play/run-support_2.12/2.6.13/run-support_2.12-2.6.13.pom
+[debug] downloaded https://repo1.maven.org/maven2/com/typesafe/play/build-link/2.6.13/build-link-2.6.13.pom
+[debug] downloaded https://repo1.maven.org/maven2/com/typesafe/play/play-exceptions/2.6.13/play-exceptions-2.6.13.pom
+[debug] downloaded https://repo1.maven.org/maven2/com/typesafe/play/play-exceptions/2.6.13/play-exceptions-2.6.13.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/typesafe/play/build-link/2.6.13/build-link-2.6.13.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/typesafe/play/sbt-routes-compiler_2.12/2.6.13/sbt-routes-compiler_2.12-2.6.13.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/typesafe/play/run-support_2.12/2.6.13/run-support_2.12-2.6.13.jar
+[debug] downloaded https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.play/sbt-plugin/scala_2.12/sbt_1.0/2.6.13/jars/sbt-plugin.jar
+[debug] downloaded https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.play/sbt-plugin/scala_2.12/sbt_1.0/2.6.13/jars/sbt-plugin.jar.sha1
