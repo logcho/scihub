@@ -7,7 +7,7 @@
 		revision="1.6.1-SNAPSHOT"
 		conf="compile"
 		confs="universal, universal-docs, universal-src, compile, runtime, test, provided, optional, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20260209161037"/>
+		date="20260425172939"/>
 	<dependencies>
 		<module organisation="com.github.javaparser" name="javaparser-symbol-solver-core">
 			<revision name="3.6.5" status="release" pubdate="20180513140640" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="494">

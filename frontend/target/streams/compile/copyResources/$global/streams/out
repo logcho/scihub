@@ -1,5 +1,5 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/Users/loganchoi/Desktop/CSHub-Fall2025/frontend/conf/logback.xml,/Users/loganchoi/Desktop/CSHub-Fall2025/frontend/target/scala-2.12/classes/logback.xml)[0m
-[0m[[0mdebug[0m] [0m	(/Users/loganchoi/Desktop/CSHub-Fall2025/frontend/conf/generated.keystore,/Users/loganchoi/Desktop/CSHub-Fall2025/frontend/target/scala-2.12/classes/generated.keystore)[0m
-[0m[[0mdebug[0m] [0m	(/Users/loganchoi/Desktop/CSHub-Fall2025/frontend/conf/application.conf,/Users/loganchoi/Desktop/CSHub-Fall2025/frontend/target/scala-2.12/classes/application.conf)[0m
-[0m[[0mdebug[0m] [0m	(/Users/loganchoi/Desktop/CSHub-Fall2025/frontend/conf/routes,/Users/loganchoi/Desktop/CSHub-Fall2025/frontend/target/scala-2.12/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/loganchoi/Desktop/scihub/frontend/conf/logback.xml,/Users/loganchoi/Desktop/scihub/frontend/target/scala-2.12/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/Users/loganchoi/Desktop/scihub/frontend/conf/generated.keystore,/Users/loganchoi/Desktop/scihub/frontend/target/scala-2.12/classes/generated.keystore)[0m
+[0m[[0mdebug[0m] [0m	(/Users/loganchoi/Desktop/scihub/frontend/conf/application.conf,/Users/loganchoi/Desktop/scihub/frontend/target/scala-2.12/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/loganchoi/Desktop/scihub/frontend/conf/routes,/Users/loganchoi/Desktop/scihub/frontend/target/scala-2.12/classes/routes)[0m

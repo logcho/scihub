@@ -305,6 +305,11 @@ GET         /rajob/closeRAJob/:rajobId                                          
 # GET        /rajob/offer/sendOffer/:rajobId/:recipientId                                      controllers.RAJobController.sendOfferEmail(rajobId: String, recipientId: String)
 POST        /rajob/sendOfferEmail                                                               controllers.RAJobController.sendOfferEmail(rajobApplicationId:Long, ccString:String)
 
+GET         /rajob/schedule/:jobId                                                              controllers.RAJobController.raInterviewSchedulePage(jobId: Long)
+POST        /rajob/schedule/:jobId                                                              controllers.RAJobController.scheduleInterviewPOST(jobId: Long)
+POST        /rajob/reschedule/:id                                                               controllers.RAJobController.rescheduleInterviewPOST(id: Long)
+POST        /rajob/cancel/:id                                                                   controllers.RAJobController.cancelInterviewPOST(id: Long)
+
 ########################################################## RAJobs #####################################################################
 
 ########################################################## TACandidate ################################################################
