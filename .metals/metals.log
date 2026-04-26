@@ -1,0 +1,33 @@
+2026.04.25 21:23:07 INFO  Started: Metals version 1.6.7 in folders '/Users/adityagoel/Downloads/VSC/scihub' for client Visual Studio Code 1.115.0.
+2026.04.25 21:23:07 INFO  Memory monitor started
+2026.04.25 21:23:11 WARN  Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026.04.25 21:23:12 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/integration/InterviewIntegrationTest.java. Using fallback presentation compiler.
+Apr 25, 2026 9:23:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2
+Apr 25, 2026 9:23:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1
+2026.04.25 21:23:15 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/integration/InterviewIntegrationTest.java. Using fallback presentation compiler.
+2026.04.25 21:23:15 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
+Apr 25, 2026 9:23:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7
+2026.04.25 21:23:16 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
+2026.04.25 21:23:16 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
+Apr 25, 2026 9:23:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 10
+2026.04.25 21:23:16 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
+2026.04.25 21:23:16 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
+Apr 25, 2026 9:23:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 17
+2026.04.25 21:23:18 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
+2026.04.25 21:23:18 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
+Apr 25, 2026 9:23:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 16
+Apr 25, 2026 9:23:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 18
+2026.04.25 21:23:19 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
+2026.04.25 21:23:22 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
+2026.04.25 21:23:26 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
+Apr 25, 2026 9:23:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 23
+2026.04.25 21:23:26 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
+2026.04.25 21:23:28 INFO  no build target found for /Users/adityagoel/Downloads/VSC/scihub/backend/test/e2e/InterviewE2ETest.java. Using fallback presentation compiler.
