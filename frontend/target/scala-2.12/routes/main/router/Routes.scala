@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/loganchoi/Desktop/CSHub-Fall2025/frontend/conf/routes
-// @DATE:Mon Feb 09 16:10:54 CST 2026
+// @SOURCE:/Users/loganchoi/Desktop/scihub/frontend/conf/routes
+// @DATE:Sat Apr 25 17:11:43 CDT 2026
 
 package router
 
@@ -41,25 +41,25 @@ class Routes(
   JobController_9: controllers.JobController,
   // @LINE:276
   RAJobController_14: controllers.RAJobController,
-  // @LINE:312
+  // @LINE:317
   TACandidateController_20: controllers.TACandidateController,
-  // @LINE:323
+  // @LINE:328
   CourseController_2: controllers.CourseController,
-  // @LINE:331
+  // @LINE:336
   CourseTAAssignmentController_5: controllers.CourseTAAssignmentController,
-  // @LINE:340
+  // @LINE:345
   TAJobController_8: controllers.TAJobController,
-  // @LINE:368
+  // @LINE:373
   AdminController_0: controllers.AdminController,
-  // @LINE:379
+  // @LINE:384
   AuthorController_3: controllers.AuthorController,
-  // @LINE:399
+  // @LINE:404
   ReviewerController_18: controllers.ReviewerController,
-  // @LINE:414
+  // @LINE:419
   PaperController_13: controllers.PaperController,
-  // @LINE:435
+  // @LINE:440
   GraphController_11: controllers.GraphController,
-  // @LINE:436
+  // @LINE:441
   FileController_22: controllers.FileController,
   val prefix: String
 ) extends GeneratedRouter {
@@ -92,25 +92,25 @@ class Routes(
     JobController_9: controllers.JobController,
     // @LINE:276
     RAJobController_14: controllers.RAJobController,
-    // @LINE:312
+    // @LINE:317
     TACandidateController_20: controllers.TACandidateController,
-    // @LINE:323
+    // @LINE:328
     CourseController_2: controllers.CourseController,
-    // @LINE:331
+    // @LINE:336
     CourseTAAssignmentController_5: controllers.CourseTAAssignmentController,
-    // @LINE:340
+    // @LINE:345
     TAJobController_8: controllers.TAJobController,
-    // @LINE:368
+    // @LINE:373
     AdminController_0: controllers.AdminController,
-    // @LINE:379
+    // @LINE:384
     AuthorController_3: controllers.AuthorController,
-    // @LINE:399
+    // @LINE:404
     ReviewerController_18: controllers.ReviewerController,
-    // @LINE:414
+    // @LINE:419
     PaperController_13: controllers.PaperController,
-    // @LINE:435
+    // @LINE:440
     GraphController_11: controllers.GraphController,
-    // @LINE:436
+    // @LINE:441
     FileController_22: controllers.FileController
   ) = this(errorHandler, AsyncController_4, Assets_19, AboutController_15, Application_21, ProjectController_12, ChallengeController_16, UserController_10, OrganizationController_17, BugReportController_6, SuggestionController_1, TechnologyController_7, JobController_9, RAJobController_14, TACandidateController_20, CourseController_2, CourseTAAssignmentController_5, TAJobController_8, AdminController_0, AuthorController_3, ReviewerController_18, PaperController_13, GraphController_11, FileController_22, "/")
 
@@ -288,6 +288,10 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/deleteRAJob/""" + "$" + """rajobId<[^/]+>""", """controllers.RAJobController.deleteRAJob(rajobId:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/closeRAJob/""" + "$" + """rajobId<[^/]+>""", """controllers.RAJobController.closeRAJob(rajobId:Long)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/sendOfferEmail""", """controllers.RAJobController.sendOfferEmail(rajobApplicationId:Long, ccString:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/schedule/""" + "$" + """jobId<[^/]+>""", """controllers.RAJobController.raInterviewSchedulePage(jobId:Long)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/schedule/""" + "$" + """jobId<[^/]+>""", """controllers.RAJobController.scheduleInterviewPOST(jobId:Long)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/reschedule/""" + "$" + """id<[^/]+>""", """controllers.RAJobController.rescheduleInterviewPOST(id:Long)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/cancel/""" + "$" + """id<[^/]+>""", """controllers.RAJobController.cancelInterviewPOST(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tapool/tacandidateRegisterPage""", """controllers.TACandidateController.tacandidateRegisterPage()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tapool/tacandidateRegisterPOST""", """controllers.TACandidateController.tacandidateRegisterPOST()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tapool/candidateList/""" + "$" + """pageNum<[^/]+>""", """controllers.TACandidateController.tacandidateList(pageNum:Integer, sortCriteria:String ?= "")"""),
@@ -3317,11 +3321,83 @@ class Routes(
     )
   )
 
-  // @LINE:312
-  private[this] lazy val controllers_TACandidateController_tacandidateRegisterPage164_route = Route("GET",
+  // @LINE:308
+  private[this] lazy val controllers_RAJobController_raInterviewSchedulePage164_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("rajob/schedule/"), DynamicPart("jobId", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_RAJobController_raInterviewSchedulePage164_invoker = createInvoker(
+    RAJobController_14.raInterviewSchedulePage(fakeValue[Long]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.RAJobController",
+      "raInterviewSchedulePage",
+      Seq(classOf[Long]),
+      "GET",
+      this.prefix + """rajob/schedule/""" + "$" + """jobId<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:309
+  private[this] lazy val controllers_RAJobController_scheduleInterviewPOST165_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("rajob/schedule/"), DynamicPart("jobId", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_RAJobController_scheduleInterviewPOST165_invoker = createInvoker(
+    RAJobController_14.scheduleInterviewPOST(fakeValue[Long]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.RAJobController",
+      "scheduleInterviewPOST",
+      Seq(classOf[Long]),
+      "POST",
+      this.prefix + """rajob/schedule/""" + "$" + """jobId<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:310
+  private[this] lazy val controllers_RAJobController_rescheduleInterviewPOST166_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("rajob/reschedule/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_RAJobController_rescheduleInterviewPOST166_invoker = createInvoker(
+    RAJobController_14.rescheduleInterviewPOST(fakeValue[Long]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.RAJobController",
+      "rescheduleInterviewPOST",
+      Seq(classOf[Long]),
+      "POST",
+      this.prefix + """rajob/reschedule/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:311
+  private[this] lazy val controllers_RAJobController_cancelInterviewPOST167_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("rajob/cancel/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_RAJobController_cancelInterviewPOST167_invoker = createInvoker(
+    RAJobController_14.cancelInterviewPOST(fakeValue[Long]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.RAJobController",
+      "cancelInterviewPOST",
+      Seq(classOf[Long]),
+      "POST",
+      this.prefix + """rajob/cancel/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:317
+  private[this] lazy val controllers_TACandidateController_tacandidateRegisterPage168_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tapool/tacandidateRegisterPage")))
   )
-  private[this] lazy val controllers_TACandidateController_tacandidateRegisterPage164_invoker = createInvoker(
+  private[this] lazy val controllers_TACandidateController_tacandidateRegisterPage168_invoker = createInvoker(
     TACandidateController_20.tacandidateRegisterPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3335,11 +3411,11 @@ class Routes(
     )
   )
 
-  // @LINE:313
-  private[this] lazy val controllers_TACandidateController_tacandidateRegisterPOST165_route = Route("POST",
+  // @LINE:318
+  private[this] lazy val controllers_TACandidateController_tacandidateRegisterPOST169_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tapool/tacandidateRegisterPOST")))
   )
-  private[this] lazy val controllers_TACandidateController_tacandidateRegisterPOST165_invoker = createInvoker(
+  private[this] lazy val controllers_TACandidateController_tacandidateRegisterPOST169_invoker = createInvoker(
     TACandidateController_20.tacandidateRegisterPOST(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3353,11 +3429,11 @@ class Routes(
     )
   )
 
-  // @LINE:314
-  private[this] lazy val controllers_TACandidateController_tacandidateList166_route = Route("GET",
+  // @LINE:319
+  private[this] lazy val controllers_TACandidateController_tacandidateList170_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tapool/candidateList/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TACandidateController_tacandidateList166_invoker = createInvoker(
+  private[this] lazy val controllers_TACandidateController_tacandidateList170_invoker = createInvoker(
     TACandidateController_20.tacandidateList(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3371,11 +3447,11 @@ class Routes(
     )
   )
 
-  // @LINE:315
-  private[this] lazy val controllers_TACandidateController_tacandidateDetail167_route = Route("GET",
+  // @LINE:320
+  private[this] lazy val controllers_TACandidateController_tacandidateDetail171_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tapool/tacandidateDetail/"), DynamicPart("Id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TACandidateController_tacandidateDetail167_invoker = createInvoker(
+  private[this] lazy val controllers_TACandidateController_tacandidateDetail171_invoker = createInvoker(
     TACandidateController_20.tacandidateDetail(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3389,11 +3465,11 @@ class Routes(
     )
   )
 
-  // @LINE:316
-  private[this] lazy val controllers_TACandidateController_getCurrentUserAssignments168_route = Route("GET",
+  // @LINE:321
+  private[this] lazy val controllers_TACandidateController_getCurrentUserAssignments172_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("ta/weeklyhours")))
   )
-  private[this] lazy val controllers_TACandidateController_getCurrentUserAssignments168_invoker = createInvoker(
+  private[this] lazy val controllers_TACandidateController_getCurrentUserAssignments172_invoker = createInvoker(
     TACandidateController_20.getCurrentUserAssignments(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3407,11 +3483,11 @@ class Routes(
     )
   )
 
-  // @LINE:323
-  private[this] lazy val controllers_CourseController_courseList169_route = Route("GET",
+  // @LINE:328
+  private[this] lazy val controllers_CourseController_courseList173_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("courses")))
   )
-  private[this] lazy val controllers_CourseController_courseList169_invoker = createInvoker(
+  private[this] lazy val controllers_CourseController_courseList173_invoker = createInvoker(
     CourseController_2.courseList(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3425,11 +3501,11 @@ class Routes(
     )
   )
 
-  // @LINE:331
-  private[this] lazy val controllers_CourseTAAssignmentController_taHiringStatusList170_route = Route("GET",
+  // @LINE:336
+  private[this] lazy val controllers_CourseTAAssignmentController_taHiringStatusList174_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tahiring/statuslist/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_CourseTAAssignmentController_taHiringStatusList170_invoker = createInvoker(
+  private[this] lazy val controllers_CourseTAAssignmentController_taHiringStatusList174_invoker = createInvoker(
     CourseTAAssignmentController_5.taHiringStatusList(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3443,11 +3519,11 @@ class Routes(
     )
   )
 
-  // @LINE:332
-  private[this] lazy val controllers_CourseTAAssignmentController_assignmentDetail171_route = Route("GET",
+  // @LINE:337
+  private[this] lazy val controllers_CourseTAAssignmentController_assignmentDetail175_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tahiring/statusDetail/"), DynamicPart("Id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_CourseTAAssignmentController_assignmentDetail171_invoker = createInvoker(
+  private[this] lazy val controllers_CourseTAAssignmentController_assignmentDetail175_invoker = createInvoker(
     CourseTAAssignmentController_5.assignmentDetail(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3461,11 +3537,11 @@ class Routes(
     )
   )
 
-  // @LINE:333
-  private[this] lazy val controllers_CourseTAAssignmentController_assignmentRegisterPOST172_route = Route("POST",
+  // @LINE:338
+  private[this] lazy val controllers_CourseTAAssignmentController_assignmentRegisterPOST176_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tahiring/assignmentRegisterPOST")))
   )
-  private[this] lazy val controllers_CourseTAAssignmentController_assignmentRegisterPOST172_invoker = createInvoker(
+  private[this] lazy val controllers_CourseTAAssignmentController_assignmentRegisterPOST176_invoker = createInvoker(
     CourseTAAssignmentController_5.assignmentRegisterPOST(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3479,11 +3555,11 @@ class Routes(
     )
   )
 
-  // @LINE:340
-  private[this] lazy val controllers_TAJobController_tajobRegisterPage173_route = Route("GET",
+  // @LINE:345
+  private[this] lazy val controllers_TAJobController_tajobRegisterPage177_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobRegisterPage")))
   )
-  private[this] lazy val controllers_TAJobController_tajobRegisterPage173_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobRegisterPage177_invoker = createInvoker(
     TAJobController_8.tajobRegisterPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3497,11 +3573,11 @@ class Routes(
     )
   )
 
-  // @LINE:341
-  private[this] lazy val controllers_TAJobController_tajobRegisterPOST174_route = Route("POST",
+  // @LINE:346
+  private[this] lazy val controllers_TAJobController_tajobRegisterPOST178_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobRegisterPOST")))
   )
-  private[this] lazy val controllers_TAJobController_tajobRegisterPOST174_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobRegisterPOST178_invoker = createInvoker(
     TAJobController_8.tajobRegisterPOST(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3515,11 +3591,11 @@ class Routes(
     )
   )
 
-  // @LINE:342
-  private[this] lazy val controllers_TAJobController_tajobEditPage175_route = Route("GET",
+  // @LINE:347
+  private[this] lazy val controllers_TAJobController_tajobEditPage179_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobEditPage/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_tajobEditPage175_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobEditPage179_invoker = createInvoker(
     TAJobController_8.tajobEditPage(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3533,11 +3609,11 @@ class Routes(
     )
   )
 
-  // @LINE:343
-  private[this] lazy val controllers_TAJobController_tajobEditPOST176_route = Route("POST",
+  // @LINE:348
+  private[this] lazy val controllers_TAJobController_tajobEditPOST180_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobEditPOST/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_tajobEditPOST176_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobEditPOST180_invoker = createInvoker(
     TAJobController_8.tajobEditPOST(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3551,11 +3627,11 @@ class Routes(
     )
   )
 
-  // @LINE:344
-  private[this] lazy val controllers_TAJobController_tajobApplyPage177_route = Route("GET",
+  // @LINE:349
+  private[this] lazy val controllers_TAJobController_tajobApplyPage181_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobApplyPage/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_tajobApplyPage177_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobApplyPage181_invoker = createInvoker(
     TAJobController_8.tajobApplyPage(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3569,11 +3645,11 @@ class Routes(
     )
   )
 
-  // @LINE:345
-  private[this] lazy val controllers_TAJobController_tajobApplyPOST178_route = Route("GET",
+  // @LINE:350
+  private[this] lazy val controllers_TAJobController_tajobApplyPOST182_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobApplyPOST/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_tajobApplyPOST178_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobApplyPOST182_invoker = createInvoker(
     TAJobController_8.tajobApplyPOST(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3587,11 +3663,11 @@ class Routes(
     )
   )
 
-  // @LINE:347
-  private[this] lazy val controllers_TAJobController_tajobStatueChange179_route = Route("POST",
+  // @LINE:352
+  private[this] lazy val controllers_TAJobController_tajobStatueChange183_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobStatue/"), DynamicPart("tajobId", """[^/]+""",true), StaticPart("/"), DynamicPart("tajobStatus", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_tajobStatueChange179_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobStatueChange183_invoker = createInvoker(
     TAJobController_8.tajobStatueChange(fakeValue[Long], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3605,11 +3681,11 @@ class Routes(
     )
   )
 
-  // @LINE:349
-  private[this] lazy val controllers_TAJobController_tajobApplicationDetail180_route = Route("GET",
+  // @LINE:354
+  private[this] lazy val controllers_TAJobController_tajobApplicationDetail184_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobApplicationDetail/"), DynamicPart("tajobApplicationId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_tajobApplicationDetail180_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobApplicationDetail184_invoker = createInvoker(
     TAJobController_8.tajobApplicationDetail(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3623,11 +3699,11 @@ class Routes(
     )
   )
 
-  // @LINE:350
-  private[this] lazy val controllers_TAJobController_saveTAJobPdf181_route = Route("POST",
+  // @LINE:355
+  private[this] lazy val controllers_TAJobController_saveTAJobPdf185_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/saveTAJobPdf/"), DynamicPart("tajobApplicationId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_saveTAJobPdf181_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_saveTAJobPdf185_invoker = createInvoker(
     TAJobController_8.saveTAJobPdf(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3641,11 +3717,11 @@ class Routes(
     )
   )
 
-  // @LINE:352
-  private[this] lazy val controllers_TAJobController_tajobList182_route = Route("GET",
+  // @LINE:357
+  private[this] lazy val controllers_TAJobController_tajobList186_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobList/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_tajobList182_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobList186_invoker = createInvoker(
     TAJobController_8.tajobList(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3659,11 +3735,11 @@ class Routes(
     )
   )
 
-  // @LINE:353
-  private[this] lazy val controllers_TAJobController_tajobListPostedByUser183_route = Route("GET",
+  // @LINE:358
+  private[this] lazy val controllers_TAJobController_tajobListPostedByUser187_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobListPostedByUser/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_tajobListPostedByUser183_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobListPostedByUser187_invoker = createInvoker(
     TAJobController_8.tajobListPostedByUser(fakeValue[Integer]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3677,11 +3753,11 @@ class Routes(
     )
   )
 
-  // @LINE:354
-  private[this] lazy val controllers_TAJobController_tajobDetail184_route = Route("GET",
+  // @LINE:359
+  private[this] lazy val controllers_TAJobController_tajobDetail188_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobDetail/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_tajobDetail184_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobDetail188_invoker = createInvoker(
     TAJobController_8.tajobDetail(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3695,11 +3771,11 @@ class Routes(
     )
   )
 
-  // @LINE:355
-  private[this] lazy val controllers_TAJobController_searchPage185_route = Route("GET",
+  // @LINE:360
+  private[this] lazy val controllers_TAJobController_searchPage189_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/searchPage")))
   )
-  private[this] lazy val controllers_TAJobController_searchPage185_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_searchPage189_invoker = createInvoker(
     TAJobController_8.searchPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3713,11 +3789,11 @@ class Routes(
     )
   )
 
-  // @LINE:356
-  private[this] lazy val controllers_TAJobController_searchPOST186_route = Route("POST",
+  // @LINE:361
+  private[this] lazy val controllers_TAJobController_searchPOST190_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/searchPOST")))
   )
-  private[this] lazy val controllers_TAJobController_searchPOST186_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_searchPOST190_invoker = createInvoker(
     TAJobController_8.searchPOST(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3731,11 +3807,11 @@ class Routes(
     )
   )
 
-  // @LINE:357
-  private[this] lazy val controllers_TAJobController_deleteTAJob187_route = Route("GET",
+  // @LINE:362
+  private[this] lazy val controllers_TAJobController_deleteTAJob191_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/deleteTAJob/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_deleteTAJob187_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_deleteTAJob191_invoker = createInvoker(
     TAJobController_8.deleteTAJob(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3749,11 +3825,11 @@ class Routes(
     )
   )
 
-  // @LINE:368
-  private[this] lazy val controllers_AdminController_dashboard188_route = Route("GET",
+  // @LINE:373
+  private[this] lazy val controllers_AdminController_dashboard192_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/dashboard")))
   )
-  private[this] lazy val controllers_AdminController_dashboard188_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_dashboard192_invoker = createInvoker(
     AdminController_0.dashboard(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3767,11 +3843,11 @@ class Routes(
     )
   )
 
-  // @LINE:369
-  private[this] lazy val controllers_AdminController_userManagement189_route = Route("GET",
+  // @LINE:374
+  private[this] lazy val controllers_AdminController_userManagement193_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/users/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AdminController_userManagement189_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_userManagement193_invoker = createInvoker(
     AdminController_0.userManagement(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3785,11 +3861,11 @@ class Routes(
     )
   )
 
-  // @LINE:370
-  private[this] lazy val controllers_AdminController_userDetail190_route = Route("GET",
+  // @LINE:375
+  private[this] lazy val controllers_AdminController_userDetail194_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/users/detail/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AdminController_userDetail190_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_userDetail194_invoker = createInvoker(
     AdminController_0.userDetail(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3803,11 +3879,11 @@ class Routes(
     )
   )
 
-  // @LINE:371
-  private[this] lazy val controllers_AdminController_jobManagement191_route = Route("GET",
+  // @LINE:376
+  private[this] lazy val controllers_AdminController_jobManagement195_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/jobs/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AdminController_jobManagement191_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_jobManagement195_invoker = createInvoker(
     AdminController_0.jobManagement(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3821,11 +3897,11 @@ class Routes(
     )
   )
 
-  // @LINE:372
-  private[this] lazy val controllers_AdminController_jobDetail192_route = Route("GET",
+  // @LINE:377
+  private[this] lazy val controllers_AdminController_jobDetail196_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/jobs/detail/"), DynamicPart("jobType", """[^/]+""",true), StaticPart("/"), DynamicPart("jobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AdminController_jobDetail192_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_jobDetail196_invoker = createInvoker(
     AdminController_0.jobDetail(fakeValue[String], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3839,11 +3915,11 @@ class Routes(
     )
   )
 
-  // @LINE:373
-  private[this] lazy val controllers_AdminController_organizationManagement193_route = Route("GET",
+  // @LINE:378
+  private[this] lazy val controllers_AdminController_organizationManagement197_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/organizations/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AdminController_organizationManagement193_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_organizationManagement197_invoker = createInvoker(
     AdminController_0.organizationManagement(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3857,11 +3933,11 @@ class Routes(
     )
   )
 
-  // @LINE:374
-  private[this] lazy val controllers_AdminController_technologyManagement194_route = Route("GET",
+  // @LINE:379
+  private[this] lazy val controllers_AdminController_technologyManagement198_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/technologies/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AdminController_technologyManagement194_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_technologyManagement198_invoker = createInvoker(
     AdminController_0.technologyManagement(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3875,11 +3951,11 @@ class Routes(
     )
   )
 
-  // @LINE:379
-  private[this] lazy val controllers_AuthorController_authorRegisterPage195_route = Route("GET",
+  // @LINE:384
+  private[this] lazy val controllers_AuthorController_authorRegisterPage199_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/authorRegisterPage")))
   )
-  private[this] lazy val controllers_AuthorController_authorRegisterPage195_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_authorRegisterPage199_invoker = createInvoker(
     AuthorController_3.authorRegisterPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3893,11 +3969,11 @@ class Routes(
     )
   )
 
-  // @LINE:380
-  private[this] lazy val controllers_AuthorController_authorRegisterPOST196_route = Route("GET",
+  // @LINE:385
+  private[this] lazy val controllers_AuthorController_authorRegisterPOST200_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/authorRegister")))
   )
-  private[this] lazy val controllers_AuthorController_authorRegisterPOST196_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_authorRegisterPOST200_invoker = createInvoker(
     AuthorController_3.authorRegisterPOST(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3911,11 +3987,11 @@ class Routes(
     )
   )
 
-  // @LINE:381
-  private[this] lazy val controllers_AuthorController_authorEditPage197_route = Route("GET",
+  // @LINE:386
+  private[this] lazy val controllers_AuthorController_authorEditPage201_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/authorEditPage")))
   )
-  private[this] lazy val controllers_AuthorController_authorEditPage197_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_authorEditPage201_invoker = createInvoker(
     AuthorController_3.authorEditPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3929,11 +4005,11 @@ class Routes(
     )
   )
 
-  // @LINE:382
-  private[this] lazy val controllers_AuthorController_authorEditPOST198_route = Route("POST",
+  // @LINE:387
+  private[this] lazy val controllers_AuthorController_authorEditPOST202_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/authorEditPOST")))
   )
-  private[this] lazy val controllers_AuthorController_authorEditPOST198_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_authorEditPOST202_invoker = createInvoker(
     AuthorController_3.authorEditPOST(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3947,11 +4023,11 @@ class Routes(
     )
   )
 
-  // @LINE:383
-  private[this] lazy val controllers_AuthorController_authorList199_route = Route("GET",
+  // @LINE:388
+  private[this] lazy val controllers_AuthorController_authorList203_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/authorList/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AuthorController_authorList199_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_authorList203_invoker = createInvoker(
     AuthorController_3.authorList(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3965,11 +4041,11 @@ class Routes(
     )
   )
 
-  // @LINE:384
-  private[this] lazy val controllers_AuthorController_authorDetailPage200_route = Route("GET",
+  // @LINE:389
+  private[this] lazy val controllers_AuthorController_authorDetailPage204_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/authorDetailPage/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AuthorController_authorDetailPage200_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_authorDetailPage204_invoker = createInvoker(
     AuthorController_3.authorDetailPage(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3983,11 +4059,11 @@ class Routes(
     )
   )
 
-  // @LINE:386
-  private[this] lazy val controllers_AuthorController_userEditPageAdmin201_route = Route("GET",
+  // @LINE:391
+  private[this] lazy val controllers_AuthorController_userEditPageAdmin205_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/userEditPageAdmin/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AuthorController_userEditPageAdmin201_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_userEditPageAdmin205_invoker = createInvoker(
     AuthorController_3.userEditPageAdmin(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4001,11 +4077,11 @@ class Routes(
     )
   )
 
-  // @LINE:387
-  private[this] lazy val controllers_AuthorController_userEditPOSTAdmin202_route = Route("POST",
+  // @LINE:392
+  private[this] lazy val controllers_AuthorController_userEditPOSTAdmin206_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/userEditPOSTAdmin/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AuthorController_userEditPOSTAdmin202_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_userEditPOSTAdmin206_invoker = createInvoker(
     AuthorController_3.userEditPOSTAdmin(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4019,11 +4095,11 @@ class Routes(
     )
   )
 
-  // @LINE:388
-  private[this] lazy val controllers_AuthorController_userListAdmin203_route = Route("GET",
+  // @LINE:393
+  private[this] lazy val controllers_AuthorController_userListAdmin207_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/userListAdmin/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AuthorController_userListAdmin203_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_userListAdmin207_invoker = createInvoker(
     AuthorController_3.userListAdmin(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4037,11 +4113,11 @@ class Routes(
     )
   )
 
-  // @LINE:389
-  private[this] lazy val controllers_AuthorController_userDetailPageAdmin204_route = Route("GET",
+  // @LINE:394
+  private[this] lazy val controllers_AuthorController_userDetailPageAdmin208_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/userDetailPageAdmin/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AuthorController_userDetailPageAdmin204_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_userDetailPageAdmin208_invoker = createInvoker(
     AuthorController_3.userDetailPageAdmin(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4055,11 +4131,11 @@ class Routes(
     )
   )
 
-  // @LINE:393
-  private[this] lazy val controllers_AuthorController_searchPage205_route = Route("GET",
+  // @LINE:398
+  private[this] lazy val controllers_AuthorController_searchPage209_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/searchPage")))
   )
-  private[this] lazy val controllers_AuthorController_searchPage205_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_searchPage209_invoker = createInvoker(
     AuthorController_3.searchPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4073,11 +4149,11 @@ class Routes(
     )
   )
 
-  // @LINE:394
-  private[this] lazy val controllers_AuthorController_searchPOST206_route = Route("POST",
+  // @LINE:399
+  private[this] lazy val controllers_AuthorController_searchPOST210_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/searchPOST")))
   )
-  private[this] lazy val controllers_AuthorController_searchPOST206_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_searchPOST210_invoker = createInvoker(
     AuthorController_3.searchPOST(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4091,11 +4167,11 @@ class Routes(
     )
   )
 
-  // @LINE:395
-  private[this] lazy val controllers_AuthorController_authorDelete207_route = Route("GET",
+  // @LINE:400
+  private[this] lazy val controllers_AuthorController_authorDelete211_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/authorDelete")))
   )
-  private[this] lazy val controllers_AuthorController_authorDelete207_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_authorDelete211_invoker = createInvoker(
     AuthorController_3.authorDelete(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4109,11 +4185,11 @@ class Routes(
     )
   )
 
-  // @LINE:396
-  private[this] lazy val controllers_AuthorController_topAuthors208_route = Route("GET",
+  // @LINE:401
+  private[this] lazy val controllers_AuthorController_topAuthors212_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/topAuthors")))
   )
-  private[this] lazy val controllers_AuthorController_topAuthors208_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_topAuthors212_invoker = createInvoker(
     AuthorController_3.topAuthors(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4127,11 +4203,11 @@ class Routes(
     )
   )
 
-  // @LINE:399
-  private[this] lazy val controllers_ReviewerController_reviewerRegisterPage209_route = Route("GET",
+  // @LINE:404
+  private[this] lazy val controllers_ReviewerController_reviewerRegisterPage213_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/reviewerRegisterPage")))
   )
-  private[this] lazy val controllers_ReviewerController_reviewerRegisterPage209_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_reviewerRegisterPage213_invoker = createInvoker(
     ReviewerController_18.reviewerRegisterPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4145,11 +4221,11 @@ class Routes(
     )
   )
 
-  // @LINE:400
-  private[this] lazy val controllers_ReviewerController_reviewerRegisterPOST210_route = Route("GET",
+  // @LINE:405
+  private[this] lazy val controllers_ReviewerController_reviewerRegisterPOST214_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/reviewerRegister")))
   )
-  private[this] lazy val controllers_ReviewerController_reviewerRegisterPOST210_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_reviewerRegisterPOST214_invoker = createInvoker(
     ReviewerController_18.reviewerRegisterPOST(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4163,11 +4239,11 @@ class Routes(
     )
   )
 
-  // @LINE:401
-  private[this] lazy val controllers_ReviewerController_reviewerEditPage211_route = Route("GET",
+  // @LINE:406
+  private[this] lazy val controllers_ReviewerController_reviewerEditPage215_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/reviewerEditPage")))
   )
-  private[this] lazy val controllers_ReviewerController_reviewerEditPage211_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_reviewerEditPage215_invoker = createInvoker(
     ReviewerController_18.reviewerEditPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4181,11 +4257,11 @@ class Routes(
     )
   )
 
-  // @LINE:402
-  private[this] lazy val controllers_ReviewerController_reviewerEditPOST212_route = Route("POST",
+  // @LINE:407
+  private[this] lazy val controllers_ReviewerController_reviewerEditPOST216_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/reviewerEditPOST")))
   )
-  private[this] lazy val controllers_ReviewerController_reviewerEditPOST212_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_reviewerEditPOST216_invoker = createInvoker(
     ReviewerController_18.reviewerEditPOST(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4199,11 +4275,11 @@ class Routes(
     )
   )
 
-  // @LINE:403
-  private[this] lazy val controllers_ReviewerController_reviewerList213_route = Route("GET",
+  // @LINE:408
+  private[this] lazy val controllers_ReviewerController_reviewerList217_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/reviewerList/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_ReviewerController_reviewerList213_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_reviewerList217_invoker = createInvoker(
     ReviewerController_18.reviewerList(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4217,11 +4293,11 @@ class Routes(
     )
   )
 
-  // @LINE:404
-  private[this] lazy val controllers_ReviewerController_reviewerDetailPage214_route = Route("GET",
+  // @LINE:409
+  private[this] lazy val controllers_ReviewerController_reviewerDetailPage218_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/reviewerDetailPage/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_ReviewerController_reviewerDetailPage214_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_reviewerDetailPage218_invoker = createInvoker(
     ReviewerController_18.reviewerDetailPage(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4235,11 +4311,11 @@ class Routes(
     )
   )
 
-  // @LINE:408
-  private[this] lazy val controllers_ReviewerController_searchPage215_route = Route("GET",
+  // @LINE:413
+  private[this] lazy val controllers_ReviewerController_searchPage219_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/searchPage")))
   )
-  private[this] lazy val controllers_ReviewerController_searchPage215_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_searchPage219_invoker = createInvoker(
     ReviewerController_18.searchPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4253,11 +4329,11 @@ class Routes(
     )
   )
 
-  // @LINE:409
-  private[this] lazy val controllers_ReviewerController_searchPOST216_route = Route("POST",
+  // @LINE:414
+  private[this] lazy val controllers_ReviewerController_searchPOST220_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/searchPOST")))
   )
-  private[this] lazy val controllers_ReviewerController_searchPOST216_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_searchPOST220_invoker = createInvoker(
     ReviewerController_18.searchPOST(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4271,11 +4347,11 @@ class Routes(
     )
   )
 
-  // @LINE:410
-  private[this] lazy val controllers_ReviewerController_reviewerDelete217_route = Route("GET",
+  // @LINE:415
+  private[this] lazy val controllers_ReviewerController_reviewerDelete221_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/reviewerDelete")))
   )
-  private[this] lazy val controllers_ReviewerController_reviewerDelete217_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_reviewerDelete221_invoker = createInvoker(
     ReviewerController_18.reviewerDelete(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4289,11 +4365,11 @@ class Routes(
     )
   )
 
-  // @LINE:414
-  private[this] lazy val controllers_PaperController_paperRegisterPage218_route = Route("GET",
+  // @LINE:419
+  private[this] lazy val controllers_PaperController_paperRegisterPage222_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/paperRegisterPage")))
   )
-  private[this] lazy val controllers_PaperController_paperRegisterPage218_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_paperRegisterPage222_invoker = createInvoker(
     PaperController_13.paperRegisterPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4307,11 +4383,11 @@ class Routes(
     )
   )
 
-  // @LINE:415
-  private[this] lazy val controllers_PaperController_paperRegisterPOST219_route = Route("POST",
+  // @LINE:420
+  private[this] lazy val controllers_PaperController_paperRegisterPOST223_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/paperRegisterPOST")))
   )
-  private[this] lazy val controllers_PaperController_paperRegisterPOST219_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_paperRegisterPOST223_invoker = createInvoker(
     PaperController_13.paperRegisterPOST(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4325,11 +4401,11 @@ class Routes(
     )
   )
 
-  // @LINE:417
-  private[this] lazy val controllers_PaperController_paperList220_route = Route("GET",
+  // @LINE:422
+  private[this] lazy val controllers_PaperController_paperList224_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/paperList/"), DynamicPart("pageNum", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PaperController_paperList220_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_paperList224_invoker = createInvoker(
     PaperController_13.paperList(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4343,11 +4419,11 @@ class Routes(
     )
   )
 
-  // @LINE:418
-  private[this] lazy val controllers_PaperController_paperDetail221_route = Route("GET",
+  // @LINE:423
+  private[this] lazy val controllers_PaperController_paperDetail225_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/paperDetail/"), DynamicPart("paperId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PaperController_paperDetail221_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_paperDetail225_invoker = createInvoker(
     PaperController_13.paperDetail(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4361,11 +4437,11 @@ class Routes(
     )
   )
 
-  // @LINE:419
-  private[this] lazy val controllers_PaperController_deletePaper222_route = Route("POST",
+  // @LINE:424
+  private[this] lazy val controllers_PaperController_deletePaper226_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/deletePaper/"), DynamicPart("paperId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PaperController_deletePaper222_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_deletePaper226_invoker = createInvoker(
     PaperController_13.deletePaper(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4379,11 +4455,11 @@ class Routes(
     )
   )
 
-  // @LINE:421
-  private[this] lazy val controllers_PaperController_primeConnections223_route = Route("GET",
+  // @LINE:426
+  private[this] lazy val controllers_PaperController_primeConnections227_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/primeConnections")))
   )
-  private[this] lazy val controllers_PaperController_primeConnections223_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_primeConnections227_invoker = createInvoker(
     PaperController_13.primeConnections(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4397,11 +4473,11 @@ class Routes(
     )
   )
 
-  // @LINE:423
-  private[this] lazy val controllers_PaperController_relationGraph224_route = Route("GET",
+  // @LINE:428
+  private[this] lazy val controllers_PaperController_relationGraph228_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/relationGraph")))
   )
-  private[this] lazy val controllers_PaperController_relationGraph224_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_relationGraph228_invoker = createInvoker(
     PaperController_13.relationGraph(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4415,11 +4491,11 @@ class Routes(
     )
   )
 
-  // @LINE:424
-  private[this] lazy val controllers_PaperController_loadUploadPage225_route = Route("GET",
+  // @LINE:429
+  private[this] lazy val controllers_PaperController_loadUploadPage229_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/loadDBLP")))
   )
-  private[this] lazy val controllers_PaperController_loadUploadPage225_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_loadUploadPage229_invoker = createInvoker(
     PaperController_13.loadUploadPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4433,11 +4509,11 @@ class Routes(
     )
   )
 
-  // @LINE:425
-  private[this] lazy val controllers_PaperController_processDBPLFile226_route = Route("POST",
+  // @LINE:430
+  private[this] lazy val controllers_PaperController_processDBPLFile230_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/uploadDBLP")))
   )
-  private[this] lazy val controllers_PaperController_processDBPLFile226_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_processDBPLFile230_invoker = createInvoker(
     PaperController_13.processDBPLFile(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4451,11 +4527,11 @@ class Routes(
     )
   )
 
-  // @LINE:427
-  private[this] lazy val controllers_PaperController_paperLDA227_route = Route("GET",
+  // @LINE:432
+  private[this] lazy val controllers_PaperController_paperLDA231_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/ldaPage")))
   )
-  private[this] lazy val controllers_PaperController_paperLDA227_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_paperLDA231_invoker = createInvoker(
     PaperController_13.paperLDA(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4469,11 +4545,11 @@ class Routes(
     )
   )
 
-  // @LINE:429
-  private[this] lazy val controllers_PaperController_authorAuthorRel228_route = Route("GET",
+  // @LINE:434
+  private[this] lazy val controllers_PaperController_authorAuthorRel232_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/authorRelation")))
   )
-  private[this] lazy val controllers_PaperController_authorAuthorRel228_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_authorAuthorRel232_invoker = createInvoker(
     PaperController_13.authorAuthorRel(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4487,11 +4563,11 @@ class Routes(
     )
   )
 
-  // @LINE:430
-  private[this] lazy val controllers_PaperController_ldaTopicDistribution229_route = Route("GET",
+  // @LINE:435
+  private[this] lazy val controllers_PaperController_ldaTopicDistribution233_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/ldaTopicDistribution")))
   )
-  private[this] lazy val controllers_PaperController_ldaTopicDistribution229_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_ldaTopicDistribution233_invoker = createInvoker(
     PaperController_13.ldaTopicDistribution(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4505,11 +4581,11 @@ class Routes(
     )
   )
 
-  // @LINE:431
-  private[this] lazy val controllers_PaperController_searchPage230_route = Route("GET",
+  // @LINE:436
+  private[this] lazy val controllers_PaperController_searchPage234_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/searchPage")))
   )
-  private[this] lazy val controllers_PaperController_searchPage230_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_searchPage234_invoker = createInvoker(
     PaperController_13.searchPage(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4523,11 +4599,11 @@ class Routes(
     )
   )
 
-  // @LINE:432
-  private[this] lazy val controllers_PaperController_searchPaper231_route = Route("POST",
+  // @LINE:437
+  private[this] lazy val controllers_PaperController_searchPaper235_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/searchPaper")))
   )
-  private[this] lazy val controllers_PaperController_searchPaper231_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_searchPaper235_invoker = createInvoker(
     PaperController_13.searchPaper(fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4541,11 +4617,11 @@ class Routes(
     )
   )
 
-  // @LINE:435
-  private[this] lazy val controllers_GraphController_researchInterest232_route = Route("GET",
+  // @LINE:440
+  private[this] lazy val controllers_GraphController_researchInterest236_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("graphs/research")))
   )
-  private[this] lazy val controllers_GraphController_researchInterest232_invoker = createInvoker(
+  private[this] lazy val controllers_GraphController_researchInterest236_invoker = createInvoker(
     GraphController_11.researchInterest(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4559,11 +4635,11 @@ class Routes(
     )
   )
 
-  // @LINE:436
-  private[this] lazy val controllers_FileController_getFile233_route = Route("GET",
+  // @LINE:441
+  private[this] lazy val controllers_FileController_getFile237_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("file/"), DynamicPart("tableName", """[^/]+""",true), StaticPart("/"), DynamicPart("challengeFileType", """[^/]+""",true), StaticPart("/"), DynamicPart("tableRecorderId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_FileController_getFile233_invoker = createInvoker(
+  private[this] lazy val controllers_FileController_getFile237_invoker = createInvoker(
     FileController_22.getFile(fakeValue[String], fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -5564,424 +5640,448 @@ class Routes(
         controllers_RAJobController_sendOfferEmail163_invoker.call(RAJobController_14.sendOfferEmail(rajobApplicationId, ccString))
       }
   
-    // @LINE:312
-    case controllers_TACandidateController_tacandidateRegisterPage164_route(params@_) =>
-      call { 
-        controllers_TACandidateController_tacandidateRegisterPage164_invoker.call(TACandidateController_20.tacandidateRegisterPage())
+    // @LINE:308
+    case controllers_RAJobController_raInterviewSchedulePage164_route(params@_) =>
+      call(params.fromPath[Long]("jobId", None)) { (jobId) =>
+        controllers_RAJobController_raInterviewSchedulePage164_invoker.call(RAJobController_14.raInterviewSchedulePage(jobId))
       }
   
-    // @LINE:313
-    case controllers_TACandidateController_tacandidateRegisterPOST165_route(params@_) =>
-      call { 
-        controllers_TACandidateController_tacandidateRegisterPOST165_invoker.call(TACandidateController_20.tacandidateRegisterPOST())
+    // @LINE:309
+    case controllers_RAJobController_scheduleInterviewPOST165_route(params@_) =>
+      call(params.fromPath[Long]("jobId", None)) { (jobId) =>
+        controllers_RAJobController_scheduleInterviewPOST165_invoker.call(RAJobController_14.scheduleInterviewPOST(jobId))
       }
   
-    // @LINE:314
-    case controllers_TACandidateController_tacandidateList166_route(params@_) =>
+    // @LINE:310
+    case controllers_RAJobController_rescheduleInterviewPOST166_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_RAJobController_rescheduleInterviewPOST166_invoker.call(RAJobController_14.rescheduleInterviewPOST(id))
+      }
+  
+    // @LINE:311
+    case controllers_RAJobController_cancelInterviewPOST167_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_RAJobController_cancelInterviewPOST167_invoker.call(RAJobController_14.cancelInterviewPOST(id))
+      }
+  
+    // @LINE:317
+    case controllers_TACandidateController_tacandidateRegisterPage168_route(params@_) =>
+      call { 
+        controllers_TACandidateController_tacandidateRegisterPage168_invoker.call(TACandidateController_20.tacandidateRegisterPage())
+      }
+  
+    // @LINE:318
+    case controllers_TACandidateController_tacandidateRegisterPOST169_route(params@_) =>
+      call { 
+        controllers_TACandidateController_tacandidateRegisterPOST169_invoker.call(TACandidateController_20.tacandidateRegisterPOST())
+      }
+  
+    // @LINE:319
+    case controllers_TACandidateController_tacandidateList170_route(params@_) =>
       call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some(""))) { (pageNum, sortCriteria) =>
-        controllers_TACandidateController_tacandidateList166_invoker.call(TACandidateController_20.tacandidateList(pageNum, sortCriteria))
+        controllers_TACandidateController_tacandidateList170_invoker.call(TACandidateController_20.tacandidateList(pageNum, sortCriteria))
       }
   
-    // @LINE:315
-    case controllers_TACandidateController_tacandidateDetail167_route(params@_) =>
+    // @LINE:320
+    case controllers_TACandidateController_tacandidateDetail171_route(params@_) =>
       call(params.fromPath[Long]("Id", None)) { (Id) =>
-        controllers_TACandidateController_tacandidateDetail167_invoker.call(TACandidateController_20.tacandidateDetail(Id))
+        controllers_TACandidateController_tacandidateDetail171_invoker.call(TACandidateController_20.tacandidateDetail(Id))
       }
   
-    // @LINE:316
-    case controllers_TACandidateController_getCurrentUserAssignments168_route(params@_) =>
+    // @LINE:321
+    case controllers_TACandidateController_getCurrentUserAssignments172_route(params@_) =>
       call { 
-        controllers_TACandidateController_getCurrentUserAssignments168_invoker.call(TACandidateController_20.getCurrentUserAssignments())
+        controllers_TACandidateController_getCurrentUserAssignments172_invoker.call(TACandidateController_20.getCurrentUserAssignments())
       }
   
-    // @LINE:323
-    case controllers_CourseController_courseList169_route(params@_) =>
+    // @LINE:328
+    case controllers_CourseController_courseList173_route(params@_) =>
       call { 
-        controllers_CourseController_courseList169_invoker.call(CourseController_2.courseList())
+        controllers_CourseController_courseList173_invoker.call(CourseController_2.courseList())
       }
   
-    // @LINE:331
-    case controllers_CourseTAAssignmentController_taHiringStatusList170_route(params@_) =>
+    // @LINE:336
+    case controllers_CourseTAAssignmentController_taHiringStatusList174_route(params@_) =>
       call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some(""))) { (pageNum, sortCriteria) =>
-        controllers_CourseTAAssignmentController_taHiringStatusList170_invoker.call(CourseTAAssignmentController_5.taHiringStatusList(pageNum, sortCriteria))
+        controllers_CourseTAAssignmentController_taHiringStatusList174_invoker.call(CourseTAAssignmentController_5.taHiringStatusList(pageNum, sortCriteria))
       }
   
-    // @LINE:332
-    case controllers_CourseTAAssignmentController_assignmentDetail171_route(params@_) =>
+    // @LINE:337
+    case controllers_CourseTAAssignmentController_assignmentDetail175_route(params@_) =>
       call(params.fromPath[Long]("Id", None)) { (Id) =>
-        controllers_CourseTAAssignmentController_assignmentDetail171_invoker.call(CourseTAAssignmentController_5.assignmentDetail(Id))
+        controllers_CourseTAAssignmentController_assignmentDetail175_invoker.call(CourseTAAssignmentController_5.assignmentDetail(Id))
       }
   
-    // @LINE:333
-    case controllers_CourseTAAssignmentController_assignmentRegisterPOST172_route(params@_) =>
+    // @LINE:338
+    case controllers_CourseTAAssignmentController_assignmentRegisterPOST176_route(params@_) =>
       call { 
-        controllers_CourseTAAssignmentController_assignmentRegisterPOST172_invoker.call(CourseTAAssignmentController_5.assignmentRegisterPOST())
-      }
-  
-    // @LINE:340
-    case controllers_TAJobController_tajobRegisterPage173_route(params@_) =>
-      call { 
-        controllers_TAJobController_tajobRegisterPage173_invoker.call(TAJobController_8.tajobRegisterPage())
-      }
-  
-    // @LINE:341
-    case controllers_TAJobController_tajobRegisterPOST174_route(params@_) =>
-      call { 
-        controllers_TAJobController_tajobRegisterPOST174_invoker.call(TAJobController_8.tajobRegisterPOST())
-      }
-  
-    // @LINE:342
-    case controllers_TAJobController_tajobEditPage175_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_tajobEditPage175_invoker.call(TAJobController_8.tajobEditPage(tajobId))
-      }
-  
-    // @LINE:343
-    case controllers_TAJobController_tajobEditPOST176_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_tajobEditPOST176_invoker.call(TAJobController_8.tajobEditPOST(tajobId))
-      }
-  
-    // @LINE:344
-    case controllers_TAJobController_tajobApplyPage177_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_tajobApplyPage177_invoker.call(TAJobController_8.tajobApplyPage(tajobId))
+        controllers_CourseTAAssignmentController_assignmentRegisterPOST176_invoker.call(CourseTAAssignmentController_5.assignmentRegisterPOST())
       }
   
     // @LINE:345
-    case controllers_TAJobController_tajobApplyPOST178_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_tajobApplyPOST178_invoker.call(TAJobController_8.tajobApplyPOST(tajobId))
+    case controllers_TAJobController_tajobRegisterPage177_route(params@_) =>
+      call { 
+        controllers_TAJobController_tajobRegisterPage177_invoker.call(TAJobController_8.tajobRegisterPage())
+      }
+  
+    // @LINE:346
+    case controllers_TAJobController_tajobRegisterPOST178_route(params@_) =>
+      call { 
+        controllers_TAJobController_tajobRegisterPOST178_invoker.call(TAJobController_8.tajobRegisterPOST())
       }
   
     // @LINE:347
-    case controllers_TAJobController_tajobStatueChange179_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None), params.fromPath[String]("tajobStatus", None)) { (tajobId, tajobStatus) =>
-        controllers_TAJobController_tajobStatueChange179_invoker.call(TAJobController_8.tajobStatueChange(tajobId, tajobStatus))
+    case controllers_TAJobController_tajobEditPage179_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
+        controllers_TAJobController_tajobEditPage179_invoker.call(TAJobController_8.tajobEditPage(tajobId))
+      }
+  
+    // @LINE:348
+    case controllers_TAJobController_tajobEditPOST180_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
+        controllers_TAJobController_tajobEditPOST180_invoker.call(TAJobController_8.tajobEditPOST(tajobId))
       }
   
     // @LINE:349
-    case controllers_TAJobController_tajobApplicationDetail180_route(params@_) =>
-      call(params.fromPath[Long]("tajobApplicationId", None)) { (tajobApplicationId) =>
-        controllers_TAJobController_tajobApplicationDetail180_invoker.call(TAJobController_8.tajobApplicationDetail(tajobApplicationId))
+    case controllers_TAJobController_tajobApplyPage181_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
+        controllers_TAJobController_tajobApplyPage181_invoker.call(TAJobController_8.tajobApplyPage(tajobId))
       }
   
     // @LINE:350
-    case controllers_TAJobController_saveTAJobPdf181_route(params@_) =>
-      call(params.fromPath[Long]("tajobApplicationId", None)) { (tajobApplicationId) =>
-        controllers_TAJobController_saveTAJobPdf181_invoker.call(TAJobController_8.saveTAJobPdf(tajobApplicationId))
+    case controllers_TAJobController_tajobApplyPOST182_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
+        controllers_TAJobController_tajobApplyPOST182_invoker.call(TAJobController_8.tajobApplyPOST(tajobId))
       }
   
     // @LINE:352
-    case controllers_TAJobController_tajobList182_route(params@_) =>
-      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some(""))) { (pageNum, sortCriteria) =>
-        controllers_TAJobController_tajobList182_invoker.call(TAJobController_8.tajobList(pageNum, sortCriteria))
-      }
-  
-    // @LINE:353
-    case controllers_TAJobController_tajobListPostedByUser183_route(params@_) =>
-      call(params.fromPath[Integer]("pageNum", None)) { (pageNum) =>
-        controllers_TAJobController_tajobListPostedByUser183_invoker.call(TAJobController_8.tajobListPostedByUser(pageNum))
+    case controllers_TAJobController_tajobStatueChange183_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None), params.fromPath[String]("tajobStatus", None)) { (tajobId, tajobStatus) =>
+        controllers_TAJobController_tajobStatueChange183_invoker.call(TAJobController_8.tajobStatueChange(tajobId, tajobStatus))
       }
   
     // @LINE:354
-    case controllers_TAJobController_tajobDetail184_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_tajobDetail184_invoker.call(TAJobController_8.tajobDetail(tajobId))
+    case controllers_TAJobController_tajobApplicationDetail184_route(params@_) =>
+      call(params.fromPath[Long]("tajobApplicationId", None)) { (tajobApplicationId) =>
+        controllers_TAJobController_tajobApplicationDetail184_invoker.call(TAJobController_8.tajobApplicationDetail(tajobApplicationId))
       }
   
     // @LINE:355
-    case controllers_TAJobController_searchPage185_route(params@_) =>
-      call { 
-        controllers_TAJobController_searchPage185_invoker.call(TAJobController_8.searchPage())
-      }
-  
-    // @LINE:356
-    case controllers_TAJobController_searchPOST186_route(params@_) =>
-      call(params.fromQuery[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", None)) { (pageNum, sortCriteria) =>
-        controllers_TAJobController_searchPOST186_invoker.call(TAJobController_8.searchPOST(pageNum, sortCriteria))
+    case controllers_TAJobController_saveTAJobPdf185_route(params@_) =>
+      call(params.fromPath[Long]("tajobApplicationId", None)) { (tajobApplicationId) =>
+        controllers_TAJobController_saveTAJobPdf185_invoker.call(TAJobController_8.saveTAJobPdf(tajobApplicationId))
       }
   
     // @LINE:357
-    case controllers_TAJobController_deleteTAJob187_route(params@_) =>
+    case controllers_TAJobController_tajobList186_route(params@_) =>
+      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some(""))) { (pageNum, sortCriteria) =>
+        controllers_TAJobController_tajobList186_invoker.call(TAJobController_8.tajobList(pageNum, sortCriteria))
+      }
+  
+    // @LINE:358
+    case controllers_TAJobController_tajobListPostedByUser187_route(params@_) =>
+      call(params.fromPath[Integer]("pageNum", None)) { (pageNum) =>
+        controllers_TAJobController_tajobListPostedByUser187_invoker.call(TAJobController_8.tajobListPostedByUser(pageNum))
+      }
+  
+    // @LINE:359
+    case controllers_TAJobController_tajobDetail188_route(params@_) =>
       call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_deleteTAJob187_invoker.call(TAJobController_8.deleteTAJob(tajobId))
+        controllers_TAJobController_tajobDetail188_invoker.call(TAJobController_8.tajobDetail(tajobId))
       }
   
-    // @LINE:368
-    case controllers_AdminController_dashboard188_route(params@_) =>
+    // @LINE:360
+    case controllers_TAJobController_searchPage189_route(params@_) =>
       call { 
-        controllers_AdminController_dashboard188_invoker.call(AdminController_0.dashboard())
+        controllers_TAJobController_searchPage189_invoker.call(TAJobController_8.searchPage())
       }
   
-    // @LINE:369
-    case controllers_AdminController_userManagement189_route(params@_) =>
-      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
-        controllers_AdminController_userManagement189_invoker.call(AdminController_0.userManagement(pageNum, sortCriteria))
+    // @LINE:361
+    case controllers_TAJobController_searchPOST190_route(params@_) =>
+      call(params.fromQuery[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", None)) { (pageNum, sortCriteria) =>
+        controllers_TAJobController_searchPOST190_invoker.call(TAJobController_8.searchPOST(pageNum, sortCriteria))
       }
   
-    // @LINE:370
-    case controllers_AdminController_userDetail190_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_AdminController_userDetail190_invoker.call(AdminController_0.userDetail(userId))
-      }
-  
-    // @LINE:371
-    case controllers_AdminController_jobManagement191_route(params@_) =>
-      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
-        controllers_AdminController_jobManagement191_invoker.call(AdminController_0.jobManagement(pageNum, sortCriteria))
-      }
-  
-    // @LINE:372
-    case controllers_AdminController_jobDetail192_route(params@_) =>
-      call(params.fromPath[String]("jobType", None), params.fromPath[Long]("jobId", None)) { (jobType, jobId) =>
-        controllers_AdminController_jobDetail192_invoker.call(AdminController_0.jobDetail(jobType, jobId))
+    // @LINE:362
+    case controllers_TAJobController_deleteTAJob191_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
+        controllers_TAJobController_deleteTAJob191_invoker.call(TAJobController_8.deleteTAJob(tajobId))
       }
   
     // @LINE:373
-    case controllers_AdminController_organizationManagement193_route(params@_) =>
-      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
-        controllers_AdminController_organizationManagement193_invoker.call(AdminController_0.organizationManagement(pageNum, sortCriteria))
+    case controllers_AdminController_dashboard192_route(params@_) =>
+      call { 
+        controllers_AdminController_dashboard192_invoker.call(AdminController_0.dashboard())
       }
   
     // @LINE:374
-    case controllers_AdminController_technologyManagement194_route(params@_) =>
+    case controllers_AdminController_userManagement193_route(params@_) =>
       call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
-        controllers_AdminController_technologyManagement194_invoker.call(AdminController_0.technologyManagement(pageNum, sortCriteria))
+        controllers_AdminController_userManagement193_invoker.call(AdminController_0.userManagement(pageNum, sortCriteria))
+      }
+  
+    // @LINE:375
+    case controllers_AdminController_userDetail194_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_AdminController_userDetail194_invoker.call(AdminController_0.userDetail(userId))
+      }
+  
+    // @LINE:376
+    case controllers_AdminController_jobManagement195_route(params@_) =>
+      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
+        controllers_AdminController_jobManagement195_invoker.call(AdminController_0.jobManagement(pageNum, sortCriteria))
+      }
+  
+    // @LINE:377
+    case controllers_AdminController_jobDetail196_route(params@_) =>
+      call(params.fromPath[String]("jobType", None), params.fromPath[Long]("jobId", None)) { (jobType, jobId) =>
+        controllers_AdminController_jobDetail196_invoker.call(AdminController_0.jobDetail(jobType, jobId))
+      }
+  
+    // @LINE:378
+    case controllers_AdminController_organizationManagement197_route(params@_) =>
+      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
+        controllers_AdminController_organizationManagement197_invoker.call(AdminController_0.organizationManagement(pageNum, sortCriteria))
       }
   
     // @LINE:379
-    case controllers_AuthorController_authorRegisterPage195_route(params@_) =>
-      call { 
-        controllers_AuthorController_authorRegisterPage195_invoker.call(AuthorController_3.authorRegisterPage())
-      }
-  
-    // @LINE:380
-    case controllers_AuthorController_authorRegisterPOST196_route(params@_) =>
-      call { 
-        controllers_AuthorController_authorRegisterPOST196_invoker.call(AuthorController_3.authorRegisterPOST())
-      }
-  
-    // @LINE:381
-    case controllers_AuthorController_authorEditPage197_route(params@_) =>
-      call { 
-        controllers_AuthorController_authorEditPage197_invoker.call(AuthorController_3.authorEditPage())
-      }
-  
-    // @LINE:382
-    case controllers_AuthorController_authorEditPOST198_route(params@_) =>
-      call { 
-        controllers_AuthorController_authorEditPOST198_invoker.call(AuthorController_3.authorEditPOST())
-      }
-  
-    // @LINE:383
-    case controllers_AuthorController_authorList199_route(params@_) =>
-      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", None)) { (pageNum, sortCriteria) =>
-        controllers_AuthorController_authorList199_invoker.call(AuthorController_3.authorList(pageNum, sortCriteria))
+    case controllers_AdminController_technologyManagement198_route(params@_) =>
+      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
+        controllers_AdminController_technologyManagement198_invoker.call(AdminController_0.technologyManagement(pageNum, sortCriteria))
       }
   
     // @LINE:384
-    case controllers_AuthorController_authorDetailPage200_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_AuthorController_authorDetailPage200_invoker.call(AuthorController_3.authorDetailPage(userId))
+    case controllers_AuthorController_authorRegisterPage199_route(params@_) =>
+      call { 
+        controllers_AuthorController_authorRegisterPage199_invoker.call(AuthorController_3.authorRegisterPage())
+      }
+  
+    // @LINE:385
+    case controllers_AuthorController_authorRegisterPOST200_route(params@_) =>
+      call { 
+        controllers_AuthorController_authorRegisterPOST200_invoker.call(AuthorController_3.authorRegisterPOST())
       }
   
     // @LINE:386
-    case controllers_AuthorController_userEditPageAdmin201_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_AuthorController_userEditPageAdmin201_invoker.call(AuthorController_3.userEditPageAdmin(userId))
+    case controllers_AuthorController_authorEditPage201_route(params@_) =>
+      call { 
+        controllers_AuthorController_authorEditPage201_invoker.call(AuthorController_3.authorEditPage())
       }
   
     // @LINE:387
-    case controllers_AuthorController_userEditPOSTAdmin202_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_AuthorController_userEditPOSTAdmin202_invoker.call(AuthorController_3.userEditPOSTAdmin(userId))
+    case controllers_AuthorController_authorEditPOST202_route(params@_) =>
+      call { 
+        controllers_AuthorController_authorEditPOST202_invoker.call(AuthorController_3.authorEditPOST())
       }
   
     // @LINE:388
-    case controllers_AuthorController_userListAdmin203_route(params@_) =>
+    case controllers_AuthorController_authorList203_route(params@_) =>
       call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", None)) { (pageNum, sortCriteria) =>
-        controllers_AuthorController_userListAdmin203_invoker.call(AuthorController_3.userListAdmin(pageNum, sortCriteria))
+        controllers_AuthorController_authorList203_invoker.call(AuthorController_3.authorList(pageNum, sortCriteria))
       }
   
     // @LINE:389
-    case controllers_AuthorController_userDetailPageAdmin204_route(params@_) =>
+    case controllers_AuthorController_authorDetailPage204_route(params@_) =>
       call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_AuthorController_userDetailPageAdmin204_invoker.call(AuthorController_3.userDetailPageAdmin(userId))
+        controllers_AuthorController_authorDetailPage204_invoker.call(AuthorController_3.authorDetailPage(userId))
+      }
+  
+    // @LINE:391
+    case controllers_AuthorController_userEditPageAdmin205_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_AuthorController_userEditPageAdmin205_invoker.call(AuthorController_3.userEditPageAdmin(userId))
+      }
+  
+    // @LINE:392
+    case controllers_AuthorController_userEditPOSTAdmin206_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_AuthorController_userEditPOSTAdmin206_invoker.call(AuthorController_3.userEditPOSTAdmin(userId))
       }
   
     // @LINE:393
-    case controllers_AuthorController_searchPage205_route(params@_) =>
-      call { 
-        controllers_AuthorController_searchPage205_invoker.call(AuthorController_3.searchPage())
+    case controllers_AuthorController_userListAdmin207_route(params@_) =>
+      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", None)) { (pageNum, sortCriteria) =>
+        controllers_AuthorController_userListAdmin207_invoker.call(AuthorController_3.userListAdmin(pageNum, sortCriteria))
       }
   
     // @LINE:394
-    case controllers_AuthorController_searchPOST206_route(params@_) =>
-      call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
-        controllers_AuthorController_searchPOST206_invoker.call(AuthorController_3.searchPOST(pageNum, sortCriteria))
+    case controllers_AuthorController_userDetailPageAdmin208_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_AuthorController_userDetailPageAdmin208_invoker.call(AuthorController_3.userDetailPageAdmin(userId))
       }
   
-    // @LINE:395
-    case controllers_AuthorController_authorDelete207_route(params@_) =>
+    // @LINE:398
+    case controllers_AuthorController_searchPage209_route(params@_) =>
       call { 
-        controllers_AuthorController_authorDelete207_invoker.call(AuthorController_3.authorDelete())
-      }
-  
-    // @LINE:396
-    case controllers_AuthorController_topAuthors208_route(params@_) =>
-      call { 
-        controllers_AuthorController_topAuthors208_invoker.call(AuthorController_3.topAuthors())
+        controllers_AuthorController_searchPage209_invoker.call(AuthorController_3.searchPage())
       }
   
     // @LINE:399
-    case controllers_ReviewerController_reviewerRegisterPage209_route(params@_) =>
-      call { 
-        controllers_ReviewerController_reviewerRegisterPage209_invoker.call(ReviewerController_18.reviewerRegisterPage())
+    case controllers_AuthorController_searchPOST210_route(params@_) =>
+      call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
+        controllers_AuthorController_searchPOST210_invoker.call(AuthorController_3.searchPOST(pageNum, sortCriteria))
       }
   
     // @LINE:400
-    case controllers_ReviewerController_reviewerRegisterPOST210_route(params@_) =>
+    case controllers_AuthorController_authorDelete211_route(params@_) =>
       call { 
-        controllers_ReviewerController_reviewerRegisterPOST210_invoker.call(ReviewerController_18.reviewerRegisterPOST())
+        controllers_AuthorController_authorDelete211_invoker.call(AuthorController_3.authorDelete())
       }
   
     // @LINE:401
-    case controllers_ReviewerController_reviewerEditPage211_route(params@_) =>
+    case controllers_AuthorController_topAuthors212_route(params@_) =>
       call { 
-        controllers_ReviewerController_reviewerEditPage211_invoker.call(ReviewerController_18.reviewerEditPage())
-      }
-  
-    // @LINE:402
-    case controllers_ReviewerController_reviewerEditPOST212_route(params@_) =>
-      call { 
-        controllers_ReviewerController_reviewerEditPOST212_invoker.call(ReviewerController_18.reviewerEditPOST())
-      }
-  
-    // @LINE:403
-    case controllers_ReviewerController_reviewerList213_route(params@_) =>
-      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", None)) { (pageNum, sortCriteria) =>
-        controllers_ReviewerController_reviewerList213_invoker.call(ReviewerController_18.reviewerList(pageNum, sortCriteria))
+        controllers_AuthorController_topAuthors212_invoker.call(AuthorController_3.topAuthors())
       }
   
     // @LINE:404
-    case controllers_ReviewerController_reviewerDetailPage214_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_ReviewerController_reviewerDetailPage214_invoker.call(ReviewerController_18.reviewerDetailPage(userId))
+    case controllers_ReviewerController_reviewerRegisterPage213_route(params@_) =>
+      call { 
+        controllers_ReviewerController_reviewerRegisterPage213_invoker.call(ReviewerController_18.reviewerRegisterPage())
+      }
+  
+    // @LINE:405
+    case controllers_ReviewerController_reviewerRegisterPOST214_route(params@_) =>
+      call { 
+        controllers_ReviewerController_reviewerRegisterPOST214_invoker.call(ReviewerController_18.reviewerRegisterPOST())
+      }
+  
+    // @LINE:406
+    case controllers_ReviewerController_reviewerEditPage215_route(params@_) =>
+      call { 
+        controllers_ReviewerController_reviewerEditPage215_invoker.call(ReviewerController_18.reviewerEditPage())
+      }
+  
+    // @LINE:407
+    case controllers_ReviewerController_reviewerEditPOST216_route(params@_) =>
+      call { 
+        controllers_ReviewerController_reviewerEditPOST216_invoker.call(ReviewerController_18.reviewerEditPOST())
       }
   
     // @LINE:408
-    case controllers_ReviewerController_searchPage215_route(params@_) =>
-      call { 
-        controllers_ReviewerController_searchPage215_invoker.call(ReviewerController_18.searchPage())
+    case controllers_ReviewerController_reviewerList217_route(params@_) =>
+      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", None)) { (pageNum, sortCriteria) =>
+        controllers_ReviewerController_reviewerList217_invoker.call(ReviewerController_18.reviewerList(pageNum, sortCriteria))
       }
   
     // @LINE:409
-    case controllers_ReviewerController_searchPOST216_route(params@_) =>
-      call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
-        controllers_ReviewerController_searchPOST216_invoker.call(ReviewerController_18.searchPOST(pageNum, sortCriteria))
+    case controllers_ReviewerController_reviewerDetailPage218_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_ReviewerController_reviewerDetailPage218_invoker.call(ReviewerController_18.reviewerDetailPage(userId))
       }
   
-    // @LINE:410
-    case controllers_ReviewerController_reviewerDelete217_route(params@_) =>
+    // @LINE:413
+    case controllers_ReviewerController_searchPage219_route(params@_) =>
       call { 
-        controllers_ReviewerController_reviewerDelete217_invoker.call(ReviewerController_18.reviewerDelete())
+        controllers_ReviewerController_searchPage219_invoker.call(ReviewerController_18.searchPage())
       }
   
     // @LINE:414
-    case controllers_PaperController_paperRegisterPage218_route(params@_) =>
-      call { 
-        controllers_PaperController_paperRegisterPage218_invoker.call(PaperController_13.paperRegisterPage())
+    case controllers_ReviewerController_searchPOST220_route(params@_) =>
+      call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
+        controllers_ReviewerController_searchPOST220_invoker.call(ReviewerController_18.searchPOST(pageNum, sortCriteria))
       }
   
     // @LINE:415
-    case controllers_PaperController_paperRegisterPOST219_route(params@_) =>
+    case controllers_ReviewerController_reviewerDelete221_route(params@_) =>
       call { 
-        controllers_PaperController_paperRegisterPOST219_invoker.call(PaperController_13.paperRegisterPOST())
-      }
-  
-    // @LINE:417
-    case controllers_PaperController_paperList220_route(params@_) =>
-      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some(""))) { (pageNum, sortCriteria) =>
-        controllers_PaperController_paperList220_invoker.call(PaperController_13.paperList(pageNum, sortCriteria))
-      }
-  
-    // @LINE:418
-    case controllers_PaperController_paperDetail221_route(params@_) =>
-      call(params.fromPath[Long]("paperId", None)) { (paperId) =>
-        controllers_PaperController_paperDetail221_invoker.call(PaperController_13.paperDetail(paperId))
+        controllers_ReviewerController_reviewerDelete221_invoker.call(ReviewerController_18.reviewerDelete())
       }
   
     // @LINE:419
-    case controllers_PaperController_deletePaper222_route(params@_) =>
-      call(params.fromPath[Long]("paperId", None)) { (paperId) =>
-        controllers_PaperController_deletePaper222_invoker.call(PaperController_13.deletePaper(paperId))
+    case controllers_PaperController_paperRegisterPage222_route(params@_) =>
+      call { 
+        controllers_PaperController_paperRegisterPage222_invoker.call(PaperController_13.paperRegisterPage())
       }
   
-    // @LINE:421
-    case controllers_PaperController_primeConnections223_route(params@_) =>
+    // @LINE:420
+    case controllers_PaperController_paperRegisterPOST223_route(params@_) =>
       call { 
-        controllers_PaperController_primeConnections223_invoker.call(PaperController_13.primeConnections())
+        controllers_PaperController_paperRegisterPOST223_invoker.call(PaperController_13.paperRegisterPOST())
+      }
+  
+    // @LINE:422
+    case controllers_PaperController_paperList224_route(params@_) =>
+      call(params.fromPath[Integer]("pageNum", None), params.fromQuery[String]("sortCriteria", Some(""))) { (pageNum, sortCriteria) =>
+        controllers_PaperController_paperList224_invoker.call(PaperController_13.paperList(pageNum, sortCriteria))
       }
   
     // @LINE:423
-    case controllers_PaperController_relationGraph224_route(params@_) =>
-      call { 
-        controllers_PaperController_relationGraph224_invoker.call(PaperController_13.relationGraph())
+    case controllers_PaperController_paperDetail225_route(params@_) =>
+      call(params.fromPath[Long]("paperId", None)) { (paperId) =>
+        controllers_PaperController_paperDetail225_invoker.call(PaperController_13.paperDetail(paperId))
       }
   
     // @LINE:424
-    case controllers_PaperController_loadUploadPage225_route(params@_) =>
-      call { 
-        controllers_PaperController_loadUploadPage225_invoker.call(PaperController_13.loadUploadPage())
+    case controllers_PaperController_deletePaper226_route(params@_) =>
+      call(params.fromPath[Long]("paperId", None)) { (paperId) =>
+        controllers_PaperController_deletePaper226_invoker.call(PaperController_13.deletePaper(paperId))
       }
   
-    // @LINE:425
-    case controllers_PaperController_processDBPLFile226_route(params@_) =>
+    // @LINE:426
+    case controllers_PaperController_primeConnections227_route(params@_) =>
       call { 
-        controllers_PaperController_processDBPLFile226_invoker.call(PaperController_13.processDBPLFile())
+        controllers_PaperController_primeConnections227_invoker.call(PaperController_13.primeConnections())
       }
   
-    // @LINE:427
-    case controllers_PaperController_paperLDA227_route(params@_) =>
+    // @LINE:428
+    case controllers_PaperController_relationGraph228_route(params@_) =>
       call { 
-        controllers_PaperController_paperLDA227_invoker.call(PaperController_13.paperLDA())
+        controllers_PaperController_relationGraph228_invoker.call(PaperController_13.relationGraph())
       }
   
     // @LINE:429
-    case controllers_PaperController_authorAuthorRel228_route(params@_) =>
+    case controllers_PaperController_loadUploadPage229_route(params@_) =>
       call { 
-        controllers_PaperController_authorAuthorRel228_invoker.call(PaperController_13.authorAuthorRel())
+        controllers_PaperController_loadUploadPage229_invoker.call(PaperController_13.loadUploadPage())
       }
   
     // @LINE:430
-    case controllers_PaperController_ldaTopicDistribution229_route(params@_) =>
+    case controllers_PaperController_processDBPLFile230_route(params@_) =>
       call { 
-        controllers_PaperController_ldaTopicDistribution229_invoker.call(PaperController_13.ldaTopicDistribution())
-      }
-  
-    // @LINE:431
-    case controllers_PaperController_searchPage230_route(params@_) =>
-      call { 
-        controllers_PaperController_searchPage230_invoker.call(PaperController_13.searchPage())
+        controllers_PaperController_processDBPLFile230_invoker.call(PaperController_13.processDBPLFile())
       }
   
     // @LINE:432
-    case controllers_PaperController_searchPaper231_route(params@_) =>
-      call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
-        controllers_PaperController_searchPaper231_invoker.call(PaperController_13.searchPaper(pageNum, sortCriteria))
+    case controllers_PaperController_paperLDA231_route(params@_) =>
+      call { 
+        controllers_PaperController_paperLDA231_invoker.call(PaperController_13.paperLDA())
+      }
+  
+    // @LINE:434
+    case controllers_PaperController_authorAuthorRel232_route(params@_) =>
+      call { 
+        controllers_PaperController_authorAuthorRel232_invoker.call(PaperController_13.authorAuthorRel())
       }
   
     // @LINE:435
-    case controllers_GraphController_researchInterest232_route(params@_) =>
+    case controllers_PaperController_ldaTopicDistribution233_route(params@_) =>
       call { 
-        controllers_GraphController_researchInterest232_invoker.call(GraphController_11.researchInterest())
+        controllers_PaperController_ldaTopicDistribution233_invoker.call(PaperController_13.ldaTopicDistribution())
       }
   
     // @LINE:436
-    case controllers_FileController_getFile233_route(params@_) =>
+    case controllers_PaperController_searchPage234_route(params@_) =>
+      call { 
+        controllers_PaperController_searchPage234_invoker.call(PaperController_13.searchPage())
+      }
+  
+    // @LINE:437
+    case controllers_PaperController_searchPaper235_route(params@_) =>
+      call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, sortCriteria) =>
+        controllers_PaperController_searchPaper235_invoker.call(PaperController_13.searchPaper(pageNum, sortCriteria))
+      }
+  
+    // @LINE:440
+    case controllers_GraphController_researchInterest236_route(params@_) =>
+      call { 
+        controllers_GraphController_researchInterest236_invoker.call(GraphController_11.researchInterest())
+      }
+  
+    // @LINE:441
+    case controllers_FileController_getFile237_route(params@_) =>
       call(params.fromPath[String]("tableName", None), params.fromPath[String]("challengeFileType", None), params.fromPath[String]("tableRecorderId", None)) { (tableName, challengeFileType, tableRecorderId) =>
-        controllers_FileController_getFile233_invoker.call(FileController_22.getFile(tableName, challengeFileType, tableRecorderId))
+        controllers_FileController_getFile237_invoker.call(FileController_22.getFile(tableName, challengeFileType, tableRecorderId))
       }
   }
 }

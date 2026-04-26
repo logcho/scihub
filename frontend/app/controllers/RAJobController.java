@@ -916,4 +916,27 @@ public class RAJobController extends Controller {
             return ok(editError.render("RAJobapplication"));
         }
     }
+
+    // @With(OperationLoggingAction.class)
+    public Result raInterviewSchedulePage(Long jobId) {
+        // checkLoginStatus();
+        return ok(views.html.raInterviewSchedule.render(jobId));
+    }
+
+    public Result scheduleInterviewPOST(Long jobId) {
+        // checkLoginStatus();
+        // Here we would normally schedule an interview.
+        Application.flashMsg(RESTfulCalls.createUserResponse(RESTfulCalls.UserResponseType.SUCCESS));
+        return redirect(routes.RAJobController.raInterviewSchedulePage(jobId));
+    }
+
+    public Result rescheduleInterviewPOST(Long id) {
+        // checkLoginStatus();
+        return ok("Rescheduled");
+    }
+
+    public Result cancelInterviewPOST(Long id) {
+        // checkLoginStatus();
+        return ok("Cancelled");
+    }
 }

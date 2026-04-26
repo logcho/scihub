@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/loganchoi/Desktop/CSHub-Fall2025/frontend/conf/routes
-// @DATE:Mon Feb 09 16:10:54 CST 2026
+// @SOURCE:/Users/loganchoi/Desktop/scihub/frontend/conf/routes
+// @DATE:Sat Apr 25 17:11:43 CDT 2026
 
 package controllers;
 

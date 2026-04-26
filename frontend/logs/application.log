@@ -1,11 +1,7 @@
-2026-04-10 12:11:47,748 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-3 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2026-04-10 12:11:48,186 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Starting application at 2026-04-10T17:11:48.186Z
-2026-04-10 12:11:48,465 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-3 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2026-04-10 12:11:48,498 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2026-04-25 17:31:06,392 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2026-04-25 17:31:06,769 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2026-04-25T22:31:06.769Z
+2026-04-25 17:31:07,055 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-4 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2026-04-25 17:31:07,096 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2026-04-10 12:11:48,501 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev)
-2026-04-10 12:11:48,577 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-3 - Optional.empty
-2026-04-10 12:11:48,765 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-3 - RESTfulCalls.postAPI(): get API exception: java.util.concurrent.ExecutionException: java.net.UnknownHostException: host.docker.internal: nodename nor servname provided, or not known
-2026-04-10 12:11:48,766 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - http://freegeoip.net/json/0:0:0:0:0:0:0:1
-2026-04-10 12:11:48,894 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-3 - RESTfulCalls.postAPI(): get API exception: java.util.concurrent.ExecutionException: java.net.UnknownHostException: host.docker.internal
+2026-04-25 17:31:07,099 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev)

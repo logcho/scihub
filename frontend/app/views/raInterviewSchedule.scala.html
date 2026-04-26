@@ -1,0 +1,164 @@
+@(jobId: Long)
+
+@scripts = {
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.modal').modal();
+            $('.tabs').tabs();
+            $('.datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $('.timepicker').timepicker();
+        });
+        
+        function proposeTimeSlots(appId) {
+            $('#applicantId').val(appId);
+            var modal = M.Modal.getInstance(document.getElementById('scheduleModal'));
+            modal.open();
+        }
+
+        function cancelInterview(interviewId) {
+            if(confirm("Are you sure you want to cancel this interview? A notification will be sent to the student.")) {
+                // Mock AJAX call to cancel
+                M.toast({html: 'Interview cancelled. Notification sent to student.'});
+            }
+        }
+        
+        function rescheduleInterview(interviewId) {
+            // Open modal to reschedule
+            var modal = M.Modal.getInstance(document.getElementById('scheduleModal'));
+            modal.open();
+        }
+    </script>
+}
+
+@main("Schedule RA Interview", scripts) {
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m10 offset-m1">
+                <div class="card-panel">
+                    <h4>Schedule RA Job Interviews</h4>
+                    <p class="grey-text">Project/Job ID: @jobId</p>
+                    
+                    <ul class="tabs" style="margin-top: 20px; margin-bottom: 20px;">
+                        <li class="tab col s6"><a class="active" href="#applicants">Applicants</a></li>
+                        <li class="tab col s6"><a href="#scheduled">Scheduled Interviews</a></li>
+                    </ul>
+
+                    <div id="applicants" class="col s12" style="margin-top: 20px;">
+                        <table class="striped responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Applicant Name</th>
+                                    <th>Status</th>
+                                    <th>Applied Time</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Mock Data rows -->
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td><span class="new badge purple darken-1" data-badge-caption="Pending"></span></td>
+                                    <td>2026-04-25 10:00</td>
+                                    <td>
+                                        <button class="btn waves-effect waves-light blue" onclick="proposeTimeSlots(1)">
+                                            Schedule
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jane Smith</td>
+                                    <td><span class="new badge purple darken-1" data-badge-caption="Pending"></span></td>
+                                    <td>2026-04-24 14:30</td>
+                                    <td>
+                                        <button class="btn waves-effect waves-light blue" onclick="proposeTimeSlots(2)">
+                                            Schedule
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="scheduled" class="col s12" style="margin-top: 20px;">
+                        <table class="striped responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Applicant Name</th>
+                                    <th>Scheduled Time</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Mock Data -->
+                                <tr>
+                                    <td>Alice Johnson</td>
+                                    <td>2026-04-28 10:00 AM</td>
+                                    <td><span class="new badge light-green darken-1" data-badge-caption="Confirmed"></span></td>
+                                    <td>
+                                        <button class="btn-flat blue-text" onclick="rescheduleInterview(101)">Reschedule</button>
+                                        <button class="btn-flat red-text" onclick="cancelInterview(101)">Cancel</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Modal -->
+    <div id="scheduleModal" class="modal">
+        <form action="#" method="POST" onsubmit="event.preventDefault(); M.toast({html: 'Notification sent successfully!'}); M.Modal.getInstance(document.getElementById('scheduleModal')).close();">
+            <div class="modal-content">
+                <h5>Propose Interview Time Slots</h5>
+                <p>Propose up to 3 time slots for an interview. The student will receive an email/in-app notification to confirm.</p>
+                <input type="hidden" id="applicantId" name="applicantId" />
+                
+                <div class="row">
+                    <h6 class="col s12">Slot 1 (Required)</h6>
+                    <div class="input-field col s6">
+                        <input type="text" class="datepicker" id="date1" name="date1" required>
+                        <label for="date1">Date</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" class="timepicker" id="time1" name="time1" required>
+                        <label for="time1">Time</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <h6 class="col s12">Slot 2 (Optional)</h6>
+                    <div class="input-field col s6">
+                        <input type="text" class="datepicker" id="date2" name="date2">
+                        <label for="date2">Date</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" class="timepicker" id="time2" name="time2">
+                        <label for="time2">Time</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <h6 class="col s12">Slot 3 (Optional)</h6>
+                    <div class="input-field col s6">
+                        <input type="text" class="datepicker" id="date3" name="date3">
+                        <label for="date3">Date</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" class="timepicker" id="time3" name="time3">
+                        <label for="time3">Time</label>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-red btn-flat">Cancel</a>
+                <button type="submit" class="waves-effect waves-green btn blue">Send Notification</button>
+            </div>
+        </form>
+    </div>
+}
