@@ -1,0 +1,7 @@
+testOnly UnitTest
+run
+clean
+build
+run
+\
+test

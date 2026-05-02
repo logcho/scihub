@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/loganchoi/Desktop/scihub/backend/conf/routes
-// @DATE:Sat Apr 25 17:27:04 CDT 2026
+// @DATE:Sat May 02 00:22:59 CDT 2026
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -1143,12 +1143,12 @@ package controllers.javascript {
     }
 
   
-    // @LINE:247
-    def listCourses: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CourseController.listCourses",
+    // @LINE:249
+    def approveTA: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CourseController.approveTA",
       """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "courses"})
+        function(courseId0,week1) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "courses/approve/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("courseId", courseId0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("week", week1))})
         }
       """
     )
@@ -1163,12 +1163,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:249
-    def approveTA: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CourseController.approveTA",
+    // @LINE:247
+    def listCourses: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CourseController.listCourses",
       """
-        function(courseId0,week1) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "courses/approve/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("courseId", courseId0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("week", week1))})
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "courses"})
         }
       """
     )
@@ -2213,16 +2213,6 @@ package controllers.javascript {
     }
 
   
-    // @LINE:257
-    def addAssignment: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CourseTAAssignmentController.addAssignment",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "tahiring/addAssignment"})
-        }
-      """
-    )
-  
     // @LINE:258
     def getCourseTAAssignmentById: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CourseTAAssignmentController.getCourseTAAssignmentById",
@@ -2233,6 +2223,16 @@ package controllers.javascript {
             return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tahiring/status/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("Id", Id0))})
           }
         
+        }
+      """
+    )
+  
+    // @LINE:257
+    def addAssignment: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CourseTAAssignmentController.addAssignment",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "tahiring/addAssignment"})
         }
       """
     )
@@ -2257,6 +2257,16 @@ package controllers.javascript {
     }
 
   
+    // @LINE:447
+    def uploadRawFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.FileController.uploadRawFile",
+      """
+        function(tableName0,fileType1,recordId2) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "file/upload/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("tableName", tableName0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("fileType", fileType1)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("recordId", recordId2))})
+        }
+      """
+    )
+  
     // @LINE:443
     def getFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FileController.getFile",
@@ -2273,16 +2283,6 @@ package controllers.javascript {
       """
         function(tableName0,fileType1,tableRecorderId2) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "file/checkFile/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("tableName", tableName0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("fileType", fileType1)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("tableRecorderId", tableRecorderId2))})
-        }
-      """
-    )
-  
-    // @LINE:447
-    def uploadRawFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.FileController.uploadRawFile",
-      """
-        function(tableName0,fileType1,recordId2) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "file/upload/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("tableName", tableName0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("fileType", fileType1)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("recordId", recordId2))})
         }
       """
     )
@@ -2337,22 +2337,22 @@ package controllers.javascript {
     }
 
   
+    // @LINE:240
+    def getAssignmentsByUserId: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.TACandidateController.getAssignmentsByUserId",
+      """
+        function(userId0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tacandidate/assignments/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("userId", userId0))})
+        }
+      """
+    )
+  
     // @LINE:237
     def addTACandidate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TACandidateController.addTACandidate",
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "tacandidate/addTACandidate"})
-        }
-      """
-    )
-  
-    // @LINE:238
-    def tacandidateList: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.TACandidateController.tacandidateList",
-      """
-        function(userId0,pageLimit1,pageNum2,sortCriteria3) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tacandidate/tacandidateList/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("userId", userId0)) + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("pageLimit", pageLimit1), (""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("pageNum", pageNum2), (""" + implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].javascriptUnbind + """)("sortCriteria", sortCriteria3)])})
         }
       """
     )
@@ -2367,12 +2367,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:240
-    def getAssignmentsByUserId: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.TACandidateController.getAssignmentsByUserId",
+    // @LINE:238
+    def tacandidateList: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.TACandidateController.tacandidateList",
       """
-        function(userId0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tacandidate/assignments/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("userId", userId0))})
+        function(userId0,pageLimit1,pageNum2,sortCriteria3) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "tacandidate/tacandidateList/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("userId", userId0)) + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("pageLimit", pageLimit1), (""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("pageNum", pageNum2), (""" + implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].javascriptUnbind + """)("sortCriteria", sortCriteria3)])})
         }
       """
     )

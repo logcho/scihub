@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/loganchoi/Desktop/scihub/backend/conf/routes
-// @DATE:Sat Apr 25 17:27:04 CDT 2026
+// @DATE:Sat May 02 00:22:59 CDT 2026
 
 import play.api.mvc.Call
 
@@ -731,10 +731,10 @@ package controllers {
     }
 
   
-    // @LINE:247
-    def listCourses(): Call = {
+    // @LINE:249
+    def approveTA(courseId:Long, week:Int): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "courses")
+      Call("POST", _prefix + { _defaultPrefix } + "courses/approve/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("courseId", courseId)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("week", week)))
     }
   
     // @LINE:248
@@ -743,10 +743,10 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "courses/details/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("courseId", courseId)))
     }
   
-    // @LINE:249
-    def approveTA(courseId:Long, week:Int): Call = {
+    // @LINE:247
+    def listCourses(): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "courses/approve/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("courseId", courseId)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("week", week)))
+      Call("GET", _prefix + { _defaultPrefix } + "courses")
     }
   
   }
@@ -1397,12 +1397,6 @@ package controllers {
     }
 
   
-    // @LINE:257
-    def addAssignment(): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "tahiring/addAssignment")
-    }
-  
     // @LINE:258
     def getCourseTAAssignmentById(Id:Long): Call = {
     
@@ -1415,6 +1409,12 @@ package controllers {
       
       }
     
+    }
+  
+    // @LINE:257
+    def addAssignment(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "tahiring/addAssignment")
     }
   
     // @LINE:259
@@ -1432,6 +1432,12 @@ package controllers {
     }
 
   
+    // @LINE:447
+    def uploadRawFile(tableName:String, fileType:String, recordId:Long): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "file/upload/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("tableName", tableName)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("fileType", fileType)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("recordId", recordId)))
+    }
+  
     // @LINE:443
     def getFile(tableName:String, fileType:String, tableRecorderId:String): Call = {
       
@@ -1442,12 +1448,6 @@ package controllers {
     def checkFile(tableName:String, fileType:String, tableRecorderId:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "file/checkFile/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("tableName", tableName)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("fileType", fileType)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("tableRecorderId", tableRecorderId)))
-    }
-  
-    // @LINE:447
-    def uploadRawFile(tableName:String, fileType:String, recordId:Long): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "file/upload/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("tableName", tableName)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("fileType", fileType)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("recordId", recordId)))
     }
   
   }
@@ -1489,16 +1489,16 @@ package controllers {
     }
 
   
+    // @LINE:240
+    def getAssignmentsByUserId(userId:Long): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "tacandidate/assignments/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
+    }
+  
     // @LINE:237
     def addTACandidate(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "tacandidate/addTACandidate")
-    }
-  
-    // @LINE:238
-    def tacandidateList(userId:Long, pageLimit:Integer, pageNum:Integer, sortCriteria:java.util.Optional[String]): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "tacandidate/tacandidateList/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)) + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageNum", pageNum)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
     // @LINE:239
@@ -1507,10 +1507,10 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "tacandidate/candidateDetail/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("Id", Id)))
     }
   
-    // @LINE:240
-    def getAssignmentsByUserId(userId:Long): Call = {
+    // @LINE:238
+    def tacandidateList(userId:Long, pageLimit:Integer, pageNum:Integer, sortCriteria:java.util.Optional[String]): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "tacandidate/assignments/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
+      Call("GET", _prefix + { _defaultPrefix } + "tacandidate/tacandidateList/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)) + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageNum", pageNum)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
   }

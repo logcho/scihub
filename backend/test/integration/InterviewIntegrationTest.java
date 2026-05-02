@@ -68,7 +68,7 @@ public class InterviewIntegrationTest {
 
         Result loginResult = route(application, fakeRequest(POST, "/user/userLogin").bodyJson(loginJson(professor.getEmail(), RAW_PASSWORD)));
 
-        assertEquals(OK, status(loginResult));
+        assertEquals(OK, loginResult.status());
         JsonNode loggedInUser = Json.parse(contentAsString(loginResult));
         assertEquals(professor.getEmail(), loggedInUser.get("email").asText());
 

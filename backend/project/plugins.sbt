@@ -9,3 +9,8 @@ addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.12")
 addSbtPlugin("com.typesafe.sbt" % "sbt-play-ebean" % "4.1.3")
 
 libraryDependencies += "com.typesafe.play" % "play-enhancer" % "1.2.2"
+
+dependencyOverrides ++= Seq(
+  "net.java.dev.jna" % "jna" % "5.13.0",
+  "net.java.dev.jna" % "jna-platform" % "5.13.0"
+)

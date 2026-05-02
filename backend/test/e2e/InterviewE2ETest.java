@@ -69,7 +69,7 @@ public class InterviewE2ETest {
 
         Result loginResult = route(application, fakeRequest(POST, "/user/userLogin").bodyJson(loginJson(professor.getEmail(), RAW_PASSWORD)));
 
-        assertEquals(OK, status(loginResult));
+        assertEquals(OK, loginResult.status());
         JsonNode loginResponse = Json.parse(contentAsString(loginResult));
         assertEquals(professor.getId(), loginResponse.get("id").asLong());
 
@@ -91,7 +91,7 @@ public class InterviewE2ETest {
 
         Result loginResult = route(application, fakeRequest(POST, "/user/userLogin").bodyJson(loginJson(professor.getEmail(), "wrong-password")));
 
-        assertEquals(OK, status(loginResult));
+        assertEquals(OK, loginResult.status());
         JsonNode response = Json.parse(contentAsString(loginResult));
         assertEquals("User is not valid", response.get("error").asText());
         assertEquals(0, Interview.find.query().where().eq("createdBy.id", professor.getId()).findCount());

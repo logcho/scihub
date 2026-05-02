@@ -1,0 +1,105 @@
+[0m[[0m[0mdebug[0m] [0m[0mjavaOptions: Vector(-Djdk.tls.client.protocols=TLSv1.2)[0m
+[0m[[0m[0mdebug[0m] [0m[0mForking tests - parallelism = false[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreate a single-thread test executor[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunner for com.novocode.junit.JUnitFramework produced 10 initial tasks for 10 tests.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(integration.InterviewIntegrationTest, sbt.ForkMain$AnnotatedFingerscan@12c44a8b, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run started[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest integration.[33mInterviewIntegrationTest[0m.[36mauthenticatedUserCanPersistAndLoadInterview[0m started[0m
+[0m[[0m[33mwarn[0m] [0m[0mTest assumption in test integration.[33mInterviewIntegrationTest[0m.[31mauthenticatedUserCanPersistAndLoadInterview[0m failed: org.junit.[31mAssumptionViolatedException[0m: Set DB_URL, DB_USER, and DB_PASS to run database integration tests., took 0.003 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest integration.[33mInterviewIntegrationTest[0m.[36mauthenticatedUserCanPersistAndLoadInterview[0m finished, took 0.003 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, 1 total, 0.006s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(services.dblp.DBLPSearchQueryStringTest, sbt.ForkMain$AnnotatedFingerscan@47cd295, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run started[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestQueryPrefix[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestQueryPrefix[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestCompoundAnd[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestCompoundAnd[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestCompoundOr[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestCompoundOr[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestNestedCompoundAnd[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestNestedCompoundAnd[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestNestedCompoundOr[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestNestedCompoundOr[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestQueryExactly[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryStringTest[0m.[36mtestQueryExactly[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, 6 total, 0.001s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 6 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(FunctionalTest, sbt.ForkMain$AnnotatedFingerscan@5390c256, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run started[0m[0m
+[0m[[0m[0minfo[0m] [0m[0mTest [33mFunctionalTest[0m.[36mrenderTemplate[0m ignored[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[33m1 ignored[0m[34m, 0 total, 0.0s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(models.InterviewTest, sbt.ForkMain$AnnotatedFingerscan@293f978c, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run started[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mInterviewTest[0m.[36mconstructorLeavesSchedulingDecisionFieldsUnset[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mInterviewTest[0m.[36mconstructorLeavesSchedulingDecisionFieldsUnset[0m finished, took 0.01 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mInterviewTest[0m.[36mconstructorStoresRequiredInterviewDetails[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mInterviewTest[0m.[36mconstructorStoresRequiredInterviewDetails[0m finished, took 0.001 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mInterviewTest[0m.[36mfinderIsAvailableForPersistenceQueries[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mInterviewTest[0m.[36mfinderIsAvailableForPersistenceQueries[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mInterviewTest[0m.[36mdefaultConstructorSupportsPopulatingOptionalFields[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mInterviewTest[0m.[36mdefaultConstructorSupportsPopulatingOptionalFields[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, 4 total, 0.011s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 4 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(UnitTest, sbt.ForkMain$AnnotatedFingerscan@1d3aa585, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run started[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest [33mUnitTest[0m.[36msimpleCheck[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest [33mUnitTest[0m.[36msimpleCheck[0m finished, took 0.032 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest [33mUnitTest[0m.[36mtestAsync[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest [33mUnitTest[0m.[36mtestAsync[0m finished, took 1.557 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest [33mUnitTest[0m.[36mtestCount[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest [33mUnitTest[0m.[36mtestCount[0m finished, took 0.002 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, 3 total, 1.592s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 3 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(models.SciHubModelTest, sbt.ForkMain$AnnotatedFingerscan@f42f57d, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run started[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mSciHubModelTest[0m.[36mtestFacultyProfile[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mSciHubModelTest[0m.[36mtestFacultyProfile[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mSciHubModelTest[0m.[36mtestFacultyNameInitialization[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest models.[33mSciHubModelTest[0m.[36mtestFacultyNameInitialization[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, 2 total, 0.0s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 2 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(BrowserTest, sbt.ForkMain$AnnotatedFingerscan@137330c1, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run started[0m[0m
+[0m[[0m[0minfo[0m] [0m[0mTest [33mBrowserTest[0m.[36mtest[0m ignored[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[33m1 ignored[0m[34m, 0 total, 0.0s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(services.dblp.DBLPAuthorQueryTest, sbt.ForkMain$AnnotatedFingerscan@14a133c3, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run started[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPAuthorQueryTest[0m.[36mtestAuthorQuery[0m started[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPAuthorQueryTest[0m.[36mtestAuthorQuery[0m finished, took 0.001 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, 1 total, 0.001s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(services.dblp.DBLPSearchQueryTest, sbt.ForkMain$AnnotatedFingerscan@6de171f7, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run started[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryTest[0m.[36mtestQuery[0m started[0m
+[0m[[0m[31merror[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryTest[0m.[31mtestQuery[0m failed: expected:<[]http://dblp.org/sear...> but was:<[/]http://dblp.org/sear...>, took 0.004 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest services.dblp.[33mDBLPSearchQueryTest[0m.[36mtestQuery[0m finished, took 0.004 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run finished: [0m[31m1 failed[0m[34m, [0m[34m0 ignored[0m[34m, 1 total, 0.004s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 1 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(e2e.InterviewE2ETest, sbt.ForkMain$AnnotatedFingerscan@f53d4c4, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run started[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest e2e.[33mInterviewE2ETest[0m.[36mhappyPathLoginAndScheduleInterview[0m started[0m
+[0m[[0m[33mwarn[0m] [0m[0mTest assumption in test e2e.[33mInterviewE2ETest[0m.[31mhappyPathLoginAndScheduleInterview[0m failed: org.junit.[31mAssumptionViolatedException[0m: Set DB_URL, DB_USER, and DB_PASS to run backend E2E tests., took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest e2e.[33mInterviewE2ETest[0m.[36mhappyPathLoginAndScheduleInterview[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest e2e.[33mInterviewE2ETest[0m.[36merrorPathRejectsInvalidAuthenticationBeforeScheduling[0m started[0m
+[0m[[0m[33mwarn[0m] [0m[0mTest assumption in test e2e.[33mInterviewE2ETest[0m.[31merrorPathRejectsInvalidAuthenticationBeforeScheduling[0m failed: org.junit.[31mAssumptionViolatedException[0m: Set DB_URL, DB_USER, and DB_PASS to run backend E2E tests., took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest e2e.[33mInterviewE2ETest[0m.[36merrorPathRejectsInvalidAuthenticationBeforeScheduling[0m finished, took 0.0 sec[0m
+[0m[[0m[0mdebug[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, 2 total, 0.0s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 2 events.[0m
+[0m[[0m[0mdebug[0m] [0m[0mSummary for JUnit not available.[0m
+[0m[[0m[31merror[0m] [0m[0mFailed: Total 22, Failed 1, Errors 0, Passed 16, Skipped 5[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	integration.InterviewIntegrationTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	services.dblp.DBLPSearchQueryStringTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FunctionalTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	models.InterviewTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	UnitTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	models.SciHubModelTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	BrowserTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	services.dblp.DBLPAuthorQueryTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	e2e.InterviewE2ETest[0m
+[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	services.dblp.DBLPSearchQueryTest[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m
