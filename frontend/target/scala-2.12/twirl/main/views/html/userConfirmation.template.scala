@@ -78,8 +78,8 @@ Seq[Any](format.raw/*1.46*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 09 16:10:55 CST 2026
-                  SOURCE: /Users/loganchoi/Desktop/CSHub-Fall2025/frontend/app/views/userConfirmation.scala.html
+                  DATE: Sat May 02 14:50:19 CDT 2026
+                  SOURCE: /Users/loganchoi/Desktop/scihub/frontend/app/views/userConfirmation.scala.html
                   HASH: a243af50786d3413f8bf81a46c81f57d0f2f72b2
                   MATRIX: 1129->1|1268->45|1296->48|1336->80|1375->82|1404->85|1514->169|1545->180|1586->195|1619->208|1851->412|1880->413|1912->418|1951->429|1980->430|2013->436|2051->447|2066->453|2107->473|2141->480|2169->481|2201->486|2357->615|2385->616|2414->618
                   LINES: 35->1|40->1|42->3|42->3|42->3|44->5|47->8|47->8|48->9|48->9|56->17|56->17|57->18|57->18|57->18|58->19|58->19|58->19|58->19|59->20|59->20|60->21|63->24|63->24|64->25

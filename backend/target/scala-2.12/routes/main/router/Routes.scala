@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/loganchoi/Desktop/scihub/backend/conf/routes
-// @DATE:Sat May 02 00:22:59 CDT 2026
+// @DATE:Sat May 02 14:40:59 CDT 2026
 
 package router
 
@@ -32,39 +32,39 @@ class Routes(
   JobController_13: controllers.JobController,
   // @LINE:180
   RAJobController_18: controllers.RAJobController,
-  // @LINE:211
+  // @LINE:213
   TAJobController_12: controllers.TAJobController,
-  // @LINE:237
+  // @LINE:239
   TACandidateController_24: controllers.TACandidateController,
-  // @LINE:247
+  // @LINE:249
   CourseController_3: controllers.CourseController,
-  // @LINE:257
+  // @LINE:259
   CourseTAAssignmentController_9: controllers.CourseTAAssignmentController,
-  // @LINE:266
+  // @LINE:268
   UserController_14: controllers.UserController,
-  // @LINE:295
+  // @LINE:297
   UserController_1: javax.inject.Provider[controllers.UserController],
-  // @LINE:307
+  // @LINE:309
   OrganizationController_20: controllers.OrganizationController,
-  // @LINE:320
+  // @LINE:322
   BugReportController_2: javax.inject.Provider[controllers.BugReportController],
-  // @LINE:334
+  // @LINE:336
   SuggestionController_11: javax.inject.Provider[controllers.SuggestionController],
-  // @LINE:343
+  // @LINE:345
   TechnologyController_10: controllers.TechnologyController,
-  // @LINE:378
+  // @LINE:380
   AdminController_0: controllers.AdminController,
-  // @LINE:393
+  // @LINE:395
   AuthorController_6: controllers.AuthorController,
-  // @LINE:407
+  // @LINE:409
   ReviewerController_22: controllers.ReviewerController,
-  // @LINE:419
+  // @LINE:421
   PaperController_17: controllers.PaperController,
-  // @LINE:429
+  // @LINE:431
   GraphController_15: controllers.GraphController,
-  // @LINE:440
+  // @LINE:442
   LogController_7: controllers.LogController,
-  // @LINE:443
+  // @LINE:445
   FileController_25: controllers.FileController,
   val prefix: String
 ) extends GeneratedRouter {
@@ -89,39 +89,39 @@ class Routes(
     JobController_13: controllers.JobController,
     // @LINE:180
     RAJobController_18: controllers.RAJobController,
-    // @LINE:211
+    // @LINE:213
     TAJobController_12: controllers.TAJobController,
-    // @LINE:237
+    // @LINE:239
     TACandidateController_24: controllers.TACandidateController,
-    // @LINE:247
+    // @LINE:249
     CourseController_3: controllers.CourseController,
-    // @LINE:257
+    // @LINE:259
     CourseTAAssignmentController_9: controllers.CourseTAAssignmentController,
-    // @LINE:266
+    // @LINE:268
     UserController_14: controllers.UserController,
-    // @LINE:295
+    // @LINE:297
     UserController_1: javax.inject.Provider[controllers.UserController],
-    // @LINE:307
+    // @LINE:309
     OrganizationController_20: controllers.OrganizationController,
-    // @LINE:320
+    // @LINE:322
     BugReportController_2: javax.inject.Provider[controllers.BugReportController],
-    // @LINE:334
+    // @LINE:336
     SuggestionController_11: javax.inject.Provider[controllers.SuggestionController],
-    // @LINE:343
+    // @LINE:345
     TechnologyController_10: controllers.TechnologyController,
-    // @LINE:378
+    // @LINE:380
     AdminController_0: controllers.AdminController,
-    // @LINE:393
+    // @LINE:395
     AuthorController_6: controllers.AuthorController,
-    // @LINE:407
+    // @LINE:409
     ReviewerController_22: controllers.ReviewerController,
-    // @LINE:419
+    // @LINE:421
     PaperController_17: controllers.PaperController,
-    // @LINE:429
+    // @LINE:431
     GraphController_15: controllers.GraphController,
-    // @LINE:440
+    // @LINE:442
     LogController_7: controllers.LogController,
-    // @LINE:443
+    // @LINE:445
     FileController_25: controllers.FileController
   ) = this(errorHandler, HomeController_5, CountController_4, AsyncController_8, Assets_23, ProjectController_16, ProjectController_21, ChallengeController_19, JobController_13, RAJobController_18, TAJobController_12, TACandidateController_24, CourseController_3, CourseTAAssignmentController_9, UserController_14, UserController_1, OrganizationController_20, BugReportController_2, SuggestionController_11, TechnologyController_10, AdminController_0, AuthorController_6, ReviewerController_22, PaperController_17, GraphController_15, LogController_7, FileController_25, "/")
 
@@ -227,6 +227,8 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/sendPostedEmail""", """controllers.RAJobController.sendRAJobPostedEmail()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/sendAppliedEmail""", """controllers.RAJobController.sendRAJobAppliedEmail()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/professors""", """controllers.RAJobController.listProfessorsJson()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/interview/schedule""", """controllers.RAJobController.scheduleInterview()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """rajob/interview/job/""" + "$" + """jobId<[^/]+>""", """controllers.RAJobController.getScheduledInterviews(jobId:Long)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tajob/addTAJob""", """controllers.TAJobController.addTAJob()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tajob/updateTAJob/""" + "$" + """tajobId<[^/]+>""", """controllers.TAJobController.updateTAJob(tajobId:Long)"""),
     ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """tajob/deleteTAJobImage/""" + "$" + """tajobId<[^/]+>""", """controllers.TAJobController.deleteTAJobImage(tajobId:Long)"""),
@@ -2035,11 +2037,47 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:211
-  private[this] lazy val controllers_TAJobController_addTAJob92_route = Route("POST",
+  // @LINE:207
+  private[this] lazy val controllers_RAJobController_scheduleInterview92_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("rajob/interview/schedule")))
+  )
+  private[this] lazy val controllers_RAJobController_scheduleInterview92_invoker = createInvoker(
+    RAJobController_18.scheduleInterview(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.RAJobController",
+      "scheduleInterview",
+      Nil,
+      "POST",
+      this.prefix + """rajob/interview/schedule""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:208
+  private[this] lazy val controllers_RAJobController_getScheduledInterviews93_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("rajob/interview/job/"), DynamicPart("jobId", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_RAJobController_getScheduledInterviews93_invoker = createInvoker(
+    RAJobController_18.getScheduledInterviews(fakeValue[Long]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.RAJobController",
+      "getScheduledInterviews",
+      Seq(classOf[Long]),
+      "GET",
+      this.prefix + """rajob/interview/job/""" + "$" + """jobId<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:213
+  private[this] lazy val controllers_TAJobController_addTAJob94_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/addTAJob")))
   )
-  private[this] lazy val controllers_TAJobController_addTAJob92_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_addTAJob94_invoker = createInvoker(
     TAJobController_12.addTAJob(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2053,11 +2091,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:212
-  private[this] lazy val controllers_TAJobController_updateTAJob93_route = Route("POST",
+  // @LINE:214
+  private[this] lazy val controllers_TAJobController_updateTAJob95_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/updateTAJob/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_updateTAJob93_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_updateTAJob95_invoker = createInvoker(
     TAJobController_12.updateTAJob(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2071,11 +2109,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:213
-  private[this] lazy val controllers_TAJobController_deleteTAJobImage94_route = Route("DELETE",
+  // @LINE:215
+  private[this] lazy val controllers_TAJobController_deleteTAJobImage96_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/deleteTAJobImage/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_deleteTAJobImage94_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_deleteTAJobImage96_invoker = createInvoker(
     TAJobController_12.deleteTAJobImage(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2089,11 +2127,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:214
-  private[this] lazy val controllers_TAJobController_deleteTAJobPDF95_route = Route("DELETE",
+  // @LINE:216
+  private[this] lazy val controllers_TAJobController_deleteTAJobPDF97_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/deleteTAJobPDF/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_deleteTAJobPDF95_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_deleteTAJobPDF97_invoker = createInvoker(
     TAJobController_12.deleteTAJobPDF(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2107,11 +2145,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:215
-  private[this] lazy val controllers_TAJobController_tajobList96_route = Route("GET",
+  // @LINE:217
+  private[this] lazy val controllers_TAJobController_tajobList98_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobList/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_tajobList96_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobList98_invoker = createInvoker(
     TAJobController_12.tajobList(fakeValue[Long], fakeValue[Integer], fakeValue[Integer], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2125,11 +2163,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:216
-  private[this] lazy val controllers_TAJobController_applyTAJob97_route = Route("POST",
+  // @LINE:218
+  private[this] lazy val controllers_TAJobController_applyTAJob99_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/applyTAJob/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_applyTAJob97_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_applyTAJob99_invoker = createInvoker(
     TAJobController_12.applyTAJob(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2143,11 +2181,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:217
-  private[this] lazy val controllers_TAJobController_tajobUpdateStatue98_route = Route("POST",
+  // @LINE:219
+  private[this] lazy val controllers_TAJobController_tajobUpdateStatue100_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/updateStatus/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_tajobUpdateStatue98_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_tajobUpdateStatue100_invoker = createInvoker(
     TAJobController_12.tajobUpdateStatue(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2161,11 +2199,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:218
-  private[this] lazy val controllers_TAJobController_getTAJobApplicationById99_route = Route("GET",
+  // @LINE:220
+  private[this] lazy val controllers_TAJobController_getTAJobApplicationById101_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobApplicationDetail/"), DynamicPart("tajobApplicationId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_getTAJobApplicationById99_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_getTAJobApplicationById101_invoker = createInvoker(
     TAJobController_12.getTAJobApplicationById(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2179,11 +2217,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:221
-  private[this] lazy val controllers_TAJobController_getTAJobById100_route = Route("GET",
+  // @LINE:223
+  private[this] lazy val controllers_TAJobController_getTAJobById102_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/tajobDetail/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_getTAJobById100_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_getTAJobById102_invoker = createInvoker(
     TAJobController_12.getTAJobById(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2197,11 +2235,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:222
-  private[this] lazy val controllers_TAJobController_getTAJobPublisher101_route = Route("GET",
+  // @LINE:224
+  private[this] lazy val controllers_TAJobController_getTAJobPublisher103_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/getTAJobPublisher/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_getTAJobPublisher101_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_getTAJobPublisher103_invoker = createInvoker(
     TAJobController_12.getTAJobPublisher(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2215,11 +2253,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:223
-  private[this] lazy val controllers_TAJobController_searchTAJobsByCondition102_route = Route("POST",
+  // @LINE:225
+  private[this] lazy val controllers_TAJobController_searchTAJobsByCondition104_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/search/conditions")))
   )
-  private[this] lazy val controllers_TAJobController_searchTAJobsByCondition102_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_searchTAJobsByCondition104_invoker = createInvoker(
     TAJobController_12.searchTAJobsByCondition(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2233,11 +2271,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:224
-  private[this] lazy val controllers_TAJobController_setImage103_route = Route("POST",
+  // @LINE:226
+  private[this] lazy val controllers_TAJobController_setImage105_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/setImage/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_setImage103_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_setImage105_invoker = createInvoker(
     TAJobController_12.setImage(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2251,11 +2289,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:225
-  private[this] lazy val controllers_TAJobController_setPDF104_route = Route("POST",
+  // @LINE:227
+  private[this] lazy val controllers_TAJobController_setPDF106_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/setPDF/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_setPDF104_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_setPDF106_invoker = createInvoker(
     TAJobController_12.setPDF(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2269,11 +2307,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:226
-  private[this] lazy val controllers_TAJobController_deleteTAJob105_route = Route("GET",
+  // @LINE:228
+  private[this] lazy val controllers_TAJobController_deleteTAJob107_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/deleteTAJob/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_deleteTAJob105_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_deleteTAJob107_invoker = createInvoker(
     TAJobController_12.deleteTAJob(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2287,11 +2325,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:227
-  private[this] lazy val controllers_TAJobController_getTAJobsByPublisher106_route = Route("GET",
+  // @LINE:229
+  private[this] lazy val controllers_TAJobController_getTAJobsByPublisher108_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/getTAJobsByUser/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_getTAJobsByPublisher106_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_getTAJobsByPublisher108_invoker = createInvoker(
     TAJobController_12.getTAJobsByPublisher(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2305,11 +2343,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:228
-  private[this] lazy val controllers_TAJobController_checkTAJobExist107_route = Route("GET",
+  // @LINE:230
+  private[this] lazy val controllers_TAJobController_checkTAJobExist109_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/checkTAJobExist/"), DynamicPart("tajobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_checkTAJobExist107_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_checkTAJobExist109_invoker = createInvoker(
     TAJobController_12.checkTAJobExist(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2323,11 +2361,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:229
-  private[this] lazy val controllers_TAJobController_checkTAJobNameAvailability108_route = Route("POST",
+  // @LINE:231
+  private[this] lazy val controllers_TAJobController_checkTAJobNameAvailability110_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/isTAJobNameExisted")))
   )
-  private[this] lazy val controllers_TAJobController_checkTAJobNameAvailability108_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_checkTAJobNameAvailability110_invoker = createInvoker(
     TAJobController_12.checkTAJobNameAvailability(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2341,11 +2379,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:230
-  private[this] lazy val controllers_TAJobController_getIdByName109_route = Route("GET",
+  // @LINE:232
+  private[this] lazy val controllers_TAJobController_getIdByName111_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tajob/getIdByName/"), DynamicPart("name", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TAJobController_getIdByName109_invoker = createInvoker(
+  private[this] lazy val controllers_TAJobController_getIdByName111_invoker = createInvoker(
     TAJobController_12.getIdByName(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2359,11 +2397,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:237
-  private[this] lazy val controllers_TACandidateController_addTACandidate110_route = Route("POST",
+  // @LINE:239
+  private[this] lazy val controllers_TACandidateController_addTACandidate112_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tacandidate/addTACandidate")))
   )
-  private[this] lazy val controllers_TACandidateController_addTACandidate110_invoker = createInvoker(
+  private[this] lazy val controllers_TACandidateController_addTACandidate112_invoker = createInvoker(
     TACandidateController_24.addTACandidate(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2377,11 +2415,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:238
-  private[this] lazy val controllers_TACandidateController_tacandidateList111_route = Route("GET",
+  // @LINE:240
+  private[this] lazy val controllers_TACandidateController_tacandidateList113_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tacandidate/tacandidateList/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TACandidateController_tacandidateList111_invoker = createInvoker(
+  private[this] lazy val controllers_TACandidateController_tacandidateList113_invoker = createInvoker(
     TACandidateController_24.tacandidateList(fakeValue[Long], fakeValue[Integer], fakeValue[Integer], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2395,11 +2433,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:239
-  private[this] lazy val controllers_TACandidateController_getTACandidateById112_route = Route("GET",
+  // @LINE:241
+  private[this] lazy val controllers_TACandidateController_getTACandidateById114_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tacandidate/candidateDetail/"), DynamicPart("Id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TACandidateController_getTACandidateById112_invoker = createInvoker(
+  private[this] lazy val controllers_TACandidateController_getTACandidateById114_invoker = createInvoker(
     TACandidateController_24.getTACandidateById(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2413,11 +2451,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:240
-  private[this] lazy val controllers_TACandidateController_getAssignmentsByUserId113_route = Route("GET",
+  // @LINE:242
+  private[this] lazy val controllers_TACandidateController_getAssignmentsByUserId115_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tacandidate/assignments/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TACandidateController_getAssignmentsByUserId113_invoker = createInvoker(
+  private[this] lazy val controllers_TACandidateController_getAssignmentsByUserId115_invoker = createInvoker(
     TACandidateController_24.getAssignmentsByUserId(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2431,11 +2469,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:247
-  private[this] lazy val controllers_CourseController_listCourses114_route = Route("GET",
+  // @LINE:249
+  private[this] lazy val controllers_CourseController_listCourses116_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("courses")))
   )
-  private[this] lazy val controllers_CourseController_listCourses114_invoker = createInvoker(
+  private[this] lazy val controllers_CourseController_listCourses116_invoker = createInvoker(
     CourseController_3.listCourses,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2449,11 +2487,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:248
-  private[this] lazy val controllers_CourseController_getCourseDetails115_route = Route("GET",
+  // @LINE:250
+  private[this] lazy val controllers_CourseController_getCourseDetails117_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("courses/details/"), DynamicPart("courseId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_CourseController_getCourseDetails115_invoker = createInvoker(
+  private[this] lazy val controllers_CourseController_getCourseDetails117_invoker = createInvoker(
     CourseController_3.getCourseDetails(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2467,11 +2505,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:249
-  private[this] lazy val controllers_CourseController_approveTA116_route = Route("POST",
+  // @LINE:251
+  private[this] lazy val controllers_CourseController_approveTA118_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("courses/approve/"), DynamicPart("courseId", """[^/]+""",true), StaticPart("/"), DynamicPart("week", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_CourseController_approveTA116_invoker = createInvoker(
+  private[this] lazy val controllers_CourseController_approveTA118_invoker = createInvoker(
     CourseController_3.approveTA(fakeValue[Long], fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2485,11 +2523,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:257
-  private[this] lazy val controllers_CourseTAAssignmentController_addAssignment117_route = Route("POST",
+  // @LINE:259
+  private[this] lazy val controllers_CourseTAAssignmentController_addAssignment119_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tahiring/addAssignment")))
   )
-  private[this] lazy val controllers_CourseTAAssignmentController_addAssignment117_invoker = createInvoker(
+  private[this] lazy val controllers_CourseTAAssignmentController_addAssignment119_invoker = createInvoker(
     CourseTAAssignmentController_9.addAssignment(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2503,11 +2541,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:258
-  private[this] lazy val controllers_CourseTAAssignmentController_getCourseTAAssignmentById118_route = Route("GET",
+  // @LINE:260
+  private[this] lazy val controllers_CourseTAAssignmentController_getCourseTAAssignmentById120_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tahiring/status/"), DynamicPart("Id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_CourseTAAssignmentController_getCourseTAAssignmentById118_invoker = createInvoker(
+  private[this] lazy val controllers_CourseTAAssignmentController_getCourseTAAssignmentById120_invoker = createInvoker(
     CourseTAAssignmentController_9.getCourseTAAssignmentById(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2521,11 +2559,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:259
-  private[this] lazy val controllers_CourseTAAssignmentController_courseTAAssignmentList119_route = Route("GET",
+  // @LINE:261
+  private[this] lazy val controllers_CourseTAAssignmentController_courseTAAssignmentList121_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tahiring/assignmentList/"), DynamicPart("Id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_CourseTAAssignmentController_courseTAAssignmentList119_invoker = createInvoker(
+  private[this] lazy val controllers_CourseTAAssignmentController_courseTAAssignmentList121_invoker = createInvoker(
     CourseTAAssignmentController_9.courseTAAssignmentList(fakeValue[Long], fakeValue[Integer], fakeValue[Integer], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2539,11 +2577,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:260
-  private[this] lazy val controllers_CourseTAAssignmentController_getCourseTAAssignmentById120_route = Route("GET",
+  // @LINE:262
+  private[this] lazy val controllers_CourseTAAssignmentController_getCourseTAAssignmentById122_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("tahiring/assignmentDetail/"), DynamicPart("Id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_CourseTAAssignmentController_getCourseTAAssignmentById120_invoker = createInvoker(
+  private[this] lazy val controllers_CourseTAAssignmentController_getCourseTAAssignmentById122_invoker = createInvoker(
     CourseTAAssignmentController_9.getCourseTAAssignmentById(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2557,11 +2595,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:266
-  private[this] lazy val controllers_UserController_addUser121_route = Route("POST",
+  // @LINE:268
+  private[this] lazy val controllers_UserController_addUser123_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/addUser")))
   )
-  private[this] lazy val controllers_UserController_addUser121_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_addUser123_invoker = createInvoker(
     UserController_14.addUser,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2575,11 +2613,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:267
-  private[this] lazy val controllers_UserController_userDetail122_route = Route("GET",
+  // @LINE:269
+  private[this] lazy val controllers_UserController_userDetail124_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/userDetail/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_userDetail122_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_userDetail124_invoker = createInvoker(
     UserController_14.userDetail(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2593,11 +2631,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:268
-  private[this] lazy val controllers_UserController_getResearcherInfo123_route = Route("GET",
+  // @LINE:270
+  private[this] lazy val controllers_UserController_getResearcherInfo125_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/getResearcherInfo/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_getResearcherInfo123_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_getResearcherInfo125_invoker = createInvoker(
     UserController_14.getResearcherInfo(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2611,11 +2649,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:269
-  private[this] lazy val controllers_UserController_getStudentInfo124_route = Route("GET",
+  // @LINE:271
+  private[this] lazy val controllers_UserController_getStudentInfo126_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/getStudentInfo/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_getStudentInfo124_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_getStudentInfo126_invoker = createInvoker(
     UserController_14.getStudentInfo(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2629,11 +2667,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:270
-  private[this] lazy val controllers_UserController_updateUser125_route = Route("POST",
+  // @LINE:272
+  private[this] lazy val controllers_UserController_updateUser127_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/updateUser")))
   )
-  private[this] lazy val controllers_UserController_updateUser125_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_updateUser127_invoker = createInvoker(
     UserController_14.updateUser,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2647,11 +2685,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:271
-  private[this] lazy val controllers_UserController_userLogin126_route = Route("POST",
+  // @LINE:273
+  private[this] lazy val controllers_UserController_userLogin128_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/userLogin")))
   )
-  private[this] lazy val controllers_UserController_userLogin126_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_userLogin128_invoker = createInvoker(
     UserController_14.userLogin,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2665,11 +2703,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:272
-  private[this] lazy val controllers_UserController_checkNewUserEmailAvailability127_route = Route("POST",
+  // @LINE:274
+  private[this] lazy val controllers_UserController_checkNewUserEmailAvailability129_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/checkEmail")))
   )
-  private[this] lazy val controllers_UserController_checkNewUserEmailAvailability127_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_checkNewUserEmailAvailability129_invoker = createInvoker(
     UserController_14.checkNewUserEmailAvailability,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2683,11 +2721,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:273
-  private[this] lazy val controllers_UserController_userList128_route = Route("GET",
+  // @LINE:275
+  private[this] lazy val controllers_UserController_userList130_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/userList")))
   )
-  private[this] lazy val controllers_UserController_userList128_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_userList130_invoker = createInvoker(
     UserController_14.userList(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2701,11 +2739,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:274
-  private[this] lazy val controllers_UserController_validateEmail129_route = Route("POST",
+  // @LINE:276
+  private[this] lazy val controllers_UserController_validateEmail131_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/validateEmail")))
   )
-  private[this] lazy val controllers_UserController_validateEmail129_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_validateEmail131_invoker = createInvoker(
     UserController_14.validateEmail,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2719,11 +2757,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:276
-  private[this] lazy val controllers_UserController_searchUserByCondition130_route = Route("POST",
+  // @LINE:278
+  private[this] lazy val controllers_UserController_searchUserByCondition132_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/search/conditions")))
   )
-  private[this] lazy val controllers_UserController_searchUserByCondition130_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_searchUserByCondition132_invoker = createInvoker(
     UserController_14.searchUserByCondition(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2737,11 +2775,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:277
-  private[this] lazy val controllers_UserController_inactivateUserPOST131_route = Route("POST",
+  // @LINE:279
+  private[this] lazy val controllers_UserController_inactivateUserPOST133_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/userDelete")))
   )
-  private[this] lazy val controllers_UserController_inactivateUserPOST131_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_inactivateUserPOST133_invoker = createInvoker(
     UserController_14.inactivateUserPOST,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2755,11 +2793,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:281
-  private[this] lazy val controllers_UserController_autoRegisterUser132_route = Route("POST",
+  // @LINE:283
+  private[this] lazy val controllers_UserController_autoRegisterUser134_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/autoRegisterUser")))
   )
-  private[this] lazy val controllers_UserController_autoRegisterUser132_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_autoRegisterUser134_invoker = createInvoker(
     UserController_14.autoRegisterUser,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2773,11 +2811,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:284
-  private[this] lazy val controllers_UserController_getAllUsersInAllRoles133_route = Route("GET",
+  // @LINE:286
+  private[this] lazy val controllers_UserController_getAllUsersInAllRoles135_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/getAllUsers")))
   )
-  private[this] lazy val controllers_UserController_getAllUsersInAllRoles133_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_getAllUsersInAllRoles135_invoker = createInvoker(
     UserController_14.getAllUsersInAllRoles,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2791,11 +2829,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:285
-  private[this] lazy val controllers_UserController_getAllNormalUsers134_route = Route("GET",
+  // @LINE:287
+  private[this] lazy val controllers_UserController_getAllNormalUsers136_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/getAllNormalUsers")))
   )
-  private[this] lazy val controllers_UserController_getAllNormalUsers134_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_getAllNormalUsers136_invoker = createInvoker(
     UserController_14.getAllNormalUsers,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2809,11 +2847,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:286
-  private[this] lazy val controllers_UserController_updateImageByUserId135_route = Route("POST",
+  // @LINE:288
+  private[this] lazy val controllers_UserController_updateImageByUserId137_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/updateImageForUser/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_updateImageByUserId135_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_updateImageByUserId137_invoker = createInvoker(
     UserController_14.updateImageByUserId(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2827,11 +2865,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:287
-  private[this] lazy val controllers_UserController_deleteImageByUserId136_route = Route("DELETE",
+  // @LINE:289
+  private[this] lazy val controllers_UserController_deleteImageByUserId138_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/deleteImageForUser/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_deleteImageByUserId136_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_deleteImageByUserId138_invoker = createInvoker(
     UserController_14.deleteImageByUserId(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2845,11 +2883,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:293
-  private[this] lazy val controllers_UserController_userSearch137_route = Route("GET",
+  // @LINE:295
+  private[this] lazy val controllers_UserController_userSearch139_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/search/"), DynamicPart("display_name", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_userSearch137_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_userSearch139_invoker = createInvoker(
     UserController_14.userSearch(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2863,11 +2901,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:295
-  private[this] lazy val controllers_UserController_getActiveUsers138_route = Route("GET",
+  // @LINE:297
+  private[this] lazy val controllers_UserController_getActiveUsers140_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/getActiveUsers/json")))
   )
-  private[this] lazy val controllers_UserController_getActiveUsers138_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_getActiveUsers140_invoker = createInvoker(
     UserController_1.get.getActiveUsers(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2881,11 +2919,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:296
-  private[this] lazy val controllers_UserController_sendPasswordEmail139_route = Route("POST",
+  // @LINE:298
+  private[this] lazy val controllers_UserController_sendPasswordEmail141_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/sendPasswordEmail")))
   )
-  private[this] lazy val controllers_UserController_sendPasswordEmail139_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_sendPasswordEmail141_invoker = createInvoker(
     UserController_1.get.sendPasswordEmail,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2899,11 +2937,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:297
-  private[this] lazy val controllers_UserController_updatePassword140_route = Route("POST",
+  // @LINE:299
+  private[this] lazy val controllers_UserController_updatePassword142_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/updatePassword")))
   )
-  private[this] lazy val controllers_UserController_updatePassword140_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_updatePassword142_invoker = createInvoker(
     UserController_1.get.updatePassword,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2917,11 +2955,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:298
-  private[this] lazy val controllers_UserController_userActivation141_route = Route("GET",
+  // @LINE:300
+  private[this] lazy val controllers_UserController_userActivation143_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users/"), DynamicPart("hashcode", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_userActivation141_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_userActivation143_invoker = createInvoker(
     UserController_1.get.userActivation(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2935,11 +2973,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:299
-  private[this] lazy val controllers_UserController_sendRegisterEmail142_route = Route("POST",
+  // @LINE:301
+  private[this] lazy val controllers_UserController_sendRegisterEmail144_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/validate")))
   )
-  private[this] lazy val controllers_UserController_sendRegisterEmail142_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_sendRegisterEmail144_invoker = createInvoker(
     UserController_14.sendRegisterEmail(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2953,11 +2991,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:300
-  private[this] lazy val controllers_UserController_resendRegisterEmail143_route = Route("POST",
+  // @LINE:302
+  private[this] lazy val controllers_UserController_resendRegisterEmail145_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/validate/resend")))
   )
-  private[this] lazy val controllers_UserController_resendRegisterEmail143_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_resendRegisterEmail145_invoker = createInvoker(
     UserController_14.resendRegisterEmail(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2971,11 +3009,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:302
-  private[this] lazy val controllers_UserController_updateLevel144_route = Route("POST",
+  // @LINE:304
+  private[this] lazy val controllers_UserController_updateLevel146_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/updateLevel/"), DynamicPart("uid", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_UserController_updateLevel144_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_updateLevel146_invoker = createInvoker(
     UserController_1.get.updateLevel(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -2989,11 +3027,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:303
-  private[this] lazy val controllers_UserController_getUserByEmail145_route = Route("POST",
+  // @LINE:305
+  private[this] lazy val controllers_UserController_getUserByEmail147_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/getUserByEmail")))
   )
-  private[this] lazy val controllers_UserController_getUserByEmail145_invoker = createInvoker(
+  private[this] lazy val controllers_UserController_getUserByEmail147_invoker = createInvoker(
     UserController_1.get.getUserByEmail,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3007,11 +3045,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:307
-  private[this] lazy val controllers_OrganizationController_organizationList146_route = Route("GET",
+  // @LINE:309
+  private[this] lazy val controllers_OrganizationController_organizationList148_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("organization/organizationList")))
   )
-  private[this] lazy val controllers_OrganizationController_organizationList146_invoker = createInvoker(
+  private[this] lazy val controllers_OrganizationController_organizationList148_invoker = createInvoker(
     OrganizationController_20.organizationList(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3025,11 +3063,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:308
-  private[this] lazy val controllers_OrganizationController_organizationListPage147_route = Route("GET",
+  // @LINE:310
+  private[this] lazy val controllers_OrganizationController_organizationListPage149_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("organization/organizationListPage")))
   )
-  private[this] lazy val controllers_OrganizationController_organizationListPage147_invoker = createInvoker(
+  private[this] lazy val controllers_OrganizationController_organizationListPage149_invoker = createInvoker(
     OrganizationController_20.organizationListPage(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3043,11 +3081,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:309
-  private[this] lazy val controllers_OrganizationController_addUsers148_route = Route("POST",
+  // @LINE:311
+  private[this] lazy val controllers_OrganizationController_addUsers150_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("organization/addUsers")))
   )
-  private[this] lazy val controllers_OrganizationController_addUsers148_invoker = createInvoker(
+  private[this] lazy val controllers_OrganizationController_addUsers150_invoker = createInvoker(
     OrganizationController_20.addUsers(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3061,11 +3099,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:310
-  private[this] lazy val controllers_OrganizationController_registerOrganization149_route = Route("POST",
+  // @LINE:312
+  private[this] lazy val controllers_OrganizationController_registerOrganization151_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("organization/register")))
   )
-  private[this] lazy val controllers_OrganizationController_registerOrganization149_invoker = createInvoker(
+  private[this] lazy val controllers_OrganizationController_registerOrganization151_invoker = createInvoker(
     OrganizationController_20.registerOrganization(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3079,11 +3117,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:311
-  private[this] lazy val controllers_OrganizationController_organizationDetail150_route = Route("GET",
+  // @LINE:313
+  private[this] lazy val controllers_OrganizationController_organizationDetail152_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("organization/organizationDetail/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_OrganizationController_organizationDetail150_invoker = createInvoker(
+  private[this] lazy val controllers_OrganizationController_organizationDetail152_invoker = createInvoker(
     OrganizationController_20.organizationDetail(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3097,11 +3135,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:312
-  private[this] lazy val controllers_OrganizationController_organizationUpdate151_route = Route("POST",
+  // @LINE:314
+  private[this] lazy val controllers_OrganizationController_organizationUpdate153_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("organization/organizationUpdate")))
   )
-  private[this] lazy val controllers_OrganizationController_organizationUpdate151_invoker = createInvoker(
+  private[this] lazy val controllers_OrganizationController_organizationUpdate153_invoker = createInvoker(
     OrganizationController_20.organizationUpdate(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3115,11 +3153,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:313
-  private[this] lazy val controllers_OrganizationController_organizationListbyName152_route = Route("POST",
+  // @LINE:315
+  private[this] lazy val controllers_OrganizationController_organizationListbyName154_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("organization/organizationListByName")))
   )
-  private[this] lazy val controllers_OrganizationController_organizationListbyName152_invoker = createInvoker(
+  private[this] lazy val controllers_OrganizationController_organizationListbyName154_invoker = createInvoker(
     OrganizationController_20.organizationListbyName(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3133,11 +3171,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:320
-  private[this] lazy val controllers_BugReportController_addBugReport153_route = Route("POST",
+  // @LINE:322
+  private[this] lazy val controllers_BugReportController_addBugReport155_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("bugReport/addBugReport")))
   )
-  private[this] lazy val controllers_BugReportController_addBugReport153_invoker = createInvoker(
+  private[this] lazy val controllers_BugReportController_addBugReport155_invoker = createInvoker(
     BugReportController_2.get.addBugReport,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3151,11 +3189,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:321
-  private[this] lazy val controllers_BugReportController_getBugReport154_route = Route("GET",
+  // @LINE:323
+  private[this] lazy val controllers_BugReportController_getBugReport156_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("bugReport/getBugReport/id/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BugReportController_getBugReport154_invoker = createInvoker(
+  private[this] lazy val controllers_BugReportController_getBugReport156_invoker = createInvoker(
     BugReportController_2.get.getBugReport(fakeValue[Long], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3169,11 +3207,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:322
-  private[this] lazy val controllers_BugReportController_updateBugReport155_route = Route("PUT",
+  // @LINE:324
+  private[this] lazy val controllers_BugReportController_updateBugReport157_route = Route("PUT",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("bugReport/updateBugReport/id/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BugReportController_updateBugReport155_invoker = createInvoker(
+  private[this] lazy val controllers_BugReportController_updateBugReport157_invoker = createInvoker(
     BugReportController_2.get.updateBugReport(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3187,11 +3225,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:323
-  private[this] lazy val controllers_BugReportController_deleteBugReport156_route = Route("DELETE",
+  // @LINE:325
+  private[this] lazy val controllers_BugReportController_deleteBugReport158_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("bugReport/deleteBugReport/id/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BugReportController_deleteBugReport156_invoker = createInvoker(
+  private[this] lazy val controllers_BugReportController_deleteBugReport158_invoker = createInvoker(
     BugReportController_2.get.deleteBugReport(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3205,11 +3243,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:324
-  private[this] lazy val controllers_BugReportController_updateBugReportSolved157_route = Route("GET",
+  // @LINE:326
+  private[this] lazy val controllers_BugReportController_updateBugReportSolved159_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("bugReport/updateBugReportSolved/"), DynamicPart("bugId", """[^/]+""",true), StaticPart("/"), DynamicPart("fixerId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_BugReportController_updateBugReportSolved157_invoker = createInvoker(
+  private[this] lazy val controllers_BugReportController_updateBugReportSolved159_invoker = createInvoker(
     BugReportController_2.get.updateBugReportSolved(fakeValue[Long], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3223,11 +3261,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:325
-  private[this] lazy val controllers_BugReportController_getAllBugReports158_route = Route("GET",
+  // @LINE:327
+  private[this] lazy val controllers_BugReportController_getAllBugReports160_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("bugReport/getAllBugReports/json")))
   )
-  private[this] lazy val controllers_BugReportController_getAllBugReports158_invoker = createInvoker(
+  private[this] lazy val controllers_BugReportController_getAllBugReports160_invoker = createInvoker(
     BugReportController_2.get.getAllBugReports(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3241,11 +3279,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:327
-  private[this] lazy val controllers_BugReportController_getAllUnsolvedBugReports159_route = Route("GET",
+  // @LINE:329
+  private[this] lazy val controllers_BugReportController_getAllUnsolvedBugReports161_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("bugReport/getAllUnsolvedBugReports/json")))
   )
-  private[this] lazy val controllers_BugReportController_getAllUnsolvedBugReports159_invoker = createInvoker(
+  private[this] lazy val controllers_BugReportController_getAllUnsolvedBugReports161_invoker = createInvoker(
     BugReportController_2.get.getAllUnsolvedBugReports,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3259,11 +3297,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:328
-  private[this] lazy val controllers_BugReportController_getAllSolvedBugReports160_route = Route("GET",
+  // @LINE:330
+  private[this] lazy val controllers_BugReportController_getAllSolvedBugReports162_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("bugReport/getAllSolvedBugReports/json")))
   )
-  private[this] lazy val controllers_BugReportController_getAllSolvedBugReports160_invoker = createInvoker(
+  private[this] lazy val controllers_BugReportController_getAllSolvedBugReports162_invoker = createInvoker(
     BugReportController_2.get.getAllSolvedBugReports,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3277,11 +3315,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:334
-  private[this] lazy val controllers_SuggestionController_addSuggestion161_route = Route("POST",
+  // @LINE:336
+  private[this] lazy val controllers_SuggestionController_addSuggestion163_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("suggestion/addSuggestion")))
   )
-  private[this] lazy val controllers_SuggestionController_addSuggestion161_invoker = createInvoker(
+  private[this] lazy val controllers_SuggestionController_addSuggestion163_invoker = createInvoker(
     SuggestionController_11.get.addSuggestion,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3295,11 +3333,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:335
-  private[this] lazy val controllers_SuggestionController_getSuggestion162_route = Route("GET",
+  // @LINE:337
+  private[this] lazy val controllers_SuggestionController_getSuggestion164_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("suggestion/getSuggestion/id/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_SuggestionController_getSuggestion162_invoker = createInvoker(
+  private[this] lazy val controllers_SuggestionController_getSuggestion164_invoker = createInvoker(
     SuggestionController_11.get.getSuggestion(fakeValue[Long], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3313,11 +3351,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:336
-  private[this] lazy val controllers_SuggestionController_suggestionList163_route = Route("GET",
+  // @LINE:338
+  private[this] lazy val controllers_SuggestionController_suggestionList165_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("suggestion/suggestionList/json")))
   )
-  private[this] lazy val controllers_SuggestionController_suggestionList163_invoker = createInvoker(
+  private[this] lazy val controllers_SuggestionController_suggestionList165_invoker = createInvoker(
     SuggestionController_11.get.suggestionList(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3331,11 +3369,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:337
-  private[this] lazy val controllers_SuggestionController_updateSuggestion164_route = Route("PUT",
+  // @LINE:339
+  private[this] lazy val controllers_SuggestionController_updateSuggestion166_route = Route("PUT",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("suggestion/updateSuggestion/id/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_SuggestionController_updateSuggestion164_invoker = createInvoker(
+  private[this] lazy val controllers_SuggestionController_updateSuggestion166_invoker = createInvoker(
     SuggestionController_11.get.updateSuggestion(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3349,11 +3387,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:338
-  private[this] lazy val controllers_SuggestionController_deleteSuggestion165_route = Route("DELETE",
+  // @LINE:340
+  private[this] lazy val controllers_SuggestionController_deleteSuggestion167_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("suggestion/deleteSuggestion/id/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_SuggestionController_deleteSuggestion165_invoker = createInvoker(
+  private[this] lazy val controllers_SuggestionController_deleteSuggestion167_invoker = createInvoker(
     SuggestionController_11.get.deleteSuggestion(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3367,11 +3405,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:339
-  private[this] lazy val controllers_SuggestionController_updateSuggestionSolved166_route = Route("GET",
+  // @LINE:341
+  private[this] lazy val controllers_SuggestionController_updateSuggestionSolved168_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("suggestion/updateSuggestionSolve/"), DynamicPart("suggestionId", """[^/]+""",true), StaticPart("/"), DynamicPart("implementorId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_SuggestionController_updateSuggestionSolved166_invoker = createInvoker(
+  private[this] lazy val controllers_SuggestionController_updateSuggestionSolved168_invoker = createInvoker(
     SuggestionController_11.get.updateSuggestionSolved(fakeValue[Long], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3385,11 +3423,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:343
-  private[this] lazy val controllers_TechnologyController_addTechnology167_route = Route("POST",
+  // @LINE:345
+  private[this] lazy val controllers_TechnologyController_addTechnology169_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("technology/addTechnology")))
   )
-  private[this] lazy val controllers_TechnologyController_addTechnology167_invoker = createInvoker(
+  private[this] lazy val controllers_TechnologyController_addTechnology169_invoker = createInvoker(
     TechnologyController_10.addTechnology(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3403,11 +3441,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:344
-  private[this] lazy val controllers_TechnologyController_updateTechnology168_route = Route("POST",
+  // @LINE:346
+  private[this] lazy val controllers_TechnologyController_updateTechnology170_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("technology/updateTechnology/"), DynamicPart("technologyId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TechnologyController_updateTechnology168_invoker = createInvoker(
+  private[this] lazy val controllers_TechnologyController_updateTechnology170_invoker = createInvoker(
     TechnologyController_10.updateTechnology(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3421,11 +3459,11 @@ DELETE        /challenge/deleteChallengePDF/:challengeId                        
     )
   )
 
-  // @LINE:347
-  private[this] lazy val controllers_TechnologyController_technologyList169_route = Route("GET",
+  // @LINE:349
+  private[this] lazy val controllers_TechnologyController_technologyList171_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("technology/technologyList/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TechnologyController_technologyList169_invoker = createInvoker(
+  private[this] lazy val controllers_TechnologyController_technologyList171_invoker = createInvoker(
     TechnologyController_10.technologyList(fakeValue[Long], fakeValue[Integer], fakeValue[Integer], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3440,11 +3478,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:350
-  private[this] lazy val controllers_TechnologyController_getTechnologyById170_route = Route("GET",
+  // @LINE:352
+  private[this] lazy val controllers_TechnologyController_getTechnologyById172_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("technology/technologyDetail/"), DynamicPart("technologyId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TechnologyController_getTechnologyById170_invoker = createInvoker(
+  private[this] lazy val controllers_TechnologyController_getTechnologyById172_invoker = createInvoker(
     TechnologyController_10.getTechnologyById(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3459,11 +3497,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:352
-  private[this] lazy val controllers_TechnologyController_searchTechnologiesByCondition171_route = Route("POST",
+  // @LINE:354
+  private[this] lazy val controllers_TechnologyController_searchTechnologiesByCondition173_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("technology/search/conditions")))
   )
-  private[this] lazy val controllers_TechnologyController_searchTechnologiesByCondition171_invoker = createInvoker(
+  private[this] lazy val controllers_TechnologyController_searchTechnologiesByCondition173_invoker = createInvoker(
     TechnologyController_10.searchTechnologiesByCondition(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3477,11 +3515,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:378
-  private[this] lazy val controllers_AdminController_getUserList172_route = Route("GET",
+  // @LINE:380
+  private[this] lazy val controllers_AdminController_getUserList174_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/users")))
   )
-  private[this] lazy val controllers_AdminController_getUserList172_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_getUserList174_invoker = createInvoker(
     AdminController_0.getUserList(fakeValue[Integer], fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3495,11 +3533,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:379
-  private[this] lazy val controllers_AdminController_getUserDetail173_route = Route("GET",
+  // @LINE:381
+  private[this] lazy val controllers_AdminController_getUserDetail175_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/users/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AdminController_getUserDetail173_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_getUserDetail175_invoker = createInvoker(
     AdminController_0.getUserDetail(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3513,11 +3551,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:380
-  private[this] lazy val controllers_AdminController_updateUserStatus174_route = Route("PUT",
+  // @LINE:382
+  private[this] lazy val controllers_AdminController_updateUserStatus176_route = Route("PUT",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/users/"), DynamicPart("userId", """[^/]+""",true), StaticPart("/status")))
   )
-  private[this] lazy val controllers_AdminController_updateUserStatus174_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_updateUserStatus176_invoker = createInvoker(
     AdminController_0.updateUserStatus(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3531,11 +3569,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:381
-  private[this] lazy val controllers_AdminController_getJobList175_route = Route("GET",
+  // @LINE:383
+  private[this] lazy val controllers_AdminController_getJobList177_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/jobs")))
   )
-  private[this] lazy val controllers_AdminController_getJobList175_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_getJobList177_invoker = createInvoker(
     AdminController_0.getJobList(fakeValue[Integer], fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3549,11 +3587,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:382
-  private[this] lazy val controllers_AdminController_getJobDetail176_route = Route("GET",
+  // @LINE:384
+  private[this] lazy val controllers_AdminController_getJobDetail178_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/jobs/"), DynamicPart("jobType", """[^/]+""",true), StaticPart("/"), DynamicPart("jobId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AdminController_getJobDetail176_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_getJobDetail178_invoker = createInvoker(
     AdminController_0.getJobDetail(fakeValue[String], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3567,11 +3605,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:383
-  private[this] lazy val controllers_AdminController_getOrganizationList177_route = Route("GET",
+  // @LINE:385
+  private[this] lazy val controllers_AdminController_getOrganizationList179_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/organizations")))
   )
-  private[this] lazy val controllers_AdminController_getOrganizationList177_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_getOrganizationList179_invoker = createInvoker(
     AdminController_0.getOrganizationList(fakeValue[Integer], fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3585,11 +3623,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:384
-  private[this] lazy val controllers_AdminController_getTechnologyList178_route = Route("GET",
+  // @LINE:386
+  private[this] lazy val controllers_AdminController_getTechnologyList180_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("admin/technologies")))
   )
-  private[this] lazy val controllers_AdminController_getTechnologyList178_invoker = createInvoker(
+  private[this] lazy val controllers_AdminController_getTechnologyList180_invoker = createInvoker(
     AdminController_0.getTechnologyList(fakeValue[Integer], fakeValue[Integer], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3603,11 +3641,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:393
-  private[this] lazy val controllers_AuthorController_addAuthor179_route = Route("POST",
+  // @LINE:395
+  private[this] lazy val controllers_AuthorController_addAuthor181_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/addAuthor")))
   )
-  private[this] lazy val controllers_AuthorController_addAuthor179_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_addAuthor181_invoker = createInvoker(
     AuthorController_6.addAuthor,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3621,11 +3659,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:394
-  private[this] lazy val controllers_AuthorController_authorDetail180_route = Route("GET",
+  // @LINE:396
+  private[this] lazy val controllers_AuthorController_authorDetail182_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/authorDetail/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AuthorController_authorDetail180_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_authorDetail182_invoker = createInvoker(
     AuthorController_6.authorDetail(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3639,11 +3677,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:395
-  private[this] lazy val controllers_AuthorController_updateAuthor181_route = Route("POST",
+  // @LINE:397
+  private[this] lazy val controllers_AuthorController_updateAuthor183_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/updateAuthor")))
   )
-  private[this] lazy val controllers_AuthorController_updateAuthor181_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_updateAuthor183_invoker = createInvoker(
     AuthorController_6.updateAuthor,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3657,11 +3695,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:396
-  private[this] lazy val controllers_AuthorController_authorList182_route = Route("GET",
+  // @LINE:398
+  private[this] lazy val controllers_AuthorController_authorList184_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/authorList")))
   )
-  private[this] lazy val controllers_AuthorController_authorList182_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_authorList184_invoker = createInvoker(
     AuthorController_6.authorList(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3675,11 +3713,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:398
-  private[this] lazy val controllers_AuthorController_userDetailAdmin183_route = Route("GET",
+  // @LINE:400
+  private[this] lazy val controllers_AuthorController_userDetailAdmin185_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/userDetailAdmin/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AuthorController_userDetailAdmin183_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_userDetailAdmin185_invoker = createInvoker(
     AuthorController_6.userDetailAdmin(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3693,11 +3731,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:399
-  private[this] lazy val controllers_AuthorController_updateUserAdmin184_route = Route("POST",
+  // @LINE:401
+  private[this] lazy val controllers_AuthorController_updateUserAdmin186_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/updateUserAdmin")))
   )
-  private[this] lazy val controllers_AuthorController_updateUserAdmin184_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_updateUserAdmin186_invoker = createInvoker(
     AuthorController_6.updateUserAdmin,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3711,11 +3749,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:400
-  private[this] lazy val controllers_AuthorController_userListAdmin185_route = Route("GET",
+  // @LINE:402
+  private[this] lazy val controllers_AuthorController_userListAdmin187_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/userListAdmin")))
   )
-  private[this] lazy val controllers_AuthorController_userListAdmin185_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_userListAdmin187_invoker = createInvoker(
     AuthorController_6.userListAdmin(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3729,11 +3767,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:402
-  private[this] lazy val controllers_AuthorController_searchAuthorByCondition186_route = Route("POST",
+  // @LINE:404
+  private[this] lazy val controllers_AuthorController_searchAuthorByCondition188_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/search")))
   )
-  private[this] lazy val controllers_AuthorController_searchAuthorByCondition186_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_searchAuthorByCondition188_invoker = createInvoker(
     AuthorController_6.searchAuthorByCondition(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3747,11 +3785,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:403
-  private[this] lazy val controllers_AuthorController_topAuthors187_route = Route("GET",
+  // @LINE:405
+  private[this] lazy val controllers_AuthorController_topAuthors189_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("author/topAuthors")))
   )
-  private[this] lazy val controllers_AuthorController_topAuthors187_invoker = createInvoker(
+  private[this] lazy val controllers_AuthorController_topAuthors189_invoker = createInvoker(
     AuthorController_6.topAuthors(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3765,11 +3803,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:407
-  private[this] lazy val controllers_ReviewerController_addReviewer188_route = Route("POST",
+  // @LINE:409
+  private[this] lazy val controllers_ReviewerController_addReviewer190_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/addReviewer")))
   )
-  private[this] lazy val controllers_ReviewerController_addReviewer188_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_addReviewer190_invoker = createInvoker(
     ReviewerController_22.addReviewer,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3783,11 +3821,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:408
-  private[this] lazy val controllers_ReviewerController_reviewerDetail189_route = Route("GET",
+  // @LINE:410
+  private[this] lazy val controllers_ReviewerController_reviewerDetail191_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/reviewerDetail/"), DynamicPart("userId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_ReviewerController_reviewerDetail189_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_reviewerDetail191_invoker = createInvoker(
     ReviewerController_22.reviewerDetail(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3801,11 +3839,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:409
-  private[this] lazy val controllers_ReviewerController_updateReviewer190_route = Route("POST",
+  // @LINE:411
+  private[this] lazy val controllers_ReviewerController_updateReviewer192_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/updateReviewer")))
   )
-  private[this] lazy val controllers_ReviewerController_updateReviewer190_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_updateReviewer192_invoker = createInvoker(
     ReviewerController_22.updateReviewer,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3819,11 +3857,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:410
-  private[this] lazy val controllers_ReviewerController_reviewerList191_route = Route("GET",
+  // @LINE:412
+  private[this] lazy val controllers_ReviewerController_reviewerList193_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/reviewerList")))
   )
-  private[this] lazy val controllers_ReviewerController_reviewerList191_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_reviewerList193_invoker = createInvoker(
     ReviewerController_22.reviewerList(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3837,11 +3875,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:412
-  private[this] lazy val controllers_ReviewerController_searchReviewerByCondition192_route = Route("POST",
+  // @LINE:414
+  private[this] lazy val controllers_ReviewerController_searchReviewerByCondition194_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("reviewer/search/conditions")))
   )
-  private[this] lazy val controllers_ReviewerController_searchReviewerByCondition192_invoker = createInvoker(
+  private[this] lazy val controllers_ReviewerController_searchReviewerByCondition194_invoker = createInvoker(
     ReviewerController_22.searchReviewerByCondition(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3855,11 +3893,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:419
-  private[this] lazy val controllers_PaperController_addPaper193_route = Route("POST",
+  // @LINE:421
+  private[this] lazy val controllers_PaperController_addPaper195_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/addPaper")))
   )
-  private[this] lazy val controllers_PaperController_addPaper193_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_addPaper195_invoker = createInvoker(
     PaperController_17.addPaper(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3873,11 +3911,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:420
-  private[this] lazy val controllers_PaperController_paperList194_route = Route("GET",
+  // @LINE:422
+  private[this] lazy val controllers_PaperController_paperList196_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/paperList")))
   )
-  private[this] lazy val controllers_PaperController_paperList194_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_paperList196_invoker = createInvoker(
     PaperController_17.paperList(fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[Integer]], fakeValue[java.util.Optional[String]]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3891,11 +3929,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:421
-  private[this] lazy val controllers_PaperController_getAuthorByPaperId195_route = Route("GET",
+  // @LINE:423
+  private[this] lazy val controllers_PaperController_getAuthorByPaperId197_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/author")))
   )
-  private[this] lazy val controllers_PaperController_getAuthorByPaperId195_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_getAuthorByPaperId197_invoker = createInvoker(
     PaperController_17.getAuthorByPaperId(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3909,11 +3947,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:422
-  private[this] lazy val controllers_PaperController_deletePaper196_route = Route("POST",
+  // @LINE:424
+  private[this] lazy val controllers_PaperController_deletePaper198_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/deletePaper")))
   )
-  private[this] lazy val controllers_PaperController_deletePaper196_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_deletePaper198_invoker = createInvoker(
     PaperController_17.deletePaper(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3927,11 +3965,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:424
-  private[this] lazy val controllers_PaperController_getPaperById197_route = Route("GET",
+  // @LINE:426
+  private[this] lazy val controllers_PaperController_getPaperById199_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/paperDetail/"), DynamicPart("paperId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PaperController_getPaperById197_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_getPaperById199_invoker = createInvoker(
     PaperController_17.getPaperById(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3945,11 +3983,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:425
-  private[this] lazy val controllers_PaperController_addAuthor198_route = Route("POST",
+  // @LINE:427
+  private[this] lazy val controllers_PaperController_addAuthor200_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/addAuthor/"), DynamicPart("paperId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_PaperController_addAuthor198_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_addAuthor200_invoker = createInvoker(
     PaperController_17.addAuthor(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3963,11 +4001,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:426
-  private[this] lazy val controllers_PaperController_deleteAuthor199_route = Route("POST",
+  // @LINE:428
+  private[this] lazy val controllers_PaperController_deleteAuthor201_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/deleteAuthor")))
   )
-  private[this] lazy val controllers_PaperController_deleteAuthor199_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_deleteAuthor201_invoker = createInvoker(
     PaperController_17.deleteAuthor(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3981,11 +4019,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:429
-  private[this] lazy val controllers_GraphController_printPrimeConnections200_route = Route("GET",
+  // @LINE:431
+  private[this] lazy val controllers_GraphController_printPrimeConnections202_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("graph/primePOC")))
   )
-  private[this] lazy val controllers_GraphController_printPrimeConnections200_invoker = createInvoker(
+  private[this] lazy val controllers_GraphController_printPrimeConnections202_invoker = createInvoker(
     GraphController_15.printPrimeConnections(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -3999,11 +4037,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:430
-  private[this] lazy val controllers_PaperController_paperAuthorList201_route = Route("GET",
+  // @LINE:432
+  private[this] lazy val controllers_PaperController_paperAuthorList203_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/paperAuthorList")))
   )
-  private[this] lazy val controllers_PaperController_paperAuthorList201_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_paperAuthorList203_invoker = createInvoker(
     PaperController_17.paperAuthorList(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4017,11 +4055,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:431
-  private[this] lazy val controllers_PaperController_storeDBLP202_route = Route("POST",
+  // @LINE:433
+  private[this] lazy val controllers_PaperController_storeDBLP204_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/loadPaper")))
   )
-  private[this] lazy val controllers_PaperController_storeDBLP202_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_storeDBLP204_invoker = createInvoker(
     PaperController_17.storeDBLP(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4035,11 +4073,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:432
-  private[this] lazy val controllers_PaperController_loadLDA203_route = Route("GET",
+  // @LINE:434
+  private[this] lazy val controllers_PaperController_loadLDA205_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/lda")))
   )
-  private[this] lazy val controllers_PaperController_loadLDA203_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_loadLDA205_invoker = createInvoker(
     PaperController_17.loadLDA(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4053,11 +4091,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:433
-  private[this] lazy val controllers_PaperController_authorRelation204_route = Route("GET",
+  // @LINE:435
+  private[this] lazy val controllers_PaperController_authorRelation206_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/authorRelation")))
   )
-  private[this] lazy val controllers_PaperController_authorRelation204_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_authorRelation206_invoker = createInvoker(
     PaperController_17.authorRelation(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4071,11 +4109,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:434
-  private[this] lazy val controllers_PaperController_storeDBLPSchema205_route = Route("POST",
+  // @LINE:436
+  private[this] lazy val controllers_PaperController_storeDBLPSchema207_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/loadSchema")))
   )
-  private[this] lazy val controllers_PaperController_storeDBLPSchema205_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_storeDBLPSchema207_invoker = createInvoker(
     PaperController_17.storeDBLPSchema(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4089,11 +4127,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:435
-  private[this] lazy val controllers_PaperController_ldaTopicDistribution206_route = Route("GET",
+  // @LINE:437
+  private[this] lazy val controllers_PaperController_ldaTopicDistribution208_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/ldaTopicList")))
   )
-  private[this] lazy val controllers_PaperController_ldaTopicDistribution206_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_ldaTopicDistribution208_invoker = createInvoker(
     PaperController_17.ldaTopicDistribution(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4107,11 +4145,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:436
-  private[this] lazy val controllers_PaperController_paperSearchList207_route = Route("POST",
+  // @LINE:438
+  private[this] lazy val controllers_PaperController_paperSearchList209_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("paper/search")))
   )
-  private[this] lazy val controllers_PaperController_paperSearchList207_invoker = createInvoker(
+  private[this] lazy val controllers_PaperController_paperSearchList209_invoker = createInvoker(
     PaperController_17.paperSearchList(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4125,11 +4163,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:440
-  private[this] lazy val controllers_LogController_operationLogging208_route = Route("POST",
+  // @LINE:442
+  private[this] lazy val controllers_LogController_operationLogging210_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("log/loggingOperation")))
   )
-  private[this] lazy val controllers_LogController_operationLogging208_invoker = createInvoker(
+  private[this] lazy val controllers_LogController_operationLogging210_invoker = createInvoker(
     LogController_7.operationLogging(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4143,11 +4181,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:443
-  private[this] lazy val controllers_FileController_getFile209_route = Route("GET",
+  // @LINE:445
+  private[this] lazy val controllers_FileController_getFile211_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("file/"), DynamicPart("tableName", """[^/]+""",true), StaticPart("/"), DynamicPart("fileType", """[^/]+""",true), StaticPart("/"), DynamicPart("tableRecorderId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_FileController_getFile209_invoker = createInvoker(
+  private[this] lazy val controllers_FileController_getFile211_invoker = createInvoker(
     FileController_25.getFile(fakeValue[String], fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4161,11 +4199,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:444
-  private[this] lazy val controllers_FileController_checkFile210_route = Route("GET",
+  // @LINE:446
+  private[this] lazy val controllers_FileController_checkFile212_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("file/checkFile/"), DynamicPart("tableName", """[^/]+""",true), StaticPart("/"), DynamicPart("fileType", """[^/]+""",true), StaticPart("/"), DynamicPart("tableRecorderId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_FileController_checkFile210_invoker = createInvoker(
+  private[this] lazy val controllers_FileController_checkFile212_invoker = createInvoker(
     FileController_25.checkFile(fakeValue[String], fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4179,11 +4217,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:445
-  private[this] lazy val controllers_TechnologyController_setFiles211_route = Route("POST",
+  // @LINE:447
+  private[this] lazy val controllers_TechnologyController_setFiles213_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("technology/setFiles/"), DynamicPart("serviceId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TechnologyController_setFiles211_invoker = createInvoker(
+  private[this] lazy val controllers_TechnologyController_setFiles213_invoker = createInvoker(
     TechnologyController_10.setFiles(fakeValue[Long], fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4197,11 +4235,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:446
-  private[this] lazy val controllers_TechnologyController_getFileById212_route = Route("GET",
+  // @LINE:448
+  private[this] lazy val controllers_TechnologyController_getFileById214_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("technology/fileDetail/"), DynamicPart("serviceId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_TechnologyController_getFileById212_invoker = createInvoker(
+  private[this] lazy val controllers_TechnologyController_getFileById214_invoker = createInvoker(
     TechnologyController_10.getFileById(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4215,11 +4253,11 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
     )
   )
 
-  // @LINE:447
-  private[this] lazy val controllers_FileController_uploadRawFile213_route = Route("POST",
+  // @LINE:449
+  private[this] lazy val controllers_FileController_uploadRawFile215_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("file/upload/"), DynamicPart("tableName", """[^/]+""",true), StaticPart("/"), DynamicPart("fileType", """[^/]+""",true), StaticPart("/"), DynamicPart("recordId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_FileController_uploadRawFile213_invoker = createInvoker(
+  private[this] lazy val controllers_FileController_uploadRawFile215_invoker = createInvoker(
     FileController_25.uploadRawFile(fakeValue[String], fakeValue[String], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -4788,172 +4826,172 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
         controllers_RAJobController_listProfessorsJson91_invoker.call(RAJobController_18.listProfessorsJson())
       }
   
-    // @LINE:211
-    case controllers_TAJobController_addTAJob92_route(params@_) =>
+    // @LINE:207
+    case controllers_RAJobController_scheduleInterview92_route(params@_) =>
       call { 
-        controllers_TAJobController_addTAJob92_invoker.call(TAJobController_12.addTAJob())
+        controllers_RAJobController_scheduleInterview92_invoker.call(RAJobController_18.scheduleInterview())
       }
   
-    // @LINE:212
-    case controllers_TAJobController_updateTAJob93_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_updateTAJob93_invoker.call(TAJobController_12.updateTAJob(tajobId))
+    // @LINE:208
+    case controllers_RAJobController_getScheduledInterviews93_route(params@_) =>
+      call(params.fromPath[Long]("jobId", None)) { (jobId) =>
+        controllers_RAJobController_getScheduledInterviews93_invoker.call(RAJobController_18.getScheduledInterviews(jobId))
       }
   
     // @LINE:213
-    case controllers_TAJobController_deleteTAJobImage94_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_deleteTAJobImage94_invoker.call(TAJobController_12.deleteTAJobImage(tajobId))
+    case controllers_TAJobController_addTAJob94_route(params@_) =>
+      call { 
+        controllers_TAJobController_addTAJob94_invoker.call(TAJobController_12.addTAJob())
       }
   
     // @LINE:214
-    case controllers_TAJobController_deleteTAJobPDF95_route(params@_) =>
+    case controllers_TAJobController_updateTAJob95_route(params@_) =>
       call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_deleteTAJobPDF95_invoker.call(TAJobController_12.deleteTAJobPDF(tajobId))
+        controllers_TAJobController_updateTAJob95_invoker.call(TAJobController_12.updateTAJob(tajobId))
       }
   
     // @LINE:215
-    case controllers_TAJobController_tajobList96_route(params@_) =>
-      call(params.fromPath[Long]("userId", None), params.fromQuery[Integer]("pageLimit", None), params.fromQuery[Integer]("pageNum", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (userId, pageLimit, pageNum, sortCriteria) =>
-        controllers_TAJobController_tajobList96_invoker.call(TAJobController_12.tajobList(userId, pageLimit, pageNum, sortCriteria))
+    case controllers_TAJobController_deleteTAJobImage96_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
+        controllers_TAJobController_deleteTAJobImage96_invoker.call(TAJobController_12.deleteTAJobImage(tajobId))
       }
   
     // @LINE:216
-    case controllers_TAJobController_applyTAJob97_route(params@_) =>
+    case controllers_TAJobController_deleteTAJobPDF97_route(params@_) =>
       call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_applyTAJob97_invoker.call(TAJobController_12.applyTAJob(tajobId))
+        controllers_TAJobController_deleteTAJobPDF97_invoker.call(TAJobController_12.deleteTAJobPDF(tajobId))
       }
   
     // @LINE:217
-    case controllers_TAJobController_tajobUpdateStatue98_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_tajobUpdateStatue98_invoker.call(TAJobController_12.tajobUpdateStatue(tajobId))
+    case controllers_TAJobController_tajobList98_route(params@_) =>
+      call(params.fromPath[Long]("userId", None), params.fromQuery[Integer]("pageLimit", None), params.fromQuery[Integer]("pageNum", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (userId, pageLimit, pageNum, sortCriteria) =>
+        controllers_TAJobController_tajobList98_invoker.call(TAJobController_12.tajobList(userId, pageLimit, pageNum, sortCriteria))
       }
   
     // @LINE:218
-    case controllers_TAJobController_getTAJobApplicationById99_route(params@_) =>
+    case controllers_TAJobController_applyTAJob99_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
+        controllers_TAJobController_applyTAJob99_invoker.call(TAJobController_12.applyTAJob(tajobId))
+      }
+  
+    // @LINE:219
+    case controllers_TAJobController_tajobUpdateStatue100_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
+        controllers_TAJobController_tajobUpdateStatue100_invoker.call(TAJobController_12.tajobUpdateStatue(tajobId))
+      }
+  
+    // @LINE:220
+    case controllers_TAJobController_getTAJobApplicationById101_route(params@_) =>
       call(params.fromPath[Long]("tajobApplicationId", None)) { (tajobApplicationId) =>
-        controllers_TAJobController_getTAJobApplicationById99_invoker.call(TAJobController_12.getTAJobApplicationById(tajobApplicationId))
-      }
-  
-    // @LINE:221
-    case controllers_TAJobController_getTAJobById100_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_getTAJobById100_invoker.call(TAJobController_12.getTAJobById(tajobId))
-      }
-  
-    // @LINE:222
-    case controllers_TAJobController_getTAJobPublisher101_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_getTAJobPublisher101_invoker.call(TAJobController_12.getTAJobPublisher(tajobId))
+        controllers_TAJobController_getTAJobApplicationById101_invoker.call(TAJobController_12.getTAJobApplicationById(tajobApplicationId))
       }
   
     // @LINE:223
-    case controllers_TAJobController_searchTAJobsByCondition102_route(params@_) =>
-      call { 
-        controllers_TAJobController_searchTAJobsByCondition102_invoker.call(TAJobController_12.searchTAJobsByCondition())
+    case controllers_TAJobController_getTAJobById102_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
+        controllers_TAJobController_getTAJobById102_invoker.call(TAJobController_12.getTAJobById(tajobId))
       }
   
     // @LINE:224
-    case controllers_TAJobController_setImage103_route(params@_) =>
+    case controllers_TAJobController_getTAJobPublisher103_route(params@_) =>
       call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_setImage103_invoker.call(TAJobController_12.setImage(tajobId))
+        controllers_TAJobController_getTAJobPublisher103_invoker.call(TAJobController_12.getTAJobPublisher(tajobId))
       }
   
     // @LINE:225
-    case controllers_TAJobController_setPDF104_route(params@_) =>
-      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_setPDF104_invoker.call(TAJobController_12.setPDF(tajobId))
+    case controllers_TAJobController_searchTAJobsByCondition104_route(params@_) =>
+      call { 
+        controllers_TAJobController_searchTAJobsByCondition104_invoker.call(TAJobController_12.searchTAJobsByCondition())
       }
   
     // @LINE:226
-    case controllers_TAJobController_deleteTAJob105_route(params@_) =>
+    case controllers_TAJobController_setImage105_route(params@_) =>
       call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_deleteTAJob105_invoker.call(TAJobController_12.deleteTAJob(tajobId))
+        controllers_TAJobController_setImage105_invoker.call(TAJobController_12.setImage(tajobId))
       }
   
     // @LINE:227
-    case controllers_TAJobController_getTAJobsByPublisher106_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_TAJobController_getTAJobsByPublisher106_invoker.call(TAJobController_12.getTAJobsByPublisher(userId))
+    case controllers_TAJobController_setPDF106_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
+        controllers_TAJobController_setPDF106_invoker.call(TAJobController_12.setPDF(tajobId))
       }
   
     // @LINE:228
-    case controllers_TAJobController_checkTAJobExist107_route(params@_) =>
+    case controllers_TAJobController_deleteTAJob107_route(params@_) =>
       call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
-        controllers_TAJobController_checkTAJobExist107_invoker.call(TAJobController_12.checkTAJobExist(tajobId))
+        controllers_TAJobController_deleteTAJob107_invoker.call(TAJobController_12.deleteTAJob(tajobId))
       }
   
     // @LINE:229
-    case controllers_TAJobController_checkTAJobNameAvailability108_route(params@_) =>
-      call { 
-        controllers_TAJobController_checkTAJobNameAvailability108_invoker.call(TAJobController_12.checkTAJobNameAvailability())
+    case controllers_TAJobController_getTAJobsByPublisher108_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_TAJobController_getTAJobsByPublisher108_invoker.call(TAJobController_12.getTAJobsByPublisher(userId))
       }
   
     // @LINE:230
-    case controllers_TAJobController_getIdByName109_route(params@_) =>
-      call(params.fromPath[String]("name", None)) { (name) =>
-        controllers_TAJobController_getIdByName109_invoker.call(TAJobController_12.getIdByName(name))
+    case controllers_TAJobController_checkTAJobExist109_route(params@_) =>
+      call(params.fromPath[Long]("tajobId", None)) { (tajobId) =>
+        controllers_TAJobController_checkTAJobExist109_invoker.call(TAJobController_12.checkTAJobExist(tajobId))
       }
   
-    // @LINE:237
-    case controllers_TACandidateController_addTACandidate110_route(params@_) =>
+    // @LINE:231
+    case controllers_TAJobController_checkTAJobNameAvailability110_route(params@_) =>
       call { 
-        controllers_TACandidateController_addTACandidate110_invoker.call(TACandidateController_24.addTACandidate())
+        controllers_TAJobController_checkTAJobNameAvailability110_invoker.call(TAJobController_12.checkTAJobNameAvailability())
       }
   
-    // @LINE:238
-    case controllers_TACandidateController_tacandidateList111_route(params@_) =>
-      call(params.fromPath[Long]("userId", None), params.fromQuery[Integer]("pageLimit", None), params.fromQuery[Integer]("pageNum", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (userId, pageLimit, pageNum, sortCriteria) =>
-        controllers_TACandidateController_tacandidateList111_invoker.call(TACandidateController_24.tacandidateList(userId, pageLimit, pageNum, sortCriteria))
+    // @LINE:232
+    case controllers_TAJobController_getIdByName111_route(params@_) =>
+      call(params.fromPath[String]("name", None)) { (name) =>
+        controllers_TAJobController_getIdByName111_invoker.call(TAJobController_12.getIdByName(name))
       }
   
     // @LINE:239
-    case controllers_TACandidateController_getTACandidateById112_route(params@_) =>
-      call(params.fromPath[Long]("Id", None)) { (Id) =>
-        controllers_TACandidateController_getTACandidateById112_invoker.call(TACandidateController_24.getTACandidateById(Id))
+    case controllers_TACandidateController_addTACandidate112_route(params@_) =>
+      call { 
+        controllers_TACandidateController_addTACandidate112_invoker.call(TACandidateController_24.addTACandidate())
       }
   
     // @LINE:240
-    case controllers_TACandidateController_getAssignmentsByUserId113_route(params@_) =>
+    case controllers_TACandidateController_tacandidateList113_route(params@_) =>
+      call(params.fromPath[Long]("userId", None), params.fromQuery[Integer]("pageLimit", None), params.fromQuery[Integer]("pageNum", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (userId, pageLimit, pageNum, sortCriteria) =>
+        controllers_TACandidateController_tacandidateList113_invoker.call(TACandidateController_24.tacandidateList(userId, pageLimit, pageNum, sortCriteria))
+      }
+  
+    // @LINE:241
+    case controllers_TACandidateController_getTACandidateById114_route(params@_) =>
+      call(params.fromPath[Long]("Id", None)) { (Id) =>
+        controllers_TACandidateController_getTACandidateById114_invoker.call(TACandidateController_24.getTACandidateById(Id))
+      }
+  
+    // @LINE:242
+    case controllers_TACandidateController_getAssignmentsByUserId115_route(params@_) =>
       call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_TACandidateController_getAssignmentsByUserId113_invoker.call(TACandidateController_24.getAssignmentsByUserId(userId))
-      }
-  
-    // @LINE:247
-    case controllers_CourseController_listCourses114_route(params@_) =>
-      call { 
-        controllers_CourseController_listCourses114_invoker.call(CourseController_3.listCourses)
-      }
-  
-    // @LINE:248
-    case controllers_CourseController_getCourseDetails115_route(params@_) =>
-      call(params.fromPath[Long]("courseId", None)) { (courseId) =>
-        controllers_CourseController_getCourseDetails115_invoker.call(CourseController_3.getCourseDetails(courseId))
+        controllers_TACandidateController_getAssignmentsByUserId115_invoker.call(TACandidateController_24.getAssignmentsByUserId(userId))
       }
   
     // @LINE:249
-    case controllers_CourseController_approveTA116_route(params@_) =>
-      call(params.fromPath[Long]("courseId", None), params.fromPath[Int]("week", None)) { (courseId, week) =>
-        controllers_CourseController_approveTA116_invoker.call(CourseController_3.approveTA(courseId, week))
-      }
-  
-    // @LINE:257
-    case controllers_CourseTAAssignmentController_addAssignment117_route(params@_) =>
+    case controllers_CourseController_listCourses116_route(params@_) =>
       call { 
-        controllers_CourseTAAssignmentController_addAssignment117_invoker.call(CourseTAAssignmentController_9.addAssignment())
+        controllers_CourseController_listCourses116_invoker.call(CourseController_3.listCourses)
       }
   
-    // @LINE:258
-    case controllers_CourseTAAssignmentController_getCourseTAAssignmentById118_route(params@_) =>
-      call(params.fromPath[Long]("Id", None)) { (Id) =>
-        controllers_CourseTAAssignmentController_getCourseTAAssignmentById118_invoker.call(CourseTAAssignmentController_9.getCourseTAAssignmentById(Id))
+    // @LINE:250
+    case controllers_CourseController_getCourseDetails117_route(params@_) =>
+      call(params.fromPath[Long]("courseId", None)) { (courseId) =>
+        controllers_CourseController_getCourseDetails117_invoker.call(CourseController_3.getCourseDetails(courseId))
+      }
+  
+    // @LINE:251
+    case controllers_CourseController_approveTA118_route(params@_) =>
+      call(params.fromPath[Long]("courseId", None), params.fromPath[Int]("week", None)) { (courseId, week) =>
+        controllers_CourseController_approveTA118_invoker.call(CourseController_3.approveTA(courseId, week))
       }
   
     // @LINE:259
-    case controllers_CourseTAAssignmentController_courseTAAssignmentList119_route(params@_) =>
-      call(params.fromPath[Long]("Id", None), params.fromQuery[Integer]("pageLimit", None), params.fromQuery[Integer]("pageNum", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (Id, pageLimit, pageNum, sortCriteria) =>
-        controllers_CourseTAAssignmentController_courseTAAssignmentList119_invoker.call(CourseTAAssignmentController_9.courseTAAssignmentList(Id, pageLimit, pageNum, sortCriteria))
+    case controllers_CourseTAAssignmentController_addAssignment119_route(params@_) =>
+      call { 
+        controllers_CourseTAAssignmentController_addAssignment119_invoker.call(CourseTAAssignmentController_9.addAssignment())
       }
   
     // @LINE:260
@@ -4962,562 +5000,574 @@ DELETE        /technology/deleteTechnologyPDF/:projectId                        
         controllers_CourseTAAssignmentController_getCourseTAAssignmentById120_invoker.call(CourseTAAssignmentController_9.getCourseTAAssignmentById(Id))
       }
   
-    // @LINE:266
-    case controllers_UserController_addUser121_route(params@_) =>
-      call { 
-        controllers_UserController_addUser121_invoker.call(UserController_14.addUser)
+    // @LINE:261
+    case controllers_CourseTAAssignmentController_courseTAAssignmentList121_route(params@_) =>
+      call(params.fromPath[Long]("Id", None), params.fromQuery[Integer]("pageLimit", None), params.fromQuery[Integer]("pageNum", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (Id, pageLimit, pageNum, sortCriteria) =>
+        controllers_CourseTAAssignmentController_courseTAAssignmentList121_invoker.call(CourseTAAssignmentController_9.courseTAAssignmentList(Id, pageLimit, pageNum, sortCriteria))
       }
   
-    // @LINE:267
-    case controllers_UserController_userDetail122_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_UserController_userDetail122_invoker.call(UserController_14.userDetail(userId))
+    // @LINE:262
+    case controllers_CourseTAAssignmentController_getCourseTAAssignmentById122_route(params@_) =>
+      call(params.fromPath[Long]("Id", None)) { (Id) =>
+        controllers_CourseTAAssignmentController_getCourseTAAssignmentById122_invoker.call(CourseTAAssignmentController_9.getCourseTAAssignmentById(Id))
       }
   
     // @LINE:268
-    case controllers_UserController_getResearcherInfo123_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_UserController_getResearcherInfo123_invoker.call(UserController_14.getResearcherInfo(userId))
+    case controllers_UserController_addUser123_route(params@_) =>
+      call { 
+        controllers_UserController_addUser123_invoker.call(UserController_14.addUser)
       }
   
     // @LINE:269
-    case controllers_UserController_getStudentInfo124_route(params@_) =>
+    case controllers_UserController_userDetail124_route(params@_) =>
       call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_UserController_getStudentInfo124_invoker.call(UserController_14.getStudentInfo(userId))
+        controllers_UserController_userDetail124_invoker.call(UserController_14.userDetail(userId))
       }
   
     // @LINE:270
-    case controllers_UserController_updateUser125_route(params@_) =>
-      call { 
-        controllers_UserController_updateUser125_invoker.call(UserController_14.updateUser)
+    case controllers_UserController_getResearcherInfo125_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_UserController_getResearcherInfo125_invoker.call(UserController_14.getResearcherInfo(userId))
       }
   
     // @LINE:271
-    case controllers_UserController_userLogin126_route(params@_) =>
-      call { 
-        controllers_UserController_userLogin126_invoker.call(UserController_14.userLogin)
+    case controllers_UserController_getStudentInfo126_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_UserController_getStudentInfo126_invoker.call(UserController_14.getStudentInfo(userId))
       }
   
     // @LINE:272
-    case controllers_UserController_checkNewUserEmailAvailability127_route(params@_) =>
+    case controllers_UserController_updateUser127_route(params@_) =>
       call { 
-        controllers_UserController_checkNewUserEmailAvailability127_invoker.call(UserController_14.checkNewUserEmailAvailability)
+        controllers_UserController_updateUser127_invoker.call(UserController_14.updateUser)
       }
   
     // @LINE:273
-    case controllers_UserController_userList128_route(params@_) =>
-      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_UserController_userList128_invoker.call(UserController_14.userList(pageLimit, offset, sortCriteria))
+    case controllers_UserController_userLogin128_route(params@_) =>
+      call { 
+        controllers_UserController_userLogin128_invoker.call(UserController_14.userLogin)
       }
   
     // @LINE:274
-    case controllers_UserController_validateEmail129_route(params@_) =>
+    case controllers_UserController_checkNewUserEmailAvailability129_route(params@_) =>
       call { 
-        controllers_UserController_validateEmail129_invoker.call(UserController_14.validateEmail)
+        controllers_UserController_checkNewUserEmailAvailability129_invoker.call(UserController_14.checkNewUserEmailAvailability)
+      }
+  
+    // @LINE:275
+    case controllers_UserController_userList130_route(params@_) =>
+      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
+        controllers_UserController_userList130_invoker.call(UserController_14.userList(pageLimit, offset, sortCriteria))
       }
   
     // @LINE:276
-    case controllers_UserController_searchUserByCondition130_route(params@_) =>
+    case controllers_UserController_validateEmail131_route(params@_) =>
+      call { 
+        controllers_UserController_validateEmail131_invoker.call(UserController_14.validateEmail)
+      }
+  
+    // @LINE:278
+    case controllers_UserController_searchUserByCondition132_route(params@_) =>
       call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_UserController_searchUserByCondition130_invoker.call(UserController_14.searchUserByCondition(pageLimit, offset, sortCriteria))
+        controllers_UserController_searchUserByCondition132_invoker.call(UserController_14.searchUserByCondition(pageLimit, offset, sortCriteria))
       }
   
-    // @LINE:277
-    case controllers_UserController_inactivateUserPOST131_route(params@_) =>
+    // @LINE:279
+    case controllers_UserController_inactivateUserPOST133_route(params@_) =>
       call { 
-        controllers_UserController_inactivateUserPOST131_invoker.call(UserController_14.inactivateUserPOST)
+        controllers_UserController_inactivateUserPOST133_invoker.call(UserController_14.inactivateUserPOST)
       }
   
-    // @LINE:281
-    case controllers_UserController_autoRegisterUser132_route(params@_) =>
+    // @LINE:283
+    case controllers_UserController_autoRegisterUser134_route(params@_) =>
       call { 
-        controllers_UserController_autoRegisterUser132_invoker.call(UserController_14.autoRegisterUser)
-      }
-  
-    // @LINE:284
-    case controllers_UserController_getAllUsersInAllRoles133_route(params@_) =>
-      call { 
-        controllers_UserController_getAllUsersInAllRoles133_invoker.call(UserController_14.getAllUsersInAllRoles)
-      }
-  
-    // @LINE:285
-    case controllers_UserController_getAllNormalUsers134_route(params@_) =>
-      call { 
-        controllers_UserController_getAllNormalUsers134_invoker.call(UserController_14.getAllNormalUsers)
+        controllers_UserController_autoRegisterUser134_invoker.call(UserController_14.autoRegisterUser)
       }
   
     // @LINE:286
-    case controllers_UserController_updateImageByUserId135_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_UserController_updateImageByUserId135_invoker.call(UserController_14.updateImageByUserId(userId))
+    case controllers_UserController_getAllUsersInAllRoles135_route(params@_) =>
+      call { 
+        controllers_UserController_getAllUsersInAllRoles135_invoker.call(UserController_14.getAllUsersInAllRoles)
       }
   
     // @LINE:287
-    case controllers_UserController_deleteImageByUserId136_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_UserController_deleteImageByUserId136_invoker.call(UserController_14.deleteImageByUserId(userId))
+    case controllers_UserController_getAllNormalUsers136_route(params@_) =>
+      call { 
+        controllers_UserController_getAllNormalUsers136_invoker.call(UserController_14.getAllNormalUsers)
       }
   
-    // @LINE:293
-    case controllers_UserController_userSearch137_route(params@_) =>
-      call(params.fromPath[String]("display_name", None)) { (display_name) =>
-        controllers_UserController_userSearch137_invoker.call(UserController_14.userSearch(display_name))
+    // @LINE:288
+    case controllers_UserController_updateImageByUserId137_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_UserController_updateImageByUserId137_invoker.call(UserController_14.updateImageByUserId(userId))
+      }
+  
+    // @LINE:289
+    case controllers_UserController_deleteImageByUserId138_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_UserController_deleteImageByUserId138_invoker.call(UserController_14.deleteImageByUserId(userId))
       }
   
     // @LINE:295
-    case controllers_UserController_getActiveUsers138_route(params@_) =>
-      call(Param[String]("format", Right("json"))) { (format) =>
-        controllers_UserController_getActiveUsers138_invoker.call(UserController_1.get.getActiveUsers(format))
-      }
-  
-    // @LINE:296
-    case controllers_UserController_sendPasswordEmail139_route(params@_) =>
-      call { 
-        controllers_UserController_sendPasswordEmail139_invoker.call(UserController_1.get.sendPasswordEmail)
+    case controllers_UserController_userSearch139_route(params@_) =>
+      call(params.fromPath[String]("display_name", None)) { (display_name) =>
+        controllers_UserController_userSearch139_invoker.call(UserController_14.userSearch(display_name))
       }
   
     // @LINE:297
-    case controllers_UserController_updatePassword140_route(params@_) =>
-      call { 
-        controllers_UserController_updatePassword140_invoker.call(UserController_1.get.updatePassword)
+    case controllers_UserController_getActiveUsers140_route(params@_) =>
+      call(Param[String]("format", Right("json"))) { (format) =>
+        controllers_UserController_getActiveUsers140_invoker.call(UserController_1.get.getActiveUsers(format))
       }
   
     // @LINE:298
-    case controllers_UserController_userActivation141_route(params@_) =>
-      call(params.fromPath[String]("hashcode", None)) { (hashcode) =>
-        controllers_UserController_userActivation141_invoker.call(UserController_1.get.userActivation(hashcode))
+    case controllers_UserController_sendPasswordEmail141_route(params@_) =>
+      call { 
+        controllers_UserController_sendPasswordEmail141_invoker.call(UserController_1.get.sendPasswordEmail)
       }
   
     // @LINE:299
-    case controllers_UserController_sendRegisterEmail142_route(params@_) =>
+    case controllers_UserController_updatePassword142_route(params@_) =>
       call { 
-        controllers_UserController_sendRegisterEmail142_invoker.call(UserController_14.sendRegisterEmail())
+        controllers_UserController_updatePassword142_invoker.call(UserController_1.get.updatePassword)
       }
   
     // @LINE:300
-    case controllers_UserController_resendRegisterEmail143_route(params@_) =>
+    case controllers_UserController_userActivation143_route(params@_) =>
+      call(params.fromPath[String]("hashcode", None)) { (hashcode) =>
+        controllers_UserController_userActivation143_invoker.call(UserController_1.get.userActivation(hashcode))
+      }
+  
+    // @LINE:301
+    case controllers_UserController_sendRegisterEmail144_route(params@_) =>
       call { 
-        controllers_UserController_resendRegisterEmail143_invoker.call(UserController_14.resendRegisterEmail())
+        controllers_UserController_sendRegisterEmail144_invoker.call(UserController_14.sendRegisterEmail())
       }
   
     // @LINE:302
-    case controllers_UserController_updateLevel144_route(params@_) =>
+    case controllers_UserController_resendRegisterEmail145_route(params@_) =>
+      call { 
+        controllers_UserController_resendRegisterEmail145_invoker.call(UserController_14.resendRegisterEmail())
+      }
+  
+    // @LINE:304
+    case controllers_UserController_updateLevel146_route(params@_) =>
       call(params.fromPath[Long]("uid", None)) { (uid) =>
-        controllers_UserController_updateLevel144_invoker.call(UserController_1.get.updateLevel(uid))
+        controllers_UserController_updateLevel146_invoker.call(UserController_1.get.updateLevel(uid))
       }
   
-    // @LINE:303
-    case controllers_UserController_getUserByEmail145_route(params@_) =>
+    // @LINE:305
+    case controllers_UserController_getUserByEmail147_route(params@_) =>
       call { 
-        controllers_UserController_getUserByEmail145_invoker.call(UserController_1.get.getUserByEmail)
-      }
-  
-    // @LINE:307
-    case controllers_OrganizationController_organizationList146_route(params@_) =>
-      call { 
-        controllers_OrganizationController_organizationList146_invoker.call(OrganizationController_20.organizationList())
-      }
-  
-    // @LINE:308
-    case controllers_OrganizationController_organizationListPage147_route(params@_) =>
-      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_OrganizationController_organizationListPage147_invoker.call(OrganizationController_20.organizationListPage(pageLimit, offset, sortCriteria))
+        controllers_UserController_getUserByEmail147_invoker.call(UserController_1.get.getUserByEmail)
       }
   
     // @LINE:309
-    case controllers_OrganizationController_addUsers148_route(params@_) =>
+    case controllers_OrganizationController_organizationList148_route(params@_) =>
       call { 
-        controllers_OrganizationController_addUsers148_invoker.call(OrganizationController_20.addUsers())
+        controllers_OrganizationController_organizationList148_invoker.call(OrganizationController_20.organizationList())
       }
   
     // @LINE:310
-    case controllers_OrganizationController_registerOrganization149_route(params@_) =>
-      call { 
-        controllers_OrganizationController_registerOrganization149_invoker.call(OrganizationController_20.registerOrganization())
+    case controllers_OrganizationController_organizationListPage149_route(params@_) =>
+      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
+        controllers_OrganizationController_organizationListPage149_invoker.call(OrganizationController_20.organizationListPage(pageLimit, offset, sortCriteria))
       }
   
     // @LINE:311
-    case controllers_OrganizationController_organizationDetail150_route(params@_) =>
-      call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_OrganizationController_organizationDetail150_invoker.call(OrganizationController_20.organizationDetail(id))
+    case controllers_OrganizationController_addUsers150_route(params@_) =>
+      call { 
+        controllers_OrganizationController_addUsers150_invoker.call(OrganizationController_20.addUsers())
       }
   
     // @LINE:312
-    case controllers_OrganizationController_organizationUpdate151_route(params@_) =>
+    case controllers_OrganizationController_registerOrganization151_route(params@_) =>
       call { 
-        controllers_OrganizationController_organizationUpdate151_invoker.call(OrganizationController_20.organizationUpdate())
+        controllers_OrganizationController_registerOrganization151_invoker.call(OrganizationController_20.registerOrganization())
       }
   
     // @LINE:313
-    case controllers_OrganizationController_organizationListbyName152_route(params@_) =>
-      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_OrganizationController_organizationListbyName152_invoker.call(OrganizationController_20.organizationListbyName(pageLimit, offset, sortCriteria))
+    case controllers_OrganizationController_organizationDetail152_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_OrganizationController_organizationDetail152_invoker.call(OrganizationController_20.organizationDetail(id))
       }
   
-    // @LINE:320
-    case controllers_BugReportController_addBugReport153_route(params@_) =>
+    // @LINE:314
+    case controllers_OrganizationController_organizationUpdate153_route(params@_) =>
       call { 
-        controllers_BugReportController_addBugReport153_invoker.call(BugReportController_2.get.addBugReport)
+        controllers_OrganizationController_organizationUpdate153_invoker.call(OrganizationController_20.organizationUpdate())
       }
   
-    // @LINE:321
-    case controllers_BugReportController_getBugReport154_route(params@_) =>
-      call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
-        controllers_BugReportController_getBugReport154_invoker.call(BugReportController_2.get.getBugReport(id, format))
+    // @LINE:315
+    case controllers_OrganizationController_organizationListbyName154_route(params@_) =>
+      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
+        controllers_OrganizationController_organizationListbyName154_invoker.call(OrganizationController_20.organizationListbyName(pageLimit, offset, sortCriteria))
       }
   
     // @LINE:322
-    case controllers_BugReportController_updateBugReport155_route(params@_) =>
-      call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_BugReportController_updateBugReport155_invoker.call(BugReportController_2.get.updateBugReport(id))
+    case controllers_BugReportController_addBugReport155_route(params@_) =>
+      call { 
+        controllers_BugReportController_addBugReport155_invoker.call(BugReportController_2.get.addBugReport)
       }
   
     // @LINE:323
-    case controllers_BugReportController_deleteBugReport156_route(params@_) =>
-      call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_BugReportController_deleteBugReport156_invoker.call(BugReportController_2.get.deleteBugReport(id))
+    case controllers_BugReportController_getBugReport156_route(params@_) =>
+      call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
+        controllers_BugReportController_getBugReport156_invoker.call(BugReportController_2.get.getBugReport(id, format))
       }
   
     // @LINE:324
-    case controllers_BugReportController_updateBugReportSolved157_route(params@_) =>
-      call(params.fromPath[Long]("bugId", None), params.fromPath[Long]("fixerId", None)) { (bugId, fixerId) =>
-        controllers_BugReportController_updateBugReportSolved157_invoker.call(BugReportController_2.get.updateBugReportSolved(bugId, fixerId))
+    case controllers_BugReportController_updateBugReport157_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_BugReportController_updateBugReport157_invoker.call(BugReportController_2.get.updateBugReport(id))
       }
   
     // @LINE:325
-    case controllers_BugReportController_getAllBugReports158_route(params@_) =>
-      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_BugReportController_getAllBugReports158_invoker.call(BugReportController_2.get.getAllBugReports(pageLimit, offset, sortCriteria))
+    case controllers_BugReportController_deleteBugReport158_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_BugReportController_deleteBugReport158_invoker.call(BugReportController_2.get.deleteBugReport(id))
+      }
+  
+    // @LINE:326
+    case controllers_BugReportController_updateBugReportSolved159_route(params@_) =>
+      call(params.fromPath[Long]("bugId", None), params.fromPath[Long]("fixerId", None)) { (bugId, fixerId) =>
+        controllers_BugReportController_updateBugReportSolved159_invoker.call(BugReportController_2.get.updateBugReportSolved(bugId, fixerId))
       }
   
     // @LINE:327
-    case controllers_BugReportController_getAllUnsolvedBugReports159_route(params@_) =>
-      call { 
-        controllers_BugReportController_getAllUnsolvedBugReports159_invoker.call(BugReportController_2.get.getAllUnsolvedBugReports)
+    case controllers_BugReportController_getAllBugReports160_route(params@_) =>
+      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
+        controllers_BugReportController_getAllBugReports160_invoker.call(BugReportController_2.get.getAllBugReports(pageLimit, offset, sortCriteria))
       }
   
-    // @LINE:328
-    case controllers_BugReportController_getAllSolvedBugReports160_route(params@_) =>
+    // @LINE:329
+    case controllers_BugReportController_getAllUnsolvedBugReports161_route(params@_) =>
       call { 
-        controllers_BugReportController_getAllSolvedBugReports160_invoker.call(BugReportController_2.get.getAllSolvedBugReports)
+        controllers_BugReportController_getAllUnsolvedBugReports161_invoker.call(BugReportController_2.get.getAllUnsolvedBugReports)
       }
   
-    // @LINE:334
-    case controllers_SuggestionController_addSuggestion161_route(params@_) =>
+    // @LINE:330
+    case controllers_BugReportController_getAllSolvedBugReports162_route(params@_) =>
       call { 
-        controllers_SuggestionController_addSuggestion161_invoker.call(SuggestionController_11.get.addSuggestion)
-      }
-  
-    // @LINE:335
-    case controllers_SuggestionController_getSuggestion162_route(params@_) =>
-      call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
-        controllers_SuggestionController_getSuggestion162_invoker.call(SuggestionController_11.get.getSuggestion(id, format))
+        controllers_BugReportController_getAllSolvedBugReports162_invoker.call(BugReportController_2.get.getAllSolvedBugReports)
       }
   
     // @LINE:336
-    case controllers_SuggestionController_suggestionList163_route(params@_) =>
-      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_SuggestionController_suggestionList163_invoker.call(SuggestionController_11.get.suggestionList(pageLimit, offset, sortCriteria))
+    case controllers_SuggestionController_addSuggestion163_route(params@_) =>
+      call { 
+        controllers_SuggestionController_addSuggestion163_invoker.call(SuggestionController_11.get.addSuggestion)
       }
   
     // @LINE:337
-    case controllers_SuggestionController_updateSuggestion164_route(params@_) =>
-      call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_SuggestionController_updateSuggestion164_invoker.call(SuggestionController_11.get.updateSuggestion(id))
+    case controllers_SuggestionController_getSuggestion164_route(params@_) =>
+      call(params.fromPath[Long]("id", None), Param[String]("format", Right("json"))) { (id, format) =>
+        controllers_SuggestionController_getSuggestion164_invoker.call(SuggestionController_11.get.getSuggestion(id, format))
       }
   
     // @LINE:338
-    case controllers_SuggestionController_deleteSuggestion165_route(params@_) =>
-      call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_SuggestionController_deleteSuggestion165_invoker.call(SuggestionController_11.get.deleteSuggestion(id))
+    case controllers_SuggestionController_suggestionList165_route(params@_) =>
+      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
+        controllers_SuggestionController_suggestionList165_invoker.call(SuggestionController_11.get.suggestionList(pageLimit, offset, sortCriteria))
       }
   
     // @LINE:339
-    case controllers_SuggestionController_updateSuggestionSolved166_route(params@_) =>
+    case controllers_SuggestionController_updateSuggestion166_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_SuggestionController_updateSuggestion166_invoker.call(SuggestionController_11.get.updateSuggestion(id))
+      }
+  
+    // @LINE:340
+    case controllers_SuggestionController_deleteSuggestion167_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_SuggestionController_deleteSuggestion167_invoker.call(SuggestionController_11.get.deleteSuggestion(id))
+      }
+  
+    // @LINE:341
+    case controllers_SuggestionController_updateSuggestionSolved168_route(params@_) =>
       call(params.fromPath[Long]("suggestionId", None), params.fromPath[Long]("implementorId", None)) { (suggestionId, implementorId) =>
-        controllers_SuggestionController_updateSuggestionSolved166_invoker.call(SuggestionController_11.get.updateSuggestionSolved(suggestionId, implementorId))
+        controllers_SuggestionController_updateSuggestionSolved168_invoker.call(SuggestionController_11.get.updateSuggestionSolved(suggestionId, implementorId))
       }
   
-    // @LINE:343
-    case controllers_TechnologyController_addTechnology167_route(params@_) =>
+    // @LINE:345
+    case controllers_TechnologyController_addTechnology169_route(params@_) =>
       call { 
-        controllers_TechnologyController_addTechnology167_invoker.call(TechnologyController_10.addTechnology())
+        controllers_TechnologyController_addTechnology169_invoker.call(TechnologyController_10.addTechnology())
       }
   
-    // @LINE:344
-    case controllers_TechnologyController_updateTechnology168_route(params@_) =>
+    // @LINE:346
+    case controllers_TechnologyController_updateTechnology170_route(params@_) =>
       call(params.fromPath[Long]("technologyId", None)) { (technologyId) =>
-        controllers_TechnologyController_updateTechnology168_invoker.call(TechnologyController_10.updateTechnology(technologyId))
+        controllers_TechnologyController_updateTechnology170_invoker.call(TechnologyController_10.updateTechnology(technologyId))
       }
   
-    // @LINE:347
-    case controllers_TechnologyController_technologyList169_route(params@_) =>
+    // @LINE:349
+    case controllers_TechnologyController_technologyList171_route(params@_) =>
       call(params.fromPath[Long]("userId", None), params.fromQuery[Integer]("pageLimit", None), params.fromQuery[Integer]("pageNum", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (userId, pageLimit, pageNum, sortCriteria) =>
-        controllers_TechnologyController_technologyList169_invoker.call(TechnologyController_10.technologyList(userId, pageLimit, pageNum, sortCriteria))
-      }
-  
-    // @LINE:350
-    case controllers_TechnologyController_getTechnologyById170_route(params@_) =>
-      call(params.fromPath[Long]("technologyId", None)) { (technologyId) =>
-        controllers_TechnologyController_getTechnologyById170_invoker.call(TechnologyController_10.getTechnologyById(technologyId))
+        controllers_TechnologyController_technologyList171_invoker.call(TechnologyController_10.technologyList(userId, pageLimit, pageNum, sortCriteria))
       }
   
     // @LINE:352
-    case controllers_TechnologyController_searchTechnologiesByCondition171_route(params@_) =>
+    case controllers_TechnologyController_getTechnologyById172_route(params@_) =>
+      call(params.fromPath[Long]("technologyId", None)) { (technologyId) =>
+        controllers_TechnologyController_getTechnologyById172_invoker.call(TechnologyController_10.getTechnologyById(technologyId))
+      }
+  
+    // @LINE:354
+    case controllers_TechnologyController_searchTechnologiesByCondition173_route(params@_) =>
       call { 
-        controllers_TechnologyController_searchTechnologiesByCondition171_invoker.call(TechnologyController_10.searchTechnologiesByCondition())
-      }
-  
-    // @LINE:378
-    case controllers_AdminController_getUserList172_route(params@_) =>
-      call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[Integer]("pageLimit", Some(20)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, pageLimit, sortCriteria) =>
-        controllers_AdminController_getUserList172_invoker.call(AdminController_0.getUserList(pageNum, pageLimit, sortCriteria))
-      }
-  
-    // @LINE:379
-    case controllers_AdminController_getUserDetail173_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_AdminController_getUserDetail173_invoker.call(AdminController_0.getUserDetail(userId))
+        controllers_TechnologyController_searchTechnologiesByCondition173_invoker.call(TechnologyController_10.searchTechnologiesByCondition())
       }
   
     // @LINE:380
-    case controllers_AdminController_updateUserStatus174_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_AdminController_updateUserStatus174_invoker.call(AdminController_0.updateUserStatus(userId))
+    case controllers_AdminController_getUserList174_route(params@_) =>
+      call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[Integer]("pageLimit", Some(20)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, pageLimit, sortCriteria) =>
+        controllers_AdminController_getUserList174_invoker.call(AdminController_0.getUserList(pageNum, pageLimit, sortCriteria))
       }
   
     // @LINE:381
-    case controllers_AdminController_getJobList175_route(params@_) =>
-      call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[Integer]("pageLimit", Some(20)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, pageLimit, sortCriteria) =>
-        controllers_AdminController_getJobList175_invoker.call(AdminController_0.getJobList(pageNum, pageLimit, sortCriteria))
+    case controllers_AdminController_getUserDetail175_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_AdminController_getUserDetail175_invoker.call(AdminController_0.getUserDetail(userId))
       }
   
     // @LINE:382
-    case controllers_AdminController_getJobDetail176_route(params@_) =>
-      call(params.fromPath[String]("jobType", None), params.fromPath[Long]("jobId", None)) { (jobType, jobId) =>
-        controllers_AdminController_getJobDetail176_invoker.call(AdminController_0.getJobDetail(jobType, jobId))
+    case controllers_AdminController_updateUserStatus176_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_AdminController_updateUserStatus176_invoker.call(AdminController_0.updateUserStatus(userId))
       }
   
     // @LINE:383
-    case controllers_AdminController_getOrganizationList177_route(params@_) =>
+    case controllers_AdminController_getJobList177_route(params@_) =>
       call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[Integer]("pageLimit", Some(20)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, pageLimit, sortCriteria) =>
-        controllers_AdminController_getOrganizationList177_invoker.call(AdminController_0.getOrganizationList(pageNum, pageLimit, sortCriteria))
+        controllers_AdminController_getJobList177_invoker.call(AdminController_0.getJobList(pageNum, pageLimit, sortCriteria))
       }
   
     // @LINE:384
-    case controllers_AdminController_getTechnologyList178_route(params@_) =>
+    case controllers_AdminController_getJobDetail178_route(params@_) =>
+      call(params.fromPath[String]("jobType", None), params.fromPath[Long]("jobId", None)) { (jobType, jobId) =>
+        controllers_AdminController_getJobDetail178_invoker.call(AdminController_0.getJobDetail(jobType, jobId))
+      }
+  
+    // @LINE:385
+    case controllers_AdminController_getOrganizationList179_route(params@_) =>
       call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[Integer]("pageLimit", Some(20)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, pageLimit, sortCriteria) =>
-        controllers_AdminController_getTechnologyList178_invoker.call(AdminController_0.getTechnologyList(pageNum, pageLimit, sortCriteria))
+        controllers_AdminController_getOrganizationList179_invoker.call(AdminController_0.getOrganizationList(pageNum, pageLimit, sortCriteria))
       }
   
-    // @LINE:393
-    case controllers_AuthorController_addAuthor179_route(params@_) =>
-      call { 
-        controllers_AuthorController_addAuthor179_invoker.call(AuthorController_6.addAuthor)
-      }
-  
-    // @LINE:394
-    case controllers_AuthorController_authorDetail180_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_AuthorController_authorDetail180_invoker.call(AuthorController_6.authorDetail(userId))
+    // @LINE:386
+    case controllers_AdminController_getTechnologyList180_route(params@_) =>
+      call(params.fromQuery[Integer]("pageNum", Some(1)), params.fromQuery[Integer]("pageLimit", Some(20)), params.fromQuery[String]("sortCriteria", Some("id"))) { (pageNum, pageLimit, sortCriteria) =>
+        controllers_AdminController_getTechnologyList180_invoker.call(AdminController_0.getTechnologyList(pageNum, pageLimit, sortCriteria))
       }
   
     // @LINE:395
-    case controllers_AuthorController_updateAuthor181_route(params@_) =>
+    case controllers_AuthorController_addAuthor181_route(params@_) =>
       call { 
-        controllers_AuthorController_updateAuthor181_invoker.call(AuthorController_6.updateAuthor)
+        controllers_AuthorController_addAuthor181_invoker.call(AuthorController_6.addAuthor)
       }
   
     // @LINE:396
-    case controllers_AuthorController_authorList182_route(params@_) =>
-      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_AuthorController_authorList182_invoker.call(AuthorController_6.authorList(pageLimit, offset, sortCriteria))
+    case controllers_AuthorController_authorDetail182_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_AuthorController_authorDetail182_invoker.call(AuthorController_6.authorDetail(userId))
+      }
+  
+    // @LINE:397
+    case controllers_AuthorController_updateAuthor183_route(params@_) =>
+      call { 
+        controllers_AuthorController_updateAuthor183_invoker.call(AuthorController_6.updateAuthor)
       }
   
     // @LINE:398
-    case controllers_AuthorController_userDetailAdmin183_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_AuthorController_userDetailAdmin183_invoker.call(AuthorController_6.userDetailAdmin(userId))
-      }
-  
-    // @LINE:399
-    case controllers_AuthorController_updateUserAdmin184_route(params@_) =>
-      call { 
-        controllers_AuthorController_updateUserAdmin184_invoker.call(AuthorController_6.updateUserAdmin)
+    case controllers_AuthorController_authorList184_route(params@_) =>
+      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
+        controllers_AuthorController_authorList184_invoker.call(AuthorController_6.authorList(pageLimit, offset, sortCriteria))
       }
   
     // @LINE:400
-    case controllers_AuthorController_userListAdmin185_route(params@_) =>
-      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_AuthorController_userListAdmin185_invoker.call(AuthorController_6.userListAdmin(pageLimit, offset, sortCriteria))
+    case controllers_AuthorController_userDetailAdmin185_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_AuthorController_userDetailAdmin185_invoker.call(AuthorController_6.userDetailAdmin(userId))
+      }
+  
+    // @LINE:401
+    case controllers_AuthorController_updateUserAdmin186_route(params@_) =>
+      call { 
+        controllers_AuthorController_updateUserAdmin186_invoker.call(AuthorController_6.updateUserAdmin)
       }
   
     // @LINE:402
-    case controllers_AuthorController_searchAuthorByCondition186_route(params@_) =>
+    case controllers_AuthorController_userListAdmin187_route(params@_) =>
       call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_AuthorController_searchAuthorByCondition186_invoker.call(AuthorController_6.searchAuthorByCondition(pageLimit, offset, sortCriteria))
+        controllers_AuthorController_userListAdmin187_invoker.call(AuthorController_6.userListAdmin(pageLimit, offset, sortCriteria))
       }
   
-    // @LINE:403
-    case controllers_AuthorController_topAuthors187_route(params@_) =>
+    // @LINE:404
+    case controllers_AuthorController_searchAuthorByCondition188_route(params@_) =>
+      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
+        controllers_AuthorController_searchAuthorByCondition188_invoker.call(AuthorController_6.searchAuthorByCondition(pageLimit, offset, sortCriteria))
+      }
+  
+    // @LINE:405
+    case controllers_AuthorController_topAuthors189_route(params@_) =>
       call { 
-        controllers_AuthorController_topAuthors187_invoker.call(AuthorController_6.topAuthors())
-      }
-  
-    // @LINE:407
-    case controllers_ReviewerController_addReviewer188_route(params@_) =>
-      call { 
-        controllers_ReviewerController_addReviewer188_invoker.call(ReviewerController_22.addReviewer)
-      }
-  
-    // @LINE:408
-    case controllers_ReviewerController_reviewerDetail189_route(params@_) =>
-      call(params.fromPath[Long]("userId", None)) { (userId) =>
-        controllers_ReviewerController_reviewerDetail189_invoker.call(ReviewerController_22.reviewerDetail(userId))
+        controllers_AuthorController_topAuthors189_invoker.call(AuthorController_6.topAuthors())
       }
   
     // @LINE:409
-    case controllers_ReviewerController_updateReviewer190_route(params@_) =>
+    case controllers_ReviewerController_addReviewer190_route(params@_) =>
       call { 
-        controllers_ReviewerController_updateReviewer190_invoker.call(ReviewerController_22.updateReviewer)
+        controllers_ReviewerController_addReviewer190_invoker.call(ReviewerController_22.addReviewer)
       }
   
     // @LINE:410
-    case controllers_ReviewerController_reviewerList191_route(params@_) =>
-      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_ReviewerController_reviewerList191_invoker.call(ReviewerController_22.reviewerList(pageLimit, offset, sortCriteria))
+    case controllers_ReviewerController_reviewerDetail191_route(params@_) =>
+      call(params.fromPath[Long]("userId", None)) { (userId) =>
+        controllers_ReviewerController_reviewerDetail191_invoker.call(ReviewerController_22.reviewerDetail(userId))
+      }
+  
+    // @LINE:411
+    case controllers_ReviewerController_updateReviewer192_route(params@_) =>
+      call { 
+        controllers_ReviewerController_updateReviewer192_invoker.call(ReviewerController_22.updateReviewer)
       }
   
     // @LINE:412
-    case controllers_ReviewerController_searchReviewerByCondition192_route(params@_) =>
+    case controllers_ReviewerController_reviewerList193_route(params@_) =>
       call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_ReviewerController_searchReviewerByCondition192_invoker.call(ReviewerController_22.searchReviewerByCondition(pageLimit, offset, sortCriteria))
+        controllers_ReviewerController_reviewerList193_invoker.call(ReviewerController_22.reviewerList(pageLimit, offset, sortCriteria))
       }
   
-    // @LINE:419
-    case controllers_PaperController_addPaper193_route(params@_) =>
-      call { 
-        controllers_PaperController_addPaper193_invoker.call(PaperController_17.addPaper())
-      }
-  
-    // @LINE:420
-    case controllers_PaperController_paperList194_route(params@_) =>
+    // @LINE:414
+    case controllers_ReviewerController_searchReviewerByCondition194_route(params@_) =>
       call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
-        controllers_PaperController_paperList194_invoker.call(PaperController_17.paperList(pageLimit, offset, sortCriteria))
+        controllers_ReviewerController_searchReviewerByCondition194_invoker.call(ReviewerController_22.searchReviewerByCondition(pageLimit, offset, sortCriteria))
       }
   
     // @LINE:421
-    case controllers_PaperController_getAuthorByPaperId195_route(params@_) =>
-      call(params.fromQuery[Long]("paperId", None)) { (paperId) =>
-        controllers_PaperController_getAuthorByPaperId195_invoker.call(PaperController_17.getAuthorByPaperId(paperId))
+    case controllers_PaperController_addPaper195_route(params@_) =>
+      call { 
+        controllers_PaperController_addPaper195_invoker.call(PaperController_17.addPaper())
       }
   
     // @LINE:422
-    case controllers_PaperController_deletePaper196_route(params@_) =>
+    case controllers_PaperController_paperList196_route(params@_) =>
+      call(params.fromQuery[java.util.Optional[Integer]]("pageLimit", None), params.fromQuery[java.util.Optional[Integer]]("offset", None), params.fromQuery[java.util.Optional[String]]("sortCriteria", None)) { (pageLimit, offset, sortCriteria) =>
+        controllers_PaperController_paperList196_invoker.call(PaperController_17.paperList(pageLimit, offset, sortCriteria))
+      }
+  
+    // @LINE:423
+    case controllers_PaperController_getAuthorByPaperId197_route(params@_) =>
       call(params.fromQuery[Long]("paperId", None)) { (paperId) =>
-        controllers_PaperController_deletePaper196_invoker.call(PaperController_17.deletePaper(paperId))
+        controllers_PaperController_getAuthorByPaperId197_invoker.call(PaperController_17.getAuthorByPaperId(paperId))
       }
   
     // @LINE:424
-    case controllers_PaperController_getPaperById197_route(params@_) =>
-      call(params.fromPath[Long]("paperId", None)) { (paperId) =>
-        controllers_PaperController_getPaperById197_invoker.call(PaperController_17.getPaperById(paperId))
-      }
-  
-    // @LINE:425
-    case controllers_PaperController_addAuthor198_route(params@_) =>
-      call(params.fromPath[Long]("paperId", None)) { (paperId) =>
-        controllers_PaperController_addAuthor198_invoker.call(PaperController_17.addAuthor(paperId))
+    case controllers_PaperController_deletePaper198_route(params@_) =>
+      call(params.fromQuery[Long]("paperId", None)) { (paperId) =>
+        controllers_PaperController_deletePaper198_invoker.call(PaperController_17.deletePaper(paperId))
       }
   
     // @LINE:426
-    case controllers_PaperController_deleteAuthor199_route(params@_) =>
+    case controllers_PaperController_getPaperById199_route(params@_) =>
+      call(params.fromPath[Long]("paperId", None)) { (paperId) =>
+        controllers_PaperController_getPaperById199_invoker.call(PaperController_17.getPaperById(paperId))
+      }
+  
+    // @LINE:427
+    case controllers_PaperController_addAuthor200_route(params@_) =>
+      call(params.fromPath[Long]("paperId", None)) { (paperId) =>
+        controllers_PaperController_addAuthor200_invoker.call(PaperController_17.addAuthor(paperId))
+      }
+  
+    // @LINE:428
+    case controllers_PaperController_deleteAuthor201_route(params@_) =>
       call(params.fromQuery[Long]("memberId", None)) { (memberId) =>
-        controllers_PaperController_deleteAuthor199_invoker.call(PaperController_17.deleteAuthor(memberId))
-      }
-  
-    // @LINE:429
-    case controllers_GraphController_printPrimeConnections200_route(params@_) =>
-      call { 
-        controllers_GraphController_printPrimeConnections200_invoker.call(GraphController_15.printPrimeConnections())
-      }
-  
-    // @LINE:430
-    case controllers_PaperController_paperAuthorList201_route(params@_) =>
-      call { 
-        controllers_PaperController_paperAuthorList201_invoker.call(PaperController_17.paperAuthorList())
+        controllers_PaperController_deleteAuthor201_invoker.call(PaperController_17.deleteAuthor(memberId))
       }
   
     // @LINE:431
-    case controllers_PaperController_storeDBLP202_route(params@_) =>
+    case controllers_GraphController_printPrimeConnections202_route(params@_) =>
       call { 
-        controllers_PaperController_storeDBLP202_invoker.call(PaperController_17.storeDBLP())
+        controllers_GraphController_printPrimeConnections202_invoker.call(GraphController_15.printPrimeConnections())
       }
   
     // @LINE:432
-    case controllers_PaperController_loadLDA203_route(params@_) =>
+    case controllers_PaperController_paperAuthorList203_route(params@_) =>
       call { 
-        controllers_PaperController_loadLDA203_invoker.call(PaperController_17.loadLDA())
+        controllers_PaperController_paperAuthorList203_invoker.call(PaperController_17.paperAuthorList())
       }
   
     // @LINE:433
-    case controllers_PaperController_authorRelation204_route(params@_) =>
+    case controllers_PaperController_storeDBLP204_route(params@_) =>
       call { 
-        controllers_PaperController_authorRelation204_invoker.call(PaperController_17.authorRelation())
+        controllers_PaperController_storeDBLP204_invoker.call(PaperController_17.storeDBLP())
       }
   
     // @LINE:434
-    case controllers_PaperController_storeDBLPSchema205_route(params@_) =>
+    case controllers_PaperController_loadLDA205_route(params@_) =>
       call { 
-        controllers_PaperController_storeDBLPSchema205_invoker.call(PaperController_17.storeDBLPSchema())
+        controllers_PaperController_loadLDA205_invoker.call(PaperController_17.loadLDA())
       }
   
     // @LINE:435
-    case controllers_PaperController_ldaTopicDistribution206_route(params@_) =>
+    case controllers_PaperController_authorRelation206_route(params@_) =>
       call { 
-        controllers_PaperController_ldaTopicDistribution206_invoker.call(PaperController_17.ldaTopicDistribution())
+        controllers_PaperController_authorRelation206_invoker.call(PaperController_17.authorRelation())
       }
   
     // @LINE:436
-    case controllers_PaperController_paperSearchList207_route(params@_) =>
+    case controllers_PaperController_storeDBLPSchema207_route(params@_) =>
       call { 
-        controllers_PaperController_paperSearchList207_invoker.call(PaperController_17.paperSearchList())
+        controllers_PaperController_storeDBLPSchema207_invoker.call(PaperController_17.storeDBLPSchema())
       }
   
-    // @LINE:440
-    case controllers_LogController_operationLogging208_route(params@_) =>
+    // @LINE:437
+    case controllers_PaperController_ldaTopicDistribution208_route(params@_) =>
       call { 
-        controllers_LogController_operationLogging208_invoker.call(LogController_7.operationLogging())
+        controllers_PaperController_ldaTopicDistribution208_invoker.call(PaperController_17.ldaTopicDistribution())
       }
   
-    // @LINE:443
-    case controllers_FileController_getFile209_route(params@_) =>
-      call(params.fromPath[String]("tableName", None), params.fromPath[String]("fileType", None), params.fromPath[String]("tableRecorderId", None)) { (tableName, fileType, tableRecorderId) =>
-        controllers_FileController_getFile209_invoker.call(FileController_25.getFile(tableName, fileType, tableRecorderId))
+    // @LINE:438
+    case controllers_PaperController_paperSearchList209_route(params@_) =>
+      call { 
+        controllers_PaperController_paperSearchList209_invoker.call(PaperController_17.paperSearchList())
       }
   
-    // @LINE:444
-    case controllers_FileController_checkFile210_route(params@_) =>
-      call(params.fromPath[String]("tableName", None), params.fromPath[String]("fileType", None), params.fromPath[String]("tableRecorderId", None)) { (tableName, fileType, tableRecorderId) =>
-        controllers_FileController_checkFile210_invoker.call(FileController_25.checkFile(tableName, fileType, tableRecorderId))
+    // @LINE:442
+    case controllers_LogController_operationLogging210_route(params@_) =>
+      call { 
+        controllers_LogController_operationLogging210_invoker.call(LogController_7.operationLogging())
       }
   
     // @LINE:445
-    case controllers_TechnologyController_setFiles211_route(params@_) =>
-      call(params.fromPath[Long]("serviceId", None), params.fromQuery[String]("fileName", None), params.fromQuery[String]("fileType", None)) { (serviceId, fileName, fileType) =>
-        controllers_TechnologyController_setFiles211_invoker.call(TechnologyController_10.setFiles(serviceId, fileName, fileType))
+    case controllers_FileController_getFile211_route(params@_) =>
+      call(params.fromPath[String]("tableName", None), params.fromPath[String]("fileType", None), params.fromPath[String]("tableRecorderId", None)) { (tableName, fileType, tableRecorderId) =>
+        controllers_FileController_getFile211_invoker.call(FileController_25.getFile(tableName, fileType, tableRecorderId))
       }
   
     // @LINE:446
-    case controllers_TechnologyController_getFileById212_route(params@_) =>
-      call(params.fromPath[Long]("serviceId", None)) { (serviceId) =>
-        controllers_TechnologyController_getFileById212_invoker.call(TechnologyController_10.getFileById(serviceId))
+    case controllers_FileController_checkFile212_route(params@_) =>
+      call(params.fromPath[String]("tableName", None), params.fromPath[String]("fileType", None), params.fromPath[String]("tableRecorderId", None)) { (tableName, fileType, tableRecorderId) =>
+        controllers_FileController_checkFile212_invoker.call(FileController_25.checkFile(tableName, fileType, tableRecorderId))
       }
   
     // @LINE:447
-    case controllers_FileController_uploadRawFile213_route(params@_) =>
+    case controllers_TechnologyController_setFiles213_route(params@_) =>
+      call(params.fromPath[Long]("serviceId", None), params.fromQuery[String]("fileName", None), params.fromQuery[String]("fileType", None)) { (serviceId, fileName, fileType) =>
+        controllers_TechnologyController_setFiles213_invoker.call(TechnologyController_10.setFiles(serviceId, fileName, fileType))
+      }
+  
+    // @LINE:448
+    case controllers_TechnologyController_getFileById214_route(params@_) =>
+      call(params.fromPath[Long]("serviceId", None)) { (serviceId) =>
+        controllers_TechnologyController_getFileById214_invoker.call(TechnologyController_10.getFileById(serviceId))
+      }
+  
+    // @LINE:449
+    case controllers_FileController_uploadRawFile215_route(params@_) =>
       call(params.fromPath[String]("tableName", None), params.fromPath[String]("fileType", None), params.fromPath[Long]("recordId", None)) { (tableName, fileType, recordId) =>
-        controllers_FileController_uploadRawFile213_invoker.call(FileController_25.uploadRawFile(tableName, fileType, recordId))
+        controllers_FileController_uploadRawFile215_invoker.call(FileController_25.uploadRawFile(tableName, fileType, recordId))
       }
   }
 }

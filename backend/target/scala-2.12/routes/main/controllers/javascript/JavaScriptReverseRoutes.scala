@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/loganchoi/Desktop/scihub/backend/conf/routes
-// @DATE:Sat May 02 00:22:59 CDT 2026
+// @DATE:Sat May 02 14:40:59 CDT 2026
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,7 +11,7 @@ import _root_.play.libs.F
 // @LINE:40
 package controllers.javascript {
 
-  // @LINE:407
+  // @LINE:409
   class ReverseReviewerController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -19,7 +19,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:408
+    // @LINE:410
     def reviewerDetail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ReviewerController.reviewerDetail",
       """
@@ -29,7 +29,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:410
+    // @LINE:412
     def reviewerList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ReviewerController.reviewerList",
       """
@@ -39,7 +39,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:412
+    // @LINE:414
     def searchReviewerByCondition: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ReviewerController.searchReviewerByCondition",
       """
@@ -49,7 +49,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:407
+    // @LINE:409
     def addReviewer: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ReviewerController.addReviewer",
       """
@@ -59,7 +59,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:409
+    // @LINE:411
     def updateReviewer: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ReviewerController.updateReviewer",
       """
@@ -91,7 +91,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:378
+  // @LINE:380
   class ReverseAdminController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -99,7 +99,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:381
+    // @LINE:383
     def getJobList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AdminController.getJobList",
       """
@@ -109,7 +109,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:380
+    // @LINE:382
     def updateUserStatus: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AdminController.updateUserStatus",
       """
@@ -119,7 +119,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:378
+    // @LINE:380
     def getUserList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AdminController.getUserList",
       """
@@ -129,7 +129,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:379
+    // @LINE:381
     def getUserDetail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AdminController.getUserDetail",
       """
@@ -139,7 +139,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:382
+    // @LINE:384
     def getJobDetail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AdminController.getJobDetail",
       """
@@ -149,7 +149,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:383
+    // @LINE:385
     def getOrganizationList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AdminController.getOrganizationList",
       """
@@ -159,7 +159,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:384
+    // @LINE:386
     def getTechnologyList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AdminController.getTechnologyList",
       """
@@ -425,7 +425,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:211
+  // @LINE:213
   class ReverseTAJobController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -433,7 +433,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:221
+    // @LINE:223
     def getTAJobById: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.getTAJobById",
       """
@@ -443,7 +443,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:227
+    // @LINE:229
     def getTAJobsByPublisher: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.getTAJobsByPublisher",
       """
@@ -453,7 +453,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:228
+    // @LINE:230
     def checkTAJobExist: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.checkTAJobExist",
       """
@@ -463,7 +463,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:214
+    // @LINE:216
     def deleteTAJobPDF: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.deleteTAJobPDF",
       """
@@ -473,7 +473,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:217
+    // @LINE:219
     def tajobUpdateStatue: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.tajobUpdateStatue",
       """
@@ -483,7 +483,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:222
+    // @LINE:224
     def getTAJobPublisher: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.getTAJobPublisher",
       """
@@ -493,7 +493,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:212
+    // @LINE:214
     def updateTAJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.updateTAJob",
       """
@@ -503,7 +503,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:230
+    // @LINE:232
     def getIdByName: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.getIdByName",
       """
@@ -513,7 +513,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:226
+    // @LINE:228
     def deleteTAJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.deleteTAJob",
       """
@@ -523,7 +523,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:225
+    // @LINE:227
     def setPDF: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.setPDF",
       """
@@ -533,7 +533,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:215
+    // @LINE:217
     def tajobList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.tajobList",
       """
@@ -543,7 +543,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:218
+    // @LINE:220
     def getTAJobApplicationById: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.getTAJobApplicationById",
       """
@@ -553,7 +553,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:229
+    // @LINE:231
     def checkTAJobNameAvailability: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.checkTAJobNameAvailability",
       """
@@ -563,7 +563,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:223
+    // @LINE:225
     def searchTAJobsByCondition: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.searchTAJobsByCondition",
       """
@@ -573,7 +573,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:211
+    // @LINE:213
     def addTAJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.addTAJob",
       """
@@ -583,7 +583,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:213
+    // @LINE:215
     def deleteTAJobImage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.deleteTAJobImage",
       """
@@ -593,7 +593,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:224
+    // @LINE:226
     def setImage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.setImage",
       """
@@ -603,7 +603,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:216
+    // @LINE:218
     def applyTAJob: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TAJobController.applyTAJob",
       """
@@ -615,7 +615,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:343
+  // @LINE:345
   class ReverseTechnologyController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -623,7 +623,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:343
+    // @LINE:345
     def addTechnology: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TechnologyController.addTechnology",
       """
@@ -633,7 +633,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:352
+    // @LINE:354
     def searchTechnologiesByCondition: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TechnologyController.searchTechnologiesByCondition",
       """
@@ -643,7 +643,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:445
+    // @LINE:447
     def setFiles: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TechnologyController.setFiles",
       """
@@ -653,7 +653,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:446
+    // @LINE:448
     def getFileById: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TechnologyController.getFileById",
       """
@@ -663,7 +663,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:347
+    // @LINE:349
     def technologyList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TechnologyController.technologyList",
       """
@@ -673,7 +673,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:350
+    // @LINE:352
     def getTechnologyById: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TechnologyController.getTechnologyById",
       """
@@ -683,7 +683,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:344
+    // @LINE:346
     def updateTechnology: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TechnologyController.updateTechnology",
       """
@@ -695,7 +695,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:419
+  // @LINE:421
   class ReversePaperController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -703,7 +703,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:436
+    // @LINE:438
     def paperSearchList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.paperSearchList",
       """
@@ -713,7 +713,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:433
+    // @LINE:435
     def authorRelation: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.authorRelation",
       """
@@ -723,7 +723,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:435
+    // @LINE:437
     def ldaTopicDistribution: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.ldaTopicDistribution",
       """
@@ -733,7 +733,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:430
+    // @LINE:432
     def paperAuthorList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.paperAuthorList",
       """
@@ -743,7 +743,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:419
+    // @LINE:421
     def addPaper: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.addPaper",
       """
@@ -753,7 +753,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:422
+    // @LINE:424
     def deletePaper: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.deletePaper",
       """
@@ -763,7 +763,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:424
+    // @LINE:426
     def getPaperById: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.getPaperById",
       """
@@ -773,7 +773,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:421
+    // @LINE:423
     def getAuthorByPaperId: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.getAuthorByPaperId",
       """
@@ -783,7 +783,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:426
+    // @LINE:428
     def deleteAuthor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.deleteAuthor",
       """
@@ -793,7 +793,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:431
+    // @LINE:433
     def storeDBLP: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.storeDBLP",
       """
@@ -803,7 +803,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:434
+    // @LINE:436
     def storeDBLPSchema: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.storeDBLPSchema",
       """
@@ -813,7 +813,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:425
+    // @LINE:427
     def addAuthor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.addAuthor",
       """
@@ -823,7 +823,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:420
+    // @LINE:422
     def paperList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.paperList",
       """
@@ -833,7 +833,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:432
+    // @LINE:434
     def loadLDA: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PaperController.loadLDA",
       """
@@ -845,7 +845,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:393
+  // @LINE:395
   class ReverseAuthorController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -853,7 +853,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:400
+    // @LINE:402
     def userListAdmin: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthorController.userListAdmin",
       """
@@ -863,7 +863,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:403
+    // @LINE:405
     def topAuthors: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthorController.topAuthors",
       """
@@ -873,7 +873,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:393
+    // @LINE:395
     def addAuthor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthorController.addAuthor",
       """
@@ -883,7 +883,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:394
+    // @LINE:396
     def authorDetail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthorController.authorDetail",
       """
@@ -893,7 +893,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:398
+    // @LINE:400
     def userDetailAdmin: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthorController.userDetailAdmin",
       """
@@ -903,7 +903,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:399
+    // @LINE:401
     def updateUserAdmin: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthorController.updateUserAdmin",
       """
@@ -913,7 +913,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:396
+    // @LINE:398
     def authorList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthorController.authorList",
       """
@@ -923,7 +923,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:402
+    // @LINE:404
     def searchAuthorByCondition: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthorController.searchAuthorByCondition",
       """
@@ -933,7 +933,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:395
+    // @LINE:397
     def updateAuthor: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AuthorController.updateAuthor",
       """
@@ -945,7 +945,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:320
+  // @LINE:322
   class ReverseBugReportController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -953,7 +953,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:321
+    // @LINE:323
     def getBugReport: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BugReportController.getBugReport",
       """
@@ -963,7 +963,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:324
+    // @LINE:326
     def updateBugReportSolved: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BugReportController.updateBugReportSolved",
       """
@@ -973,7 +973,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:320
+    // @LINE:322
     def addBugReport: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BugReportController.addBugReport",
       """
@@ -983,7 +983,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:327
+    // @LINE:329
     def getAllUnsolvedBugReports: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BugReportController.getAllUnsolvedBugReports",
       """
@@ -993,7 +993,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:323
+    // @LINE:325
     def deleteBugReport: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BugReportController.deleteBugReport",
       """
@@ -1003,7 +1003,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:328
+    // @LINE:330
     def getAllSolvedBugReports: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BugReportController.getAllSolvedBugReports",
       """
@@ -1013,7 +1013,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:325
+    // @LINE:327
     def getAllBugReports: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BugReportController.getAllBugReports",
       """
@@ -1023,7 +1023,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:322
+    // @LINE:324
     def updateBugReport: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.BugReportController.updateBugReport",
       """
@@ -1055,7 +1055,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:307
+  // @LINE:309
   class ReverseOrganizationController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -1063,7 +1063,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:307
+    // @LINE:309
     def organizationList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.OrganizationController.organizationList",
       """
@@ -1073,7 +1073,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:312
+    // @LINE:314
     def organizationUpdate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.OrganizationController.organizationUpdate",
       """
@@ -1083,7 +1083,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:313
+    // @LINE:315
     def organizationListbyName: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.OrganizationController.organizationListbyName",
       """
@@ -1093,7 +1093,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:309
+    // @LINE:311
     def addUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.OrganizationController.addUsers",
       """
@@ -1103,7 +1103,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:311
+    // @LINE:313
     def organizationDetail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.OrganizationController.organizationDetail",
       """
@@ -1113,7 +1113,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:308
+    // @LINE:310
     def organizationListPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.OrganizationController.organizationListPage",
       """
@@ -1123,7 +1123,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:310
+    // @LINE:312
     def registerOrganization: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.OrganizationController.registerOrganization",
       """
@@ -1135,7 +1135,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:247
+  // @LINE:249
   class ReverseCourseController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -1143,7 +1143,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:249
+    // @LINE:251
     def approveTA: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CourseController.approveTA",
       """
@@ -1153,7 +1153,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:248
+    // @LINE:250
     def getCourseDetails: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CourseController.getCourseDetails",
       """
@@ -1163,7 +1163,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:247
+    // @LINE:249
     def listCourses: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CourseController.listCourses",
       """
@@ -1175,7 +1175,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:266
+  // @LINE:268
   class ReverseUserController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -1183,7 +1183,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:298
+    // @LINE:300
     def userActivation: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.userActivation",
       """
@@ -1193,7 +1193,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:270
+    // @LINE:272
     def updateUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.updateUser",
       """
@@ -1203,7 +1203,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:295
+    // @LINE:297
     def getActiveUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getActiveUsers",
       """
@@ -1213,7 +1213,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:281
+    // @LINE:283
     def autoRegisterUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.autoRegisterUser",
       """
@@ -1223,7 +1223,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:285
+    // @LINE:287
     def getAllNormalUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getAllNormalUsers",
       """
@@ -1233,7 +1233,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:296
+    // @LINE:298
     def sendPasswordEmail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.sendPasswordEmail",
       """
@@ -1243,7 +1243,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:266
+    // @LINE:268
     def addUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.addUser",
       """
@@ -1253,7 +1253,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:268
+    // @LINE:270
     def getResearcherInfo: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getResearcherInfo",
       """
@@ -1263,7 +1263,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:286
+    // @LINE:288
     def updateImageByUserId: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.updateImageByUserId",
       """
@@ -1273,7 +1273,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:299
+    // @LINE:301
     def sendRegisterEmail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.sendRegisterEmail",
       """
@@ -1283,7 +1283,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:293
+    // @LINE:295
     def userSearch: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.userSearch",
       """
@@ -1293,7 +1293,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:271
+    // @LINE:273
     def userLogin: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.userLogin",
       """
@@ -1303,7 +1303,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:267
+    // @LINE:269
     def userDetail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.userDetail",
       """
@@ -1313,7 +1313,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:303
+    // @LINE:305
     def getUserByEmail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getUserByEmail",
       """
@@ -1323,7 +1323,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:277
+    // @LINE:279
     def inactivateUserPOST: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.inactivateUserPOST",
       """
@@ -1333,7 +1333,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:300
+    // @LINE:302
     def resendRegisterEmail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.resendRegisterEmail",
       """
@@ -1343,7 +1343,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:287
+    // @LINE:289
     def deleteImageByUserId: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.deleteImageByUserId",
       """
@@ -1353,7 +1353,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:273
+    // @LINE:275
     def userList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.userList",
       """
@@ -1363,7 +1363,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:269
+    // @LINE:271
     def getStudentInfo: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getStudentInfo",
       """
@@ -1373,7 +1373,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:276
+    // @LINE:278
     def searchUserByCondition: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.searchUserByCondition",
       """
@@ -1383,7 +1383,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:297
+    // @LINE:299
     def updatePassword: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.updatePassword",
       """
@@ -1393,7 +1393,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:284
+    // @LINE:286
     def getAllUsersInAllRoles: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.getAllUsersInAllRoles",
       """
@@ -1403,7 +1403,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:302
+    // @LINE:304
     def updateLevel: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.updateLevel",
       """
@@ -1413,7 +1413,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:274
+    // @LINE:276
     def validateEmail: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.validateEmail",
       """
@@ -1423,7 +1423,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:272
+    // @LINE:274
     def checkNewUserEmailAvailability: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.UserController.checkNewUserEmailAvailability",
       """
@@ -1455,7 +1455,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:334
+  // @LINE:336
   class ReverseSuggestionController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -1463,7 +1463,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:336
+    // @LINE:338
     def suggestionList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SuggestionController.suggestionList",
       """
@@ -1473,7 +1473,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:335
+    // @LINE:337
     def getSuggestion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SuggestionController.getSuggestion",
       """
@@ -1483,7 +1483,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:338
+    // @LINE:340
     def deleteSuggestion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SuggestionController.deleteSuggestion",
       """
@@ -1493,7 +1493,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:334
+    // @LINE:336
     def addSuggestion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SuggestionController.addSuggestion",
       """
@@ -1503,7 +1503,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:337
+    // @LINE:339
     def updateSuggestion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SuggestionController.updateSuggestion",
       """
@@ -1513,7 +1513,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:339
+    // @LINE:341
     def updateSuggestionSolved: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.SuggestionController.updateSuggestionSolved",
       """
@@ -1683,6 +1683,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:207
+    def scheduleInterview: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.RAJobController.scheduleInterview",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "rajob/interview/schedule"})
+        }
+      """
+    )
+  
     // @LINE:196
     def setPDF: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.RAJobController.setPDF",
@@ -1749,6 +1759,16 @@ package controllers.javascript {
       """
         function(userId0,pageLimit1,pageNum2,sortCriteria3) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "rajob/rajobList/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("userId", userId0)) + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("pageLimit", pageLimit1), (""" + implicitly[play.api.mvc.QueryStringBindable[Integer]].javascriptUnbind + """)("pageNum", pageNum2), (""" + implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].javascriptUnbind + """)("sortCriteria", sortCriteria3)])})
+        }
+      """
+    )
+  
+    // @LINE:208
+    def getScheduledInterviews: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.RAJobController.getScheduledInterviews",
+      """
+        function(jobId0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "rajob/interview/job/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("jobId", jobId0))})
         }
       """
     )
@@ -2205,7 +2225,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:257
+  // @LINE:259
   class ReverseCourseTAAssignmentController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -2213,7 +2233,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:258
+    // @LINE:260
     def getCourseTAAssignmentById: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CourseTAAssignmentController.getCourseTAAssignmentById",
       """
@@ -2227,7 +2247,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:257
+    // @LINE:259
     def addAssignment: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CourseTAAssignmentController.addAssignment",
       """
@@ -2237,7 +2257,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:259
+    // @LINE:261
     def courseTAAssignmentList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CourseTAAssignmentController.courseTAAssignmentList",
       """
@@ -2249,7 +2269,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:443
+  // @LINE:445
   class ReverseFileController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -2257,7 +2277,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:447
+    // @LINE:449
     def uploadRawFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FileController.uploadRawFile",
       """
@@ -2267,7 +2287,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:443
+    // @LINE:445
     def getFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FileController.getFile",
       """
@@ -2277,7 +2297,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:444
+    // @LINE:446
     def checkFile: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.FileController.checkFile",
       """
@@ -2289,7 +2309,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:429
+  // @LINE:431
   class ReverseGraphController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -2297,7 +2317,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:429
+    // @LINE:431
     def printPrimeConnections: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.GraphController.printPrimeConnections",
       """
@@ -2309,7 +2329,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:440
+  // @LINE:442
   class ReverseLogController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -2317,7 +2337,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:440
+    // @LINE:442
     def operationLogging: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.LogController.operationLogging",
       """
@@ -2329,7 +2349,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:237
+  // @LINE:239
   class ReverseTACandidateController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -2337,7 +2357,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:240
+    // @LINE:242
     def getAssignmentsByUserId: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TACandidateController.getAssignmentsByUserId",
       """
@@ -2347,7 +2367,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:237
+    // @LINE:239
     def addTACandidate: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TACandidateController.addTACandidate",
       """
@@ -2357,7 +2377,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:239
+    // @LINE:241
     def getTACandidateById: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TACandidateController.getTACandidateById",
       """
@@ -2367,7 +2387,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:238
+    // @LINE:240
     def tacandidateList: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TACandidateController.tacandidateList",
       """

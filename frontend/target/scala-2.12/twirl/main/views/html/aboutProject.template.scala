@@ -101,8 +101,8 @@ Seq[Any](_display_(/*3.2*/main("About Project")/*3.23*/ {_display_(Seq[Any](form
 
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 09 16:10:55 CST 2026
-                  SOURCE: /Users/loganchoi/Desktop/CSHub-Fall2025/frontend/app/views/aboutProject.scala.html
+                  DATE: Sat May 02 14:50:19 CDT 2026
+                  SOURCE: /Users/loganchoi/Desktop/scihub/frontend/app/views/aboutProject.scala.html
                   HASH: 75a8da4a453ca79daa6b6e9f09155a383a0de071
                   MATRIX: 814->1|1223->19|1252->40|1291->42|1319->44|1541->265|1574->271|3955->3602|3989->3609|4232->3823
                   LINES: 31->1|41->3|41->3|41->3|42->4|47->9|48->10|79->53|80->54|87->61

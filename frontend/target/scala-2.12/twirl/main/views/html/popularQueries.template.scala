@@ -82,8 +82,8 @@ Seq[Any](_display_(/*3.2*/main("Popular Queries")/*3.25*/ {_display_(Seq[Any](fo
 
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 09 16:10:55 CST 2026
-                  SOURCE: /Users/loganchoi/Desktop/CSHub-Fall2025/frontend/app/views/popularQueries.scala.html
+                  DATE: Sat May 02 14:50:19 CDT 2026
+                  SOURCE: /Users/loganchoi/Desktop/scihub/frontend/app/views/popularQueries.scala.html
                   HASH: 428219d141776bb8efc134e3e0e4dfba85bb409d
                   MATRIX: 814->1|1225->19|1256->42|1295->44|1326->49|3058->1751
                   LINES: 31->1|41->3|41->3|41->3|42->4|68->30

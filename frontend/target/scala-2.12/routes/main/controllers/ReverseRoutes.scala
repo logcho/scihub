@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/loganchoi/Desktop/scihub/frontend/conf/routes
-// @DATE:Sat Apr 25 17:11:43 CDT 2026
+// @DATE:Sat May 02 14:50:19 CDT 2026
 
 import play.api.mvc.Call
 

@@ -204,6 +204,8 @@ POST          /rajob/offer                                                      
 POST          /rajob/sendPostedEmail                                                                      controllers.RAJobController.sendRAJobPostedEmail()
 POST          /rajob/sendAppliedEmail                                                                     controllers.RAJobController.sendRAJobAppliedEmail()
 GET           /rajob/professors                                                                           controllers.RAJobController.listProfessorsJson()
+POST          /rajob/interview/schedule                                                                   controllers.RAJobController.scheduleInterview()
+GET           /rajob/interview/job/:jobId                                                                 controllers.RAJobController.getScheduledInterviews(jobId: Long)
 
 ######################################### RAJob ########################################################################
 

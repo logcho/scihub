@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/loganchoi/Desktop/scihub/backend/conf/routes
-// @DATE:Sat May 02 00:22:59 CDT 2026
+// @DATE:Sat May 02 14:40:59 CDT 2026
 
 
 package router {

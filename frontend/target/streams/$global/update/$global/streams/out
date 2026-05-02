@@ -72003,7 +72003,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.ow2.asm#asm-util;5.0.3!asm-util.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.2!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] jline#jline;2.14.3!jline.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 5908ms :: artifacts dl 61ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 5897ms :: artifacts dl 55ms[0m
 [0m[[0mdebug[0m] [0m	report for basicframework#basicframework_2.12;1.6.1-SNAPSHOT universal produced in /Users/loganchoi/Desktop/scihub/frontend/target/scala-2.12/resolution-cache/reports/basicframework-basicframework_2.12-universal.xml[0m
 [0m[[0mdebug[0m] [0m	report for basicframework#basicframework_2.12;1.6.1-SNAPSHOT universal-docs produced in /Users/loganchoi/Desktop/scihub/frontend/target/scala-2.12/resolution-cache/reports/basicframework-basicframework_2.12-universal-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for basicframework#basicframework_2.12;1.6.1-SNAPSHOT universal-src produced in /Users/loganchoi/Desktop/scihub/frontend/target/scala-2.12/resolution-cache/reports/basicframework-basicframework_2.12-universal-src.xml[0m
@@ -72025,7 +72025,7 @@
 [0m[[0mdebug[0m] [0m	report for basicframework#basicframework_2.12;1.6.1-SNAPSHOT docs produced in /Users/loganchoi/Desktop/scihub/frontend/target/scala-2.12/resolution-cache/reports/basicframework-basicframework_2.12-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for basicframework#basicframework_2.12;1.6.1-SNAPSHOT pom produced in /Users/loganchoi/Desktop/scihub/frontend/target/scala-2.12/resolution-cache/reports/basicframework-basicframework_2.12-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for basicframework#basicframework_2.12;1.6.1-SNAPSHOT scala-tool produced in /Users/loganchoi/Desktop/scihub/frontend/target/scala-2.12/resolution-cache/reports/basicframework-basicframework_2.12-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (5908ms resolve - 61ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (5897ms resolve - 55ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
 [0m[[33mwarn[0m] [0mFound version conflict(s) in library dependencies; some are suspected to be binary incompatible:[0m
 [0m[[33mwarn[0m] [0m[0m

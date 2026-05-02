@@ -56,8 +56,8 @@ Seq[Any](format.raw/*1.36*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 09 16:10:55 CST 2026
-                  SOURCE: /Users/loganchoi/Desktop/CSHub-Fall2025/frontend/app/views/taAssignmentDetail.scala.html
+                  DATE: Sat May 02 14:50:20 CDT 2026
+                  SOURCE: /Users/loganchoi/Desktop/scihub/frontend/app/views/taAssignmentDetail.scala.html
                   HASH: 328829e46f2f9910028cc915257fcc23b5372d18
                   MATRIX: 1136->1|1243->38|1305->35
                   LINES: 35->1|38->3|41->1

@@ -89,8 +89,8 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 09 16:10:56 CST 2026
-                  SOURCE: /Users/loganchoi/Desktop/CSHub-Fall2025/frontend/app/views/activationConfirmation.scala.html
+                  DATE: Sat May 02 14:50:20 CDT 2026
+                  SOURCE: /Users/loganchoi/Desktop/scihub/frontend/app/views/activationConfirmation.scala.html
                   HASH: e91da543ade324109d4fb262cfccef74186e18d0
                   MATRIX: 1121->1|1196->6|1219->23|1248->46|1300->3|1328->70|1357->252|1384->254|1428->290|1467->292|1498->297|2163->934|2192->935|2237->952|2273->960|2302->961|2351->982|2389->993|2404->999|2444->1018|2491->1037|2520->1038|2566->1056|2768->1230|2797->1231|2829->1236|2870->1247
                   LINES: 35->1|38->3|39->4|40->5|43->1|45->6|46->7|47->8|47->8|47->8|48->9|65->26|65->26|66->27|66->27|66->27|67->28|67->28|67->28|67->28|68->29|68->29|70->31|73->34|73->34|74->35|75->36

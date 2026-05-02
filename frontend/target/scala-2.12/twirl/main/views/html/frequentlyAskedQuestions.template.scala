@@ -105,8 +105,8 @@ Seq[Any](_display_(/*3.2*/main("Frequently Asked Questions")/*3.36*/ {_display_(
 
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 09 16:10:55 CST 2026
-                  SOURCE: /Users/loganchoi/Desktop/CSHub-Fall2025/frontend/app/views/frequentlyAskedQuestions.scala.html
+                  DATE: Sat May 02 14:50:19 CDT 2026
+                  SOURCE: /Users/loganchoi/Desktop/scihub/frontend/app/views/frequentlyAskedQuestions.scala.html
                   HASH: 92c726b505c47f9629292dc19dcb9424b42ff9c2
                   MATRIX: 814->1|1235->19|1277->53|1316->55|1347->60|2317->1056|2366->1077|5387->4564|5434->4583|5517->4636
                   LINES: 31->1|41->3|41->3|41->3|42->4|56->18|57->19|84->50|87->53|91->57

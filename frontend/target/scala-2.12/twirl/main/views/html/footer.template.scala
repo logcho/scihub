@@ -61,8 +61,8 @@ Seq[Any](format.raw/*1.1*/("""<!-- Footer -->
 
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 09 16:11:00 CST 2026
-                  SOURCE: /Users/loganchoi/Desktop/CSHub-Fall2025/frontend/app/views/footer.scala.html
+                  DATE: Sat May 02 14:50:23 CDT 2026
+                  SOURCE: /Users/loganchoi/Desktop/scihub/frontend/app/views/footer.scala.html
                   HASH: 71bf414e8100d10dd01dca878ff640e4c5a6ca12
                   MATRIX: 1194->0
                   LINES: 40->1

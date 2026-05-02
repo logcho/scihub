@@ -75,8 +75,8 @@ Seq[Any](format.raw/*1.14*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 09 16:10:57 CST 2026
-                  SOURCE: /Users/loganchoi/Desktop/CSHub-Fall2025/frontend/app/views/authorDelete.scala.html
+                  DATE: Sat May 02 14:50:20 CDT 2026
+                  SOURCE: /Users/loganchoi/Desktop/scihub/frontend/app/views/authorDelete.scala.html
                   HASH: ef90ecc8bb2e71e0c117ee2e295bb014da989acc
                   MATRIX: 1118->1|1203->16|1248->13|1276->32|1304->35|1334->57|1372->58|1401->61|1698->331|1713->337|1766->369
                   LINES: 35->1|38->2|41->1|42->3|43->4|43->4|43->4|44->5|51->12|51->12|51->12

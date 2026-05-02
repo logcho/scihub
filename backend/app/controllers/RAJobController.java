@@ -1055,4 +1055,53 @@ public class RAJobController extends Controller {
 
         return ok(Json.toJson(professors));
     }
+
+    public Result scheduleInterview() {
+        try {
+            JsonNode json = request().body().asJson();
+            if (json == null) {
+                return badRequest("Missing interview scheduling data");
+            }
+
+            Long rajobApplicationId = json.get("rajobApplicationId").asLong();
+            Long createdByUserId = json.get("createdByUserId").asLong();
+            String proposedTimes = json.has("proposedTimes") ? json.get("proposedTimes").asText() : "[]";
+            
+            RAJobApplication rajobApplication = RAJobApplication.find.byId(rajobApplicationId);
+            if (rajobApplication == null) {
+                return badRequest("RAJobApplication not found");
+            }
+
+            User createdBy = User.find.byId(createdByUserId);
+            if (createdBy == null) {
+                return badRequest("User not found");
+            }
+
+            Interview interview = new Interview(rajobApplication, createdBy, proposedTimes, "proposed");
+            interview.save();
+
+            // Update application status to reflect interview proposed
+            rajobApplication.setStatus("interview_proposed");
+            rajobApplication.update();
+
+            return ok(Json.toJson(interview));
+        } catch (Exception e) {
+            Logger.error("Error scheduling interview", e);
+            return internalServerError("Error scheduling interview: " + e.getMessage());
+        }
+    }
+
+    public Result getScheduledInterviews(Long jobId) {
+        try {
+            // Fetch all interviews for the specific RA job
+            List<Interview> interviews = Interview.find.query()
+                    .where().eq("rajobApplication.appliedRAJob.id", jobId)
+                    .findList();
+            
+            return ok(Json.toJson(interviews));
+        } catch (Exception e) {
+            Logger.error("Error fetching interviews for job: " + jobId, e);
+            return internalServerError("Error fetching interviews");
+        }
+    }
 }

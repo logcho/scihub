@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/loganchoi/Desktop/scihub/backend/conf/routes
-// @DATE:Sat May 02 00:22:59 CDT 2026
+// @DATE:Sat May 02 14:40:59 CDT 2026
 
 import play.api.mvc.Call
 
@@ -11,38 +11,38 @@ import _root_.play.libs.F
 // @LINE:40
 package controllers {
 
-  // @LINE:407
+  // @LINE:409
   class ReverseReviewerController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:408
+    // @LINE:410
     def reviewerDetail(userId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "reviewer/reviewerDetail/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
     }
   
-    // @LINE:410
+    // @LINE:412
     def reviewerList(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "reviewer/reviewerList" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:412
+    // @LINE:414
     def searchReviewerByCondition(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "reviewer/search/conditions" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:407
+    // @LINE:409
     def addReviewer(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "reviewer/addReviewer")
     }
   
-    // @LINE:409
+    // @LINE:411
     def updateReviewer(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "reviewer/updateReviewer")
@@ -65,50 +65,50 @@ package controllers {
   
   }
 
-  // @LINE:378
+  // @LINE:380
   class ReverseAdminController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:381
+    // @LINE:383
     def getJobList(pageNum:Integer = 1, pageLimit:Integer = 20, sortCriteria:String = "id"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "admin/jobs" + play.core.routing.queryString(List(if(pageNum == 1) None else Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageNum", pageNum)), if(pageLimit == 20) None else Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageLimit", pageLimit)), if(sortCriteria == "id") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:380
+    // @LINE:382
     def updateUserStatus(userId:Long): Call = {
       
       Call("PUT", _prefix + { _defaultPrefix } + "admin/users/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)) + "/status")
     }
   
-    // @LINE:378
+    // @LINE:380
     def getUserList(pageNum:Integer = 1, pageLimit:Integer = 20, sortCriteria:String = "id"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "admin/users" + play.core.routing.queryString(List(if(pageNum == 1) None else Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageNum", pageNum)), if(pageLimit == 20) None else Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageLimit", pageLimit)), if(sortCriteria == "id") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:379
+    // @LINE:381
     def getUserDetail(userId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "admin/users/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
     }
   
-    // @LINE:382
+    // @LINE:384
     def getJobDetail(jobType:String, jobId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "admin/jobs/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("jobType", jobType)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("jobId", jobId)))
     }
   
-    // @LINE:383
+    // @LINE:385
     def getOrganizationList(pageNum:Integer = 1, pageLimit:Integer = 20, sortCriteria:String = "id"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "admin/organizations" + play.core.routing.queryString(List(if(pageNum == 1) None else Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageNum", pageNum)), if(pageLimit == 20) None else Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageLimit", pageLimit)), if(sortCriteria == "id") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:384
+    // @LINE:386
     def getTechnologyList(pageNum:Integer = 1, pageLimit:Integer = 20, sortCriteria:String = "id"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "admin/technologies" + play.core.routing.queryString(List(if(pageNum == 1) None else Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageNum", pageNum)), if(pageLimit == 20) None else Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageLimit", pageLimit)), if(sortCriteria == "id") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("sortCriteria", sortCriteria)))))
@@ -277,116 +277,116 @@ package controllers {
   
   }
 
-  // @LINE:211
+  // @LINE:213
   class ReverseTAJobController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:221
+    // @LINE:223
     def getTAJobById(tajobId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tajob/tajobDetail/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobId", tajobId)))
     }
   
-    // @LINE:227
+    // @LINE:229
     def getTAJobsByPublisher(userId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tajob/getTAJobsByUser/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
     }
   
-    // @LINE:228
+    // @LINE:230
     def checkTAJobExist(tajobId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tajob/checkTAJobExist/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobId", tajobId)))
     }
   
-    // @LINE:214
+    // @LINE:216
     def deleteTAJobPDF(tajobId:Long): Call = {
       
       Call("DELETE", _prefix + { _defaultPrefix } + "tajob/deleteTAJobPDF/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobId", tajobId)))
     }
   
-    // @LINE:217
+    // @LINE:219
     def tajobUpdateStatue(tajobId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "tajob/updateStatus/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobId", tajobId)))
     }
   
-    // @LINE:222
+    // @LINE:224
     def getTAJobPublisher(tajobId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tajob/getTAJobPublisher/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobId", tajobId)))
     }
   
-    // @LINE:212
+    // @LINE:214
     def updateTAJob(tajobId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "tajob/updateTAJob/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobId", tajobId)))
     }
   
-    // @LINE:230
+    // @LINE:232
     def getIdByName(name:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tajob/getIdByName/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("name", name)))
     }
   
-    // @LINE:226
+    // @LINE:228
     def deleteTAJob(tajobId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tajob/deleteTAJob/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobId", tajobId)))
     }
   
-    // @LINE:225
+    // @LINE:227
     def setPDF(tajobId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "tajob/setPDF/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobId", tajobId)))
     }
   
-    // @LINE:215
+    // @LINE:217
     def tajobList(userId:Long, pageLimit:Integer, pageNum:Integer, sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tajob/tajobList/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)) + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageNum", pageNum)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:218
+    // @LINE:220
     def getTAJobApplicationById(tajobApplicationId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tajob/tajobApplicationDetail/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobApplicationId", tajobApplicationId)))
     }
   
-    // @LINE:229
+    // @LINE:231
     def checkTAJobNameAvailability(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "tajob/isTAJobNameExisted")
     }
   
-    // @LINE:223
+    // @LINE:225
     def searchTAJobsByCondition(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "tajob/search/conditions")
     }
   
-    // @LINE:211
+    // @LINE:213
     def addTAJob(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "tajob/addTAJob")
     }
   
-    // @LINE:213
+    // @LINE:215
     def deleteTAJobImage(tajobId:Long): Call = {
       
       Call("DELETE", _prefix + { _defaultPrefix } + "tajob/deleteTAJobImage/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobId", tajobId)))
     }
   
-    // @LINE:224
+    // @LINE:226
     def setImage(tajobId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "tajob/setImage/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobId", tajobId)))
     }
   
-    // @LINE:216
+    // @LINE:218
     def applyTAJob(tajobId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "tajob/applyTAJob/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("tajobId", tajobId)))
@@ -394,50 +394,50 @@ package controllers {
   
   }
 
-  // @LINE:343
+  // @LINE:345
   class ReverseTechnologyController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:343
+    // @LINE:345
     def addTechnology(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "technology/addTechnology")
     }
   
-    // @LINE:352
+    // @LINE:354
     def searchTechnologiesByCondition(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "technology/search/conditions")
     }
   
-    // @LINE:445
+    // @LINE:447
     def setFiles(serviceId:Long, fileName:String, fileType:String): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "technology/setFiles/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("serviceId", serviceId)) + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("fileName", fileName)), Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("fileType", fileType)))))
     }
   
-    // @LINE:446
+    // @LINE:448
     def getFileById(serviceId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "technology/fileDetail/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("serviceId", serviceId)))
     }
   
-    // @LINE:347
+    // @LINE:349
     def technologyList(userId:Long, pageLimit:Integer, pageNum:Integer, sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "technology/technologyList/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)) + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageNum", pageNum)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:350
+    // @LINE:352
     def getTechnologyById(technologyId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "technology/technologyDetail/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("technologyId", technologyId)))
     }
   
-    // @LINE:344
+    // @LINE:346
     def updateTechnology(technologyId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "technology/updateTechnology/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("technologyId", technologyId)))
@@ -445,92 +445,92 @@ package controllers {
   
   }
 
-  // @LINE:419
+  // @LINE:421
   class ReversePaperController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:436
+    // @LINE:438
     def paperSearchList(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "paper/search")
     }
   
-    // @LINE:433
+    // @LINE:435
     def authorRelation(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "paper/authorRelation")
     }
   
-    // @LINE:435
+    // @LINE:437
     def ldaTopicDistribution(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "paper/ldaTopicList")
     }
   
-    // @LINE:430
+    // @LINE:432
     def paperAuthorList(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "paper/paperAuthorList")
     }
   
-    // @LINE:419
+    // @LINE:421
     def addPaper(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "paper/addPaper")
     }
   
-    // @LINE:422
+    // @LINE:424
     def deletePaper(paperId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "paper/deletePaper" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Long]].unbind("paperId", paperId)))))
     }
   
-    // @LINE:424
+    // @LINE:426
     def getPaperById(paperId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "paper/paperDetail/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("paperId", paperId)))
     }
   
-    // @LINE:421
+    // @LINE:423
     def getAuthorByPaperId(paperId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "paper/author" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Long]].unbind("paperId", paperId)))))
     }
   
-    // @LINE:426
+    // @LINE:428
     def deleteAuthor(memberId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "paper/deleteAuthor" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Long]].unbind("memberId", memberId)))))
     }
   
-    // @LINE:431
+    // @LINE:433
     def storeDBLP(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "paper/loadPaper")
     }
   
-    // @LINE:434
+    // @LINE:436
     def storeDBLPSchema(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "paper/loadSchema")
     }
   
-    // @LINE:425
+    // @LINE:427
     def addAuthor(paperId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "paper/addAuthor/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("paperId", paperId)))
     }
   
-    // @LINE:420
+    // @LINE:422
     def paperList(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "paper/paperList" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:432
+    // @LINE:434
     def loadLDA(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "paper/lda")
@@ -538,62 +538,62 @@ package controllers {
   
   }
 
-  // @LINE:393
+  // @LINE:395
   class ReverseAuthorController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:400
+    // @LINE:402
     def userListAdmin(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "author/userListAdmin" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:403
+    // @LINE:405
     def topAuthors(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "author/topAuthors")
     }
   
-    // @LINE:393
+    // @LINE:395
     def addAuthor(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "author/addAuthor")
     }
   
-    // @LINE:394
+    // @LINE:396
     def authorDetail(userId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "author/authorDetail/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
     }
   
-    // @LINE:398
+    // @LINE:400
     def userDetailAdmin(userId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "author/userDetailAdmin/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
     }
   
-    // @LINE:399
+    // @LINE:401
     def updateUserAdmin(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "author/updateUserAdmin")
     }
   
-    // @LINE:396
+    // @LINE:398
     def authorList(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "author/authorList" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:402
+    // @LINE:404
     def searchAuthorByCondition(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "author/search" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:395
+    // @LINE:397
     def updateAuthor(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "author/updateAuthor")
@@ -601,56 +601,56 @@ package controllers {
   
   }
 
-  // @LINE:320
+  // @LINE:322
   class ReverseBugReportController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:321
+    // @LINE:323
     def getBugReport(id:Long): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("format", "json"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "bugReport/getBugReport/id/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
-    // @LINE:324
+    // @LINE:326
     def updateBugReportSolved(bugId:Long, fixerId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "bugReport/updateBugReportSolved/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("bugId", bugId)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("fixerId", fixerId)))
     }
   
-    // @LINE:320
+    // @LINE:322
     def addBugReport(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "bugReport/addBugReport")
     }
   
-    // @LINE:327
+    // @LINE:329
     def getAllUnsolvedBugReports(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "bugReport/getAllUnsolvedBugReports/json")
     }
   
-    // @LINE:323
+    // @LINE:325
     def deleteBugReport(id:Long): Call = {
       
       Call("DELETE", _prefix + { _defaultPrefix } + "bugReport/deleteBugReport/id/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
-    // @LINE:328
+    // @LINE:330
     def getAllSolvedBugReports(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "bugReport/getAllSolvedBugReports/json")
     }
   
-    // @LINE:325
+    // @LINE:327
     def getAllBugReports(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "bugReport/getAllBugReports/json" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:322
+    // @LINE:324
     def updateBugReport(id:Long): Call = {
       
       Call("PUT", _prefix + { _defaultPrefix } + "bugReport/updateBugReport/id/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
@@ -673,50 +673,50 @@ package controllers {
   
   }
 
-  // @LINE:307
+  // @LINE:309
   class ReverseOrganizationController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:307
+    // @LINE:309
     def organizationList(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "organization/organizationList")
     }
   
-    // @LINE:312
+    // @LINE:314
     def organizationUpdate(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "organization/organizationUpdate")
     }
   
-    // @LINE:313
+    // @LINE:315
     def organizationListbyName(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "organization/organizationListByName" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:309
+    // @LINE:311
     def addUsers(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "organization/addUsers")
     }
   
-    // @LINE:311
+    // @LINE:313
     def organizationDetail(id:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "organization/organizationDetail/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
-    // @LINE:308
+    // @LINE:310
     def organizationListPage(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "organization/organizationListPage" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:310
+    // @LINE:312
     def registerOrganization(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "organization/register")
@@ -724,26 +724,26 @@ package controllers {
   
   }
 
-  // @LINE:247
+  // @LINE:249
   class ReverseCourseController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:249
+    // @LINE:251
     def approveTA(courseId:Long, week:Int): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "courses/approve/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("courseId", courseId)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("week", week)))
     }
   
-    // @LINE:248
+    // @LINE:250
     def getCourseDetails(courseId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "courses/details/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("courseId", courseId)))
     }
   
-    // @LINE:247
+    // @LINE:249
     def listCourses(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "courses")
@@ -751,158 +751,158 @@ package controllers {
   
   }
 
-  // @LINE:266
+  // @LINE:268
   class ReverseUserController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:298
+    // @LINE:300
     def userActivation(hashcode:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "users/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("hashcode", hashcode)))
     }
   
-    // @LINE:270
+    // @LINE:272
     def updateUser(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/updateUser")
     }
   
-    // @LINE:295
+    // @LINE:297
     def getActiveUsers(): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("format", "json"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "user/getActiveUsers/json")
     }
   
-    // @LINE:281
+    // @LINE:283
     def autoRegisterUser(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/autoRegisterUser")
     }
   
-    // @LINE:285
+    // @LINE:287
     def getAllNormalUsers(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "user/getAllNormalUsers")
     }
   
-    // @LINE:296
+    // @LINE:298
     def sendPasswordEmail(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/sendPasswordEmail")
     }
   
-    // @LINE:266
+    // @LINE:268
     def addUser(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/addUser")
     }
   
-    // @LINE:268
+    // @LINE:270
     def getResearcherInfo(userId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "user/getResearcherInfo/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
     }
   
-    // @LINE:286
+    // @LINE:288
     def updateImageByUserId(userId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/updateImageForUser/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
     }
   
-    // @LINE:299
+    // @LINE:301
     def sendRegisterEmail(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/validate")
     }
   
-    // @LINE:293
+    // @LINE:295
     def userSearch(display_name:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "user/search/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("display_name", display_name)))
     }
   
-    // @LINE:271
+    // @LINE:273
     def userLogin(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/userLogin")
     }
   
-    // @LINE:267
+    // @LINE:269
     def userDetail(userId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "user/userDetail/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
     }
   
-    // @LINE:303
+    // @LINE:305
     def getUserByEmail(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/getUserByEmail")
     }
   
-    // @LINE:277
+    // @LINE:279
     def inactivateUserPOST(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/userDelete")
     }
   
-    // @LINE:300
+    // @LINE:302
     def resendRegisterEmail(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/validate/resend")
     }
   
-    // @LINE:287
+    // @LINE:289
     def deleteImageByUserId(userId:Long): Call = {
       
       Call("DELETE", _prefix + { _defaultPrefix } + "user/deleteImageForUser/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
     }
   
-    // @LINE:273
+    // @LINE:275
     def userList(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "user/userList" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:269
+    // @LINE:271
     def getStudentInfo(userId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "user/getStudentInfo/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
     }
   
-    // @LINE:276
+    // @LINE:278
     def searchUserByCondition(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/search/conditions" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:297
+    // @LINE:299
     def updatePassword(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/updatePassword")
     }
   
-    // @LINE:284
+    // @LINE:286
     def getAllUsersInAllRoles(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "user/getAllUsers")
     }
   
-    // @LINE:302
+    // @LINE:304
     def updateLevel(uid:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/updateLevel/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("uid", uid)))
     }
   
-    // @LINE:274
+    // @LINE:276
     def validateEmail(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/validateEmail")
     }
   
-    // @LINE:272
+    // @LINE:274
     def checkNewUserEmailAvailability(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "user/checkEmail")
@@ -925,44 +925,44 @@ package controllers {
   
   }
 
-  // @LINE:334
+  // @LINE:336
   class ReverseSuggestionController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:336
+    // @LINE:338
     def suggestionList(pageLimit:java.util.Optional[Integer], offset:java.util.Optional[Integer], sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "suggestion/suggestionList/json" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[Integer]]].unbind("offset", offset)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
     }
   
-    // @LINE:335
+    // @LINE:337
     def getSuggestion(id:Long): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("format", "json"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "suggestion/getSuggestion/id/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
-    // @LINE:338
+    // @LINE:340
     def deleteSuggestion(id:Long): Call = {
       
       Call("DELETE", _prefix + { _defaultPrefix } + "suggestion/deleteSuggestion/id/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
-    // @LINE:334
+    // @LINE:336
     def addSuggestion(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "suggestion/addSuggestion")
     }
   
-    // @LINE:337
+    // @LINE:339
     def updateSuggestion(id:Long): Call = {
       
       Call("PUT", _prefix + { _defaultPrefix } + "suggestion/updateSuggestion/id/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
-    // @LINE:339
+    // @LINE:341
     def updateSuggestionSolved(suggestionId:Long, implementorId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "suggestion/updateSuggestionSolve/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("suggestionId", suggestionId)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("implementorId", implementorId)))
@@ -1070,6 +1070,12 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "rajob/checkRAJobExist/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("rajobId", rajobId)))
     }
   
+    // @LINE:207
+    def scheduleInterview(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "rajob/interview/schedule")
+    }
+  
     // @LINE:196
     def setPDF(rajobId:Long): Call = {
       
@@ -1110,6 +1116,12 @@ package controllers {
     def rajobList(userId:Long, pageLimit:Integer, pageNum:Integer, sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "rajob/rajobList/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)) + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageNum", pageNum)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
+    }
+  
+    // @LINE:208
+    def getScheduledInterviews(jobId:Long): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "rajob/interview/job/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("jobId", jobId)))
     }
   
     // @LINE:193
@@ -1390,19 +1402,19 @@ package controllers {
   
   }
 
-  // @LINE:257
+  // @LINE:259
   class ReverseCourseTAAssignmentController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:258
+    // @LINE:260
     def getCourseTAAssignmentById(Id:Long): Call = {
     
       (Id: @unchecked) match {
       
-        // @LINE:258
+        // @LINE:260
         case (Id)  =>
           
           Call("GET", _prefix + { _defaultPrefix } + "tahiring/status/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("Id", Id)))
@@ -1411,13 +1423,13 @@ package controllers {
     
     }
   
-    // @LINE:257
+    // @LINE:259
     def addAssignment(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "tahiring/addAssignment")
     }
   
-    // @LINE:259
+    // @LINE:261
     def courseTAAssignmentList(Id:Long, pageLimit:Integer, pageNum:Integer, sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tahiring/assignmentList/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("Id", Id)) + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageNum", pageNum)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
@@ -1425,26 +1437,26 @@ package controllers {
   
   }
 
-  // @LINE:443
+  // @LINE:445
   class ReverseFileController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:447
+    // @LINE:449
     def uploadRawFile(tableName:String, fileType:String, recordId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "file/upload/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("tableName", tableName)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("fileType", fileType)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("recordId", recordId)))
     }
   
-    // @LINE:443
+    // @LINE:445
     def getFile(tableName:String, fileType:String, tableRecorderId:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "file/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("tableName", tableName)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("fileType", fileType)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("tableRecorderId", tableRecorderId)))
     }
   
-    // @LINE:444
+    // @LINE:446
     def checkFile(tableName:String, fileType:String, tableRecorderId:String): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "file/checkFile/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("tableName", tableName)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("fileType", fileType)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("tableRecorderId", tableRecorderId)))
@@ -1452,14 +1464,14 @@ package controllers {
   
   }
 
-  // @LINE:429
+  // @LINE:431
   class ReverseGraphController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:429
+    // @LINE:431
     def printPrimeConnections(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "graph/primePOC")
@@ -1467,14 +1479,14 @@ package controllers {
   
   }
 
-  // @LINE:440
+  // @LINE:442
   class ReverseLogController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:440
+    // @LINE:442
     def operationLogging(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "log/loggingOperation")
@@ -1482,32 +1494,32 @@ package controllers {
   
   }
 
-  // @LINE:237
+  // @LINE:239
   class ReverseTACandidateController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:240
+    // @LINE:242
     def getAssignmentsByUserId(userId:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tacandidate/assignments/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)))
     }
   
-    // @LINE:237
+    // @LINE:239
     def addTACandidate(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "tacandidate/addTACandidate")
     }
   
-    // @LINE:239
+    // @LINE:241
     def getTACandidateById(Id:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tacandidate/candidateDetail/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("Id", Id)))
     }
   
-    // @LINE:238
+    // @LINE:240
     def tacandidateList(userId:Long, pageLimit:Integer, pageNum:Integer, sortCriteria:java.util.Optional[String]): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "tacandidate/tacandidateList/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("userId", userId)) + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageLimit", pageLimit)), Some(implicitly[play.api.mvc.QueryStringBindable[Integer]].unbind("pageNum", pageNum)), Some(implicitly[play.api.mvc.QueryStringBindable[java.util.Optional[String]]].unbind("sortCriteria", sortCriteria)))))
