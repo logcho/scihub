@@ -31,6 +31,7 @@ public class Interview extends Model {
     private User createdBy;
 
     // JSON array of proposed times
+    @Column(columnDefinition = "LONGTEXT")
     private String proposedTimes;
 
     // The chosen/confirmed time
@@ -42,6 +43,7 @@ public class Interview extends Model {
     private String createdTime;
     private String updatedTime;
     private String location;
+    @Column(columnDefinition = "LONGTEXT")
     private String notes;
 
     public Interview() {

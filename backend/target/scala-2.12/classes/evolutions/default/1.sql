@@ -134,6 +134,20 @@ create table file (
   constraint pk_file primary key (id)
 );
 
+create table interview (
+  id                            bigint auto_increment not null,
+  rajob_application_id          bigint,
+  created_by_user_id            bigint,
+  proposed_times                LONGTEXT,
+  chosen_time                   varchar(255),
+  status                        varchar(255),
+  created_time                  varchar(255),
+  updated_time                  varchar(255),
+  location                      varchar(255),
+  notes                         LONGTEXT,
+  constraint pk_interview primary key (id)
+);
+
 create table job (
   id                            bigint auto_increment not null,
   is_active                     varchar(255),
@@ -667,135 +681,141 @@ create table friendship (
   constraint pk_friendship primary key (useraid,userbid)
 );
 
-alter table bug_report add constraint fk_bug_report_reporter_id foreign key (reporter_id) references user (id) on delete restrict on update restrict;
 create index ix_bug_report_reporter_id on bug_report (reporter_id);
+alter table bug_report add constraint fk_bug_report_reporter_id foreign key (reporter_id) references user (id) on delete restrict on update restrict;
 
-alter table bug_report add constraint fk_bug_report_fixer_id foreign key (fixer_id) references user (id) on delete restrict on update restrict;
 create index ix_bug_report_fixer_id on bug_report (fixer_id);
+alter table bug_report add constraint fk_bug_report_fixer_id foreign key (fixer_id) references user (id) on delete restrict on update restrict;
 
-alter table challenge add constraint fk_challenge_challenge_publisher_id foreign key (challenge_publisher_id) references user (id) on delete restrict on update restrict;
 create index ix_challenge_challenge_publisher_id on challenge (challenge_publisher_id);
+alter table challenge add constraint fk_challenge_challenge_publisher_id foreign key (challenge_publisher_id) references user (id) on delete restrict on update restrict;
 
-alter table challenge_application add constraint fk_challenge_application_challenge_id foreign key (challenge_id) references challenge (id) on delete restrict on update restrict;
 create index ix_challenge_application_challenge_id on challenge_application (challenge_id);
+alter table challenge_application add constraint fk_challenge_application_challenge_id foreign key (challenge_id) references challenge (id) on delete restrict on update restrict;
 
-alter table challenge_application add constraint fk_challenge_application_applicant_id foreign key (applicant_id) references user (id) on delete restrict on update restrict;
 create index ix_challenge_application_applicant_id on challenge_application (applicant_id);
+alter table challenge_application add constraint fk_challenge_application_applicant_id foreign key (applicant_id) references user (id) on delete restrict on update restrict;
 
-alter table course_taassignment add constraint fk_course_taassignment_course_id foreign key (course_id) references course (id) on delete restrict on update restrict;
 create index ix_course_taassignment_course_id on course_taassignment (course_id);
+alter table course_taassignment add constraint fk_course_taassignment_course_id foreign key (course_id) references course (id) on delete restrict on update restrict;
 
-alter table course_taassignment add constraint fk_course_taassignment_ta_id foreign key (ta_id) references tacandidate (id) on delete restrict on update restrict;
 create index ix_course_taassignment_ta_id on course_taassignment (ta_id);
+alter table course_taassignment add constraint fk_course_taassignment_ta_id foreign key (ta_id) references tacandidate (id) on delete restrict on update restrict;
 
-alter table job add constraint fk_job_job_publisher_id foreign key (job_publisher_id) references user (id) on delete restrict on update restrict;
+create index ix_interview_rajob_application_id on interview (rajob_application_id);
+alter table interview add constraint fk_interview_rajob_application_id foreign key (rajob_application_id) references rajob_application (id) on delete restrict on update restrict;
+
+create index ix_interview_created_by_user_id on interview (created_by_user_id);
+alter table interview add constraint fk_interview_created_by_user_id foreign key (created_by_user_id) references user (id) on delete restrict on update restrict;
+
 create index ix_job_job_publisher_id on job (job_publisher_id);
+alter table job add constraint fk_job_job_publisher_id foreign key (job_publisher_id) references user (id) on delete restrict on update restrict;
 
-alter table job_application add constraint fk_job_application_job_id foreign key (job_id) references job (id) on delete restrict on update restrict;
 create index ix_job_application_job_id on job_application (job_id);
+alter table job_application add constraint fk_job_application_job_id foreign key (job_id) references job (id) on delete restrict on update restrict;
 
-alter table job_application add constraint fk_job_application_applicant_id foreign key (applicant_id) references user (id) on delete restrict on update restrict;
 create index ix_job_application_applicant_id on job_application (applicant_id);
+alter table job_application add constraint fk_job_application_applicant_id foreign key (applicant_id) references user (id) on delete restrict on update restrict;
 
-alter table mail add constraint fk_mail_sender_id foreign key (sender_id) references user (id) on delete restrict on update restrict;
 create index ix_mail_sender_id on mail (sender_id);
+alter table mail add constraint fk_mail_sender_id foreign key (sender_id) references user (id) on delete restrict on update restrict;
 
-alter table mail add constraint fk_mail_receiver_id foreign key (receiver_id) references user (id) on delete restrict on update restrict;
 create index ix_mail_receiver_id on mail (receiver_id);
+alter table mail add constraint fk_mail_receiver_id foreign key (receiver_id) references user (id) on delete restrict on update restrict;
 
-alter table mail_file add constraint fk_mail_file_mail foreign key (mail_id) references mail (id) on delete restrict on update restrict;
 create index ix_mail_file_mail on mail_file (mail_id);
+alter table mail_file add constraint fk_mail_file_mail foreign key (mail_id) references mail (id) on delete restrict on update restrict;
 
-alter table mail_file add constraint fk_mail_file_file foreign key (file_id) references file (id) on delete restrict on update restrict;
 create index ix_mail_file_file on mail_file (file_id);
+alter table mail_file add constraint fk_mail_file_file foreign key (file_id) references file (id) on delete restrict on update restrict;
 
-alter table user_organization add constraint fk_user_organization_organization foreign key (organization_id) references organization (id) on delete restrict on update restrict;
 create index ix_user_organization_organization on user_organization (organization_id);
+alter table user_organization add constraint fk_user_organization_organization foreign key (organization_id) references organization (id) on delete restrict on update restrict;
 
-alter table user_organization add constraint fk_user_organization_user foreign key (user_id) references user (id) on delete restrict on update restrict;
 create index ix_user_organization_user on user_organization (user_id);
+alter table user_organization add constraint fk_user_organization_user foreign key (user_id) references user (id) on delete restrict on update restrict;
 
-alter table project add constraint fk_project_principal_investigator_id foreign key (principal_investigator_id) references user (id) on delete restrict on update restrict;
 create index ix_project_principal_investigator_id on project (principal_investigator_id);
+alter table project add constraint fk_project_principal_investigator_id foreign key (principal_investigator_id) references user (id) on delete restrict on update restrict;
 
-alter table project add constraint fk_project_sponsor_contact_id foreign key (sponsor_contact_id) references user (id) on delete restrict on update restrict;
 create index ix_project_sponsor_contact_id on project (sponsor_contact_id);
+alter table project add constraint fk_project_sponsor_contact_id foreign key (sponsor_contact_id) references user (id) on delete restrict on update restrict;
 
-alter table project add constraint fk_project_principal_investigator_organization_id foreign key (principal_investigator_organization_id) references organization (id) on delete restrict on update restrict;
 create index ix_project_principal_investigator_organization_id on project (principal_investigator_organization_id);
+alter table project add constraint fk_project_principal_investigator_organization_id foreign key (principal_investigator_organization_id) references organization (id) on delete restrict on update restrict;
 
-alter table project add constraint fk_project_sponsor_organization_id foreign key (sponsor_organization_id) references organization (id) on delete restrict on update restrict;
 create index ix_project_sponsor_organization_id on project (sponsor_organization_id);
+alter table project add constraint fk_project_sponsor_organization_id foreign key (sponsor_organization_id) references organization (id) on delete restrict on update restrict;
 
-alter table rajob add constraint fk_rajob_rajob_publisher_id foreign key (rajob_publisher_id) references user (id) on delete restrict on update restrict;
 create index ix_rajob_rajob_publisher_id on rajob (rajob_publisher_id);
+alter table rajob add constraint fk_rajob_rajob_publisher_id foreign key (rajob_publisher_id) references user (id) on delete restrict on update restrict;
 
-alter table rajob_application add constraint fk_rajob_application_rajob_id foreign key (rajob_id) references rajob (id) on delete restrict on update restrict;
 create index ix_rajob_application_rajob_id on rajob_application (rajob_id);
+alter table rajob_application add constraint fk_rajob_application_rajob_id foreign key (rajob_id) references rajob (id) on delete restrict on update restrict;
 
-alter table rajob_application add constraint fk_rajob_application_applicant_id foreign key (applicant_id) references user (id) on delete restrict on update restrict;
 create index ix_rajob_application_applicant_id on rajob_application (applicant_id);
+alter table rajob_application add constraint fk_rajob_application_applicant_id foreign key (applicant_id) references user (id) on delete restrict on update restrict;
 
 alter table researcher_info add constraint fk_researcher_info_user_id foreign key (user_id) references user (id) on delete restrict on update restrict;
 
 alter table student_info add constraint fk_student_info_user_id foreign key (user_id) references user (id) on delete restrict on update restrict;
 
-alter table suggestion add constraint fk_suggestion_reporter_id foreign key (reporter_id) references user (id) on delete restrict on update restrict;
 create index ix_suggestion_reporter_id on suggestion (reporter_id);
+alter table suggestion add constraint fk_suggestion_reporter_id foreign key (reporter_id) references user (id) on delete restrict on update restrict;
 
-alter table suggestion add constraint fk_suggestion_implementor_id foreign key (implementor_id) references user (id) on delete restrict on update restrict;
 create index ix_suggestion_implementor_id on suggestion (implementor_id);
+alter table suggestion add constraint fk_suggestion_implementor_id foreign key (implementor_id) references user (id) on delete restrict on update restrict;
 
-alter table tacandidate add constraint fk_tacandidate_ta_applicant_id foreign key (ta_applicant_id) references user (id) on delete restrict on update restrict;
 create index ix_tacandidate_ta_applicant_id on tacandidate (ta_applicant_id);
+alter table tacandidate add constraint fk_tacandidate_ta_applicant_id foreign key (ta_applicant_id) references user (id) on delete restrict on update restrict;
 
-alter table tajob add constraint fk_tajob_tajob_publisher_id foreign key (tajob_publisher_id) references user (id) on delete restrict on update restrict;
 create index ix_tajob_tajob_publisher_id on tajob (tajob_publisher_id);
+alter table tajob add constraint fk_tajob_tajob_publisher_id foreign key (tajob_publisher_id) references user (id) on delete restrict on update restrict;
 
-alter table tajob_application add constraint fk_tajob_application_tajob_id foreign key (tajob_id) references tajob (id) on delete restrict on update restrict;
 create index ix_tajob_application_tajob_id on tajob_application (tajob_id);
+alter table tajob_application add constraint fk_tajob_application_tajob_id foreign key (tajob_id) references tajob (id) on delete restrict on update restrict;
 
-alter table tajob_application add constraint fk_tajob_application_applicant_id foreign key (applicant_id) references user (id) on delete restrict on update restrict;
 create index ix_tajob_application_applicant_id on tajob_application (applicant_id);
+alter table tajob_application add constraint fk_tajob_application_applicant_id foreign key (applicant_id) references user (id) on delete restrict on update restrict;
 
-alter table taweekly_hours add constraint fk_taweekly_hours_assignment_id foreign key (assignment_id) references course_taassignment (id) on delete restrict on update restrict;
 create index ix_taweekly_hours_assignment_id on taweekly_hours (assignment_id);
+alter table taweekly_hours add constraint fk_taweekly_hours_assignment_id foreign key (assignment_id) references course_taassignment (id) on delete restrict on update restrict;
 
-alter table technology add constraint fk_technology_technology_publisher_id foreign key (technology_publisher_id) references user (id) on delete restrict on update restrict;
 create index ix_technology_technology_publisher_id on technology (technology_publisher_id);
+alter table technology add constraint fk_technology_technology_publisher_id foreign key (technology_publisher_id) references user (id) on delete restrict on update restrict;
 
-alter table technology_usedin_project add constraint fk_technology_usedin_project_technology foreign key (technology_id) references technology (id) on delete restrict on update restrict;
 create index ix_technology_usedin_project_technology on technology_usedin_project (technology_id);
+alter table technology_usedin_project add constraint fk_technology_usedin_project_technology foreign key (technology_id) references technology (id) on delete restrict on update restrict;
 
-alter table technology_usedin_project add constraint fk_technology_usedin_project_project foreign key (project_id) references project (id) on delete restrict on update restrict;
 create index ix_technology_usedin_project_project on technology_usedin_project (project_id);
+alter table technology_usedin_project add constraint fk_technology_usedin_project_project foreign key (project_id) references project (id) on delete restrict on update restrict;
 
-alter table user add constraint fk_user_project_zone_id foreign key (project_zone_id) references project (id) on delete restrict on update restrict;
 create index ix_user_project_zone_id on user (project_zone_id);
+alter table user add constraint fk_user_project_zone_id foreign key (project_zone_id) references project (id) on delete restrict on update restrict;
 
-alter table user_participation_project add constraint fk_user_participation_project_user foreign key (user_id) references user (id) on delete restrict on update restrict;
 create index ix_user_participation_project_user on user_participation_project (user_id);
+alter table user_participation_project add constraint fk_user_participation_project_user foreign key (user_id) references user (id) on delete restrict on update restrict;
 
-alter table user_participation_project add constraint fk_user_participation_project_project foreign key (project_id) references project (id) on delete restrict on update restrict;
 create index ix_user_participation_project_project on user_participation_project (project_id);
+alter table user_participation_project add constraint fk_user_participation_project_project foreign key (project_id) references project (id) on delete restrict on update restrict;
 
-alter table followers add constraint fk_followers_user_1 foreign key (userid) references user (id) on delete restrict on update restrict;
 create index ix_followers_user_1 on followers (userid);
+alter table followers add constraint fk_followers_user_1 foreign key (userid) references user (id) on delete restrict on update restrict;
 
-alter table followers add constraint fk_followers_user_2 foreign key (followerid) references user (id) on delete restrict on update restrict;
 create index ix_followers_user_2 on followers (followerid);
+alter table followers add constraint fk_followers_user_2 foreign key (followerid) references user (id) on delete restrict on update restrict;
 
-alter table friendrequests add constraint fk_friendrequests_user_1 foreign key (userid) references user (id) on delete restrict on update restrict;
 create index ix_friendrequests_user_1 on friendrequests (userid);
+alter table friendrequests add constraint fk_friendrequests_user_1 foreign key (userid) references user (id) on delete restrict on update restrict;
 
-alter table friendrequests add constraint fk_friendrequests_user_2 foreign key (senderid) references user (id) on delete restrict on update restrict;
 create index ix_friendrequests_user_2 on friendrequests (senderid);
+alter table friendrequests add constraint fk_friendrequests_user_2 foreign key (senderid) references user (id) on delete restrict on update restrict;
 
-alter table friendship add constraint fk_friendship_user_1 foreign key (useraid) references user (id) on delete restrict on update restrict;
 create index ix_friendship_user_1 on friendship (useraid);
+alter table friendship add constraint fk_friendship_user_1 foreign key (useraid) references user (id) on delete restrict on update restrict;
 
-alter table friendship add constraint fk_friendship_user_2 foreign key (userbid) references user (id) on delete restrict on update restrict;
 create index ix_friendship_user_2 on friendship (userbid);
+alter table friendship add constraint fk_friendship_user_2 foreign key (userbid) references user (id) on delete restrict on update restrict;
 
 
 # --- !Downs
@@ -820,6 +840,12 @@ drop index ix_course_taassignment_course_id on course_taassignment;
 
 alter table course_taassignment drop foreign key fk_course_taassignment_ta_id;
 drop index ix_course_taassignment_ta_id on course_taassignment;
+
+alter table interview drop foreign key fk_interview_rajob_application_id;
+drop index ix_interview_rajob_application_id on interview;
+
+alter table interview drop foreign key fk_interview_created_by_user_id;
+drop index ix_interview_created_by_user_id on interview;
 
 alter table job drop foreign key fk_job_job_publisher_id;
 drop index ix_job_job_publisher_id on job;
@@ -945,6 +971,8 @@ drop table if exists course;
 drop table if exists course_taassignment;
 
 drop table if exists file;
+
+drop table if exists interview;
 
 drop table if exists job;
 

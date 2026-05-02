@@ -1,0 +1,435 @@
+2026-05-02 00:51:27,985 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
+2026-05-02 00:51:28,082 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:mysql://localhost:3306/scihub_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2026-05-02 00:51:28,404 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-7 - ApplicationTimer demo: Starting application at 2026-05-02T05:51:28.404Z
+2026-05-02 00:51:28,708 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    filters.ExampleFilter
+    play.filters.cors.CORSFilter
+
+2026-05-02 00:51:28,759 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev)
+2026-05-02 00:51:28,888 [DEBUG] from application in application-akka.actor.default-dispatcher-3 - UserController.checkNewUserEmailAvailability() exception: javax.persistence.PersistenceException: Query threw SQLException:Table 'scihub_db.user' doesn't exist Bind values:[] Query was:select t0.id, t0.user_name, t0.password, t0.first_name, t0.last_name, t0.middle_initial, t0.organization, t0.email, t0.mailing_address, t0.phone_number, t0.level, t0.rating, t0.rating_count, t0.recommend_rating, t0.recommend_rating_count, t0.homepage, t0.avatar, t0.service_provider, t0.expertises, t0.categories, t0.detail, t0.user_type, t0.service_execution_counts, t0.service_user, t0.create_time, t0.is_active, t0.token, t0.unread_mention, t0.project_zone_id from user t0 left join researcher_info t1 on t1.user_id = t0.id  left join student_info t2 on t2.user_id = t0.id  where t0.email = ? 
+2026-05-02 00:52:12,337 [INFO] from application in application-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Stopping application at 2026-05-02T05:52:12.337Z after 44s.
+2026-05-02 00:52:12,338 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
+2026-05-02 00:52:12,389 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
+2026-05-02 00:52:12,392 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:mysql://localhost:3306/scihub_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2026-05-02 00:52:13,189 [ERROR] from play.api.db.evolutions.DefaultEvolutionsApi in play-dev-mode-akka.actor.default-dispatcher-6 - Table 'interview' already exists [ERROR:1050, SQLSTATE:42S01]
+2026-05-02 00:52:13,194 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-6 - ApplicationTimer demo: Starting application at 2026-05-02T05:52:13.194Z
+2026-05-02 00:52:13,229 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-6 - 
+
+! @8d8gl3a3a - Internal server error, for (POST) [/user/checkEmail] ->
+ 
+play.api.db.evolutions.InconsistentDatabase: Database 'default' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+	at play.api.db.evolutions.DatabaseEvolutions.$anonfun$checkEvolutionsState$3(EvolutionsApi.scala:288)
+	at play.api.db.evolutions.DatabaseEvolutions.$anonfun$checkEvolutionsState$3$adapted(EvolutionsApi.scala:273)
+	at play.api.db.evolutions.DatabaseEvolutions.executeQuery(EvolutionsApi.scala:320)
+	at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:273)
+	at play.api.db.evolutions.DatabaseEvolutions.evolve(EvolutionsApi.scala:242)
+	at play.api.db.evolutions.DefaultEvolutionsApi.evolve(EvolutionsApi.scala:97)
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$runEvolutions$1(ApplicationEvolutions.scala:63)
+	at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:100)
+	at play.api.db.evolutions.ApplicationEvolutions.runEvolutions(ApplicationEvolutions.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$start$1(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$start$1$adapted(ApplicationEvolutions.scala:42)
+	at scala.collection.immutable.List.foreach(List.scala:431)
+	at play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:151)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:50)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:40)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:194)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1085)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+	at com.google.inject.Guice.createInjector(Guice.java:99)
+	at com.google.inject.Guice.createInjector(Guice.java:84)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:185)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:137)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:174)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:171)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:124)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:202)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:117)
+	at akka.stream.impl.fusing.MapAsync$$anon$25.onPush(Ops.scala:1194)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:585)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:469)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:560)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:667)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:590)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:559)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2026-05-02 00:52:22,758 [ERROR] from play.api.db.evolutions.DefaultEvolutionsApi in play-dev-mode-akka.actor.default-dispatcher-6 - Table 'interview' already exists [ERROR:1050, SQLSTATE:42S01]
+2026-05-02 00:52:22,759 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-6 - 
+
+! @8d8gl3o79 - Internal server error, for (POST) [/@evolutions/apply/default] ->
+ 
+play.api.db.evolutions.InconsistentDatabase: Database 'default' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+	at play.api.db.evolutions.DatabaseEvolutions.$anonfun$checkEvolutionsState$3(EvolutionsApi.scala:288)
+	at play.api.db.evolutions.DatabaseEvolutions.$anonfun$checkEvolutionsState$3$adapted(EvolutionsApi.scala:273)
+	at play.api.db.evolutions.DatabaseEvolutions.executeQuery(EvolutionsApi.scala:320)
+	at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:273)
+	at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:138)
+	at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:113)
+	at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:128)
+	at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:93)
+	at play.api.db.evolutions.EvolutionsWebCommands.handleWebCommand(ApplicationEvolutions.scala:365)
+	at play.core.DefaultWebCommands.$anonfun$handleWebCommand$1(WebCommands.scala:40)
+	at scala.collection.immutable.Stream.flatMap(Stream.scala:489)
+	at play.core.DefaultWebCommands.handleWebCommand(WebCommands.scala:40)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$handleWebCommand$1(DevServerStart.scala:134)
+	at scala.Option.flatMap(Option.scala:271)
+	at play.core.server.DevServerStart$$anon$1.handleWebCommand(DevServerStart.scala:134)
+	at play.core.server.AkkaHttpServer$$anon$4.handleWebCommand(AkkaHttpServer.scala:243)
+	at play.core.server.Server$.getHandlerFor(Server.scala:115)
+	at play.core.server.AkkaHttpServer.getHandler(AkkaHttpServer.scala:246)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:217)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:117)
+	at akka.stream.impl.fusing.MapAsync$$anon$25.onPush(Ops.scala:1194)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:585)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:469)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:560)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:667)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:590)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:559)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2026-05-02 00:53:01,745 [ERROR] from play.api.db.evolutions.DefaultEvolutionsApi in play-dev-mode-akka.actor.default-dispatcher-6 - Table 'interview' already exists [ERROR:1050, SQLSTATE:42S01]
+2026-05-02 00:53:01,745 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-6 - 
+
+! @8d8gl63om - Internal server error, for (POST) [/@evolutions/apply/default] ->
+ 
+play.api.db.evolutions.InconsistentDatabase: Database 'default' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+	at play.api.db.evolutions.DatabaseEvolutions.$anonfun$checkEvolutionsState$3(EvolutionsApi.scala:288)
+	at play.api.db.evolutions.DatabaseEvolutions.$anonfun$checkEvolutionsState$3$adapted(EvolutionsApi.scala:273)
+	at play.api.db.evolutions.DatabaseEvolutions.executeQuery(EvolutionsApi.scala:320)
+	at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:273)
+	at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:138)
+	at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:113)
+	at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:128)
+	at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:93)
+	at play.api.db.evolutions.EvolutionsWebCommands.handleWebCommand(ApplicationEvolutions.scala:365)
+	at play.core.DefaultWebCommands.$anonfun$handleWebCommand$1(WebCommands.scala:40)
+	at scala.collection.immutable.Stream.flatMap(Stream.scala:489)
+	at play.core.DefaultWebCommands.handleWebCommand(WebCommands.scala:40)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$handleWebCommand$1(DevServerStart.scala:134)
+	at scala.Option.flatMap(Option.scala:271)
+	at play.core.server.DevServerStart$$anon$1.handleWebCommand(DevServerStart.scala:134)
+	at play.core.server.AkkaHttpServer$$anon$4.handleWebCommand(AkkaHttpServer.scala:243)
+	at play.core.server.Server$.getHandlerFor(Server.scala:115)
+	at play.core.server.AkkaHttpServer.getHandler(AkkaHttpServer.scala:246)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:217)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:117)
+	at akka.stream.impl.fusing.MapAsync$$anon$25.onPush(Ops.scala:1194)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:585)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:469)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:560)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:667)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:590)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:559)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2026-05-02 00:53:06,842 [ERROR] from play.api.db.evolutions.DefaultEvolutionsApi in play-dev-mode-akka.actor.default-dispatcher-6 - Table 'interview' already exists [ERROR:1050, SQLSTATE:42S01]
+2026-05-02 00:53:06,843 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-6 - 
+
+! @8d8gl6bcn - Internal server error, for (POST) [/@evolutions/apply/default] ->
+ 
+play.api.db.evolutions.InconsistentDatabase: Database 'default' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+	at play.api.db.evolutions.DatabaseEvolutions.$anonfun$checkEvolutionsState$3(EvolutionsApi.scala:288)
+	at play.api.db.evolutions.DatabaseEvolutions.$anonfun$checkEvolutionsState$3$adapted(EvolutionsApi.scala:273)
+	at play.api.db.evolutions.DatabaseEvolutions.executeQuery(EvolutionsApi.scala:320)
+	at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:273)
+	at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:138)
+	at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:113)
+	at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:128)
+	at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:93)
+	at play.api.db.evolutions.EvolutionsWebCommands.handleWebCommand(ApplicationEvolutions.scala:365)
+	at play.core.DefaultWebCommands.$anonfun$handleWebCommand$1(WebCommands.scala:40)
+	at scala.collection.immutable.Stream.flatMap(Stream.scala:489)
+	at play.core.DefaultWebCommands.handleWebCommand(WebCommands.scala:40)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$handleWebCommand$1(DevServerStart.scala:134)
+	at scala.Option.flatMap(Option.scala:271)
+	at play.core.server.DevServerStart$$anon$1.handleWebCommand(DevServerStart.scala:134)
+	at play.core.server.AkkaHttpServer$$anon$4.handleWebCommand(AkkaHttpServer.scala:243)
+	at play.core.server.Server$.getHandlerFor(Server.scala:115)
+	at play.core.server.AkkaHttpServer.getHandler(AkkaHttpServer.scala:246)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:217)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:117)
+	at akka.stream.impl.fusing.MapAsync$$anon$25.onPush(Ops.scala:1194)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:585)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:469)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:560)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:667)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:590)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:559)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2026-05-02 00:53:11,702 [ERROR] from play.api.db.evolutions.DefaultEvolutionsApi in play-dev-mode-akka.actor.default-dispatcher-6 - Table 'interview' already exists [ERROR:1050, SQLSTATE:42S01]
+2026-05-02 00:53:11,702 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-6 - 
+
+! @8d8gl6ihl - Internal server error, for (POST) [/@evolutions/apply/default] ->
+ 
+play.api.db.evolutions.InconsistentDatabase: Database 'default' is in an inconsistent state![An evolution has not been applied properly. Please check the problem and resolve it manually before marking it as resolved.]
+	at play.api.db.evolutions.DatabaseEvolutions.$anonfun$checkEvolutionsState$3(EvolutionsApi.scala:288)
+	at play.api.db.evolutions.DatabaseEvolutions.$anonfun$checkEvolutionsState$3$adapted(EvolutionsApi.scala:273)
+	at play.api.db.evolutions.DatabaseEvolutions.executeQuery(EvolutionsApi.scala:320)
+	at play.api.db.evolutions.DatabaseEvolutions.checkEvolutionsState(EvolutionsApi.scala:273)
+	at play.api.db.evolutions.DatabaseEvolutions.databaseEvolutions(EvolutionsApi.scala:138)
+	at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:113)
+	at play.api.db.evolutions.DatabaseEvolutions.scripts(EvolutionsApi.scala:128)
+	at play.api.db.evolutions.DefaultEvolutionsApi.scripts(EvolutionsApi.scala:93)
+	at play.api.db.evolutions.EvolutionsWebCommands.handleWebCommand(ApplicationEvolutions.scala:365)
+	at play.core.DefaultWebCommands.$anonfun$handleWebCommand$1(WebCommands.scala:40)
+	at scala.collection.immutable.Stream.flatMap(Stream.scala:489)
+	at play.core.DefaultWebCommands.handleWebCommand(WebCommands.scala:40)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$handleWebCommand$1(DevServerStart.scala:134)
+	at scala.Option.flatMap(Option.scala:271)
+	at play.core.server.DevServerStart$$anon$1.handleWebCommand(DevServerStart.scala:134)
+	at play.core.server.AkkaHttpServer$$anon$4.handleWebCommand(AkkaHttpServer.scala:243)
+	at play.core.server.Server$.getHandlerFor(Server.scala:115)
+	at play.core.server.AkkaHttpServer.getHandler(AkkaHttpServer.scala:246)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:217)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:117)
+	at akka.stream.impl.fusing.MapAsync$$anon$25.onPush(Ops.scala:1194)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:585)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:469)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:560)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:742)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:757)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:667)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:590)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:559)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2026-05-02 00:53:48,304 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Stopping application at 2026-05-02T05:53:48.304Z after 95s.
+2026-05-02 00:53:48,304 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2026-05-02 00:53:48,342 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2026-05-02 00:53:48,345 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:mysql://localhost:3306/scihub_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2026-05-02 00:53:49,052 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2026-05-02T05:53:49.052Z
+2026-05-02 00:53:49,186 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    filters.ExampleFilter
+    play.filters.cors.CORSFilter
+
+2026-05-02 00:53:49,189 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
+2026-05-02 00:53:49,210 [INFO] from application in application-akka.actor.default-dispatcher-4 - UserController.checkNewUserEmailAvailability the email can be used: test@example.com
+2026-05-02 01:03:32,389 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Stopping application at 2026-05-02T06:03:32.389Z after 583s.
+2026-05-02 01:03:32,389 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2026-05-02 01:03:32,424 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2026-05-02 01:03:32,427 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:mysql://localhost:3306/scihub_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2026-05-02 01:03:32,481 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - ApplicationTimer demo: Starting application at 2026-05-02T06:03:32.481Z
+2026-05-02 01:03:32,595 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    filters.ExampleFilter
+    play.filters.cors.CORSFilter
+
+2026-05-02 01:03:32,598 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
+2026-05-02 01:03:37,121 [INFO] from application in application-akka.actor.default-dispatcher-5 - UserController.checkNewUserEmailAvailability the email can be used: lschoi@smu.edu
+2026-05-02 01:04:02,386 [DEBUG] from application in application-akka.actor.default-dispatcher-5 - Homepage received from request: 
+2026-05-02 01:04:02,433 [INFO] from application in application-akka.actor.default-dispatcher-5 - sendRegisterEmail: Begin processing registration email.
+2026-05-02 01:04:02,433 [INFO] from application in application-akka.actor.default-dispatcher-5 - sendRegisterEmail: Received parameters - email: lschoi@smu.edu, id: 1, url: http://localhost:9036/users/
+2026-05-02 01:04:02,444 [INFO] from application in application-akka.actor.default-dispatcher-5 - AESEncode result: OjyEqTSzRF9uka406iJs3g==
+2026-05-02 01:04:02,444 [INFO] from application in application-akka.actor.default-dispatcher-5 - URL safe encoded token: OjyEqTSzRF9uka406iJs3g
+2026-05-02 01:04:02,446 [INFO] from application in application-akka.actor.default-dispatcher-5 - sendRegisterEmail: URL safe encoded token: OjyEqTSzRF9uka406iJs3g
+2026-05-02 01:04:02,446 [INFO] from application in application-akka.actor.default-dispatcher-5 - sendRegisterEmail: Activation link constructed: http://localhost:9036/users/OjyEqTSzRF9uka406iJs3g
+2026-05-02 01:04:02,446 [INFO] from application in application-akka.actor.default-dispatcher-5 - sendRegisterEmail: Email body constructed: Hi, 
+
+Thank you for your registration!
+Now the last step is to verify your email address. 
+Please click the link below to finish the registration process.
+http://localhost:9036/users/OjyEqTSzRF9uka406iJs3g
+
+Best Regards, 
+SMU-Lyle-Sci-Hub Group
+2026-05-02 01:04:02,449 [INFO] from application in application-akka.actor.default-dispatcher-5 - sendIndividualEmail: Starting email sending process.
+2026-05-02 01:04:02,452 [INFO] from application in application-akka.actor.default-dispatcher-5 - sendIndividualEmail: Config = Config(SimpleConfigObject({"akka":{"actor":{"additional-serialization-bindings":{},"allow-java-serialization":"on","creation-timeout":"20s","debug":{"autoreceive":"off","event-stream":"off","fsm":"off","lifecycle":"off","receive":"off","router-misconfiguration":"off","unhandled":"off"},"default-blocking-io-dispatcher":{"executor":"thread-pool-executor","thread-pool-executor":{"fixed-pool-size":16},"throughput":1,"type":"Dispatcher"},"default-dispatcher":{"affinity-pool-executor":{"fair-work-distribution":{"threshold":128},"idle-cpu-level":5,"parallelism-factor":0.8,"parallelism-max":64,"parallelism-min":4,"queue-selector":"akka.dispatch.affinity.FairDistributionHashCache","rejection-handler":"akka.dispatch.affinity.ThrowOnOverflowRejectionHandler","task-queue-size":512},"attempt-teamwork":"on","default-executor":{"fallback":"fork-join-executor"},"executor":"default-executor","fork-join-executor":{"parallelism-factor":1,"parallelism-max":24,"parallelism-min":8,"task-peeking-mode":"LIFO"},"mailbox-requirement":"","shutdown-timeout":"1s","thread-pool-executor":{"allow-core-timeout":"on","core-pool-size-factor":3,"core-pool-size-max":64,"core-pool-size-min":8,"fixed-pool-size":"off","keep-alive-time":"60s","max-pool-size-factor":3,"max-pool-size-max":64,"max-pool-size-min":8,"task-queue-size":-1,"task-queue-type":"linked"},"throughput":5,"throughput-deadline-time":"0ms","type":"Dispatcher"},"default-mailbox":{"mailbox-capacity":1000,"mailbox-push-timeout-time":"10s","mailbox-type":"akka.dispatch.UnboundedMailbox","stash-capacity":-1},"deployment":{"/IO-DNS/inet-address":{"mailbox":"unbounded","nr-of-instances":4,"router":"consistent-hashing-pool"},"/IO-DNS/inet-address/*":{"dispatcher":"akka.actor.default-blocking-io-dispatcher"},"default":{"dispatcher":"","mailbox":"","nr-of-instances":1,"optimal-size-exploring-resizer":{"action-interval":"5s","chance-of-exploration":0.4,"chance-of-ramping-down-when-full":0.2,"downsize-after-underutilized-for":"72h","downsize-ratio":0.8,"enabled":"off","explore-step-size":0.1,"lower-bound":1,"optimization-range":16,"upper-bound":10,"weight-of-latest-metric":0.5},"resizer":{"backoff-rate":0.1,"backoff-threshold":0.3,"enabled":"off","lower-bound":1,"messages-per-resize":10,"pressure-threshold":1,"rampup-rate":0.2,"upper-bound":10},"routees":{"paths":[]},"router":"from-code","tail-chopping-router":{"interval":"10 milliseconds"},"virtual-nodes-factor":10,"within":"5 seconds"}},"dsl":{"default-timeout":"5s","inbox-size":1000},"enable-additional-serialization-bindings":"on","guardian-supervisor-strategy":"akka.actor.DefaultSupervisorStrategy","java-serialization-disabled-additional-serialization-bindings":{},"mailbox":{"bounded-control-aware-queue-based":{"mailbox-type":"akka.dispatch.BoundedControlAwareMailbox"},"bounded-deque-based":{"mailbox-type":"akka.dispatch.BoundedDequeBasedMailbox"},"bounded-queue-based":{"mailbox-type":"akka.dispatch.BoundedMailbox"},"logger-queue":{"mailbox-type":"akka.event.LoggerMailboxType"},"requirements":{"akka.dispatch.BoundedControlAwareMessageQueueSemantics":"akka.actor.mailbox.bounded-control-aware-queue-based","akka.dispatch.BoundedDequeBasedMessageQueueSemantics":"akka.actor.mailbox.bounded-deque-based","akka.dispatch.BoundedMessageQueueSemantics":"akka.actor.mailbox.bounded-queue-based","akka.dispatch.ControlAwareMessageQueueSemantics":"akka.actor.mailbox.unbounded-control-aware-queue-based","akka.dispatch.DequeBasedMessageQueueSemantics":"akka.actor.mailbox.unbounded-deque-based","akka.dispatch.MultipleConsumerSemantics":"akka.actor.mailbox.unbounded-queue-based","akka.dispatch.UnboundedControlAwareMessageQueueSemantics":"akka.actor.mailbox.unbounded-control-aware-queue-based","akka.dispatch.UnboundedDequeBasedMessageQueueSemantics":"akka.actor.mailbox.unbounded-deque-based","akka.dispatch.UnboundedMessageQueueSemantics":"akka.actor.mailbox.unbounded-queue-based","akka.event.LoggerMessageQueueSemantics":"akka.actor.mailbox.logger-queue"},"unbounded-control-aware-queue-based":{"mailbox-type":"akka.dispatch.UnboundedControlAwareMailbox"},"unbounded-deque-based":{"mailbox-type":"akka.dispatch.UnboundedDequeBasedMailbox"},"unbounded-queue-based":{"mailbox-type":"akka.dispatch.UnboundedMailbox"}},"provider":"local","router":{"type-mapping":{"balancing-pool":"akka.routing.BalancingPool","broadcast-group":"akka.routing.BroadcastGroup","broadcast-pool":"akka.routing.BroadcastPool","consistent-hashing-group":"akka.routing.ConsistentHashingGroup","consistent-hashing-pool":"akka.routing.ConsistentHashingPool","from-code":"akka.routing.NoRouter","random-group":"akka.routing.RandomGroup","random-pool":"akka.routing.RandomPool","round-robin-group":"akka.routing.RoundRobinGroup","round-robin-pool":"akka.routing.RoundRobinPool","scatter-gather-group":"akka.routing.ScatterGatherFirstCompletedGroup","scatter-gather-pool":"akka.routing.ScatterGatherFirstCompletedPool","smallest-mailbox-pool":"akka.routing.SmallestMailboxPool","tail-chopping-group":"akka.routing.TailChoppingGroup","tail-chopping-pool":"akka.routing.TailChoppingPool"}},"serialization-bindings":{"[B":"bytes","akka.stream.SinkRef":"akka-stream-ref","akka.stream.SourceRef":"akka-stream-ref","akka.stream.impl.streamref.StreamRefsProtocol":"akka-stream-ref","java.io.Serializable":"java"},"serialization-identifiers":{"akka.serialization.ByteArraySerializer":4,"akka.serialization.JavaSerializer":1,"akka.stream.serialization.StreamRefSerializer":30},"serialize-creators":"off","serialize-messages":"off","serializers":{"akka-stream-ref":"akka.stream.serialization.StreamRefSerializer","bytes":"akka.serialization.ByteArraySerializer","java":"akka.serialization.JavaSerializer"},"typed":{"timeout":"5s"},"unstarted-push-timeout":"10s","warn-about-java-serializer-usage":"on","warn-on-no-serialization-verification":"on"},"coordinated-shutdown":{"default-phase-timeout":"5 s","exit-jvm":"off","phases":{"actor-system-terminate":{"depends-on":["before-actor-system-terminate"],"timeout":"10 s"},"before-actor-system-terminate":{"depends-on":["cluster-shutdown"]},"before-cluster-shutdown":{"depends-on":["service-stop"]},"before-service-unbind":{},"cluster-exiting":{"depends-on":["cluster-leave"],"timeout":"10 s"},"cluster-exiting-done":{"depends-on":["cluster-exiting"]},"cluster-leave":{"depends-on":["cluster-sharding-shutdown-region"]},"cluster-sharding-shutdown-region":{"depends-on":["before-cluster-shutdown"],"timeout":"10 s"},"cluster-shutdown":{"depends-on":["cluster-exiting-done"]},"service-requests-done":{"depends-on":["service-unbind"]},"service-stop":{"depends-on":["service-requests-done"]},"service-unbind":{"depends-on":["before-service-unbind"]}},"run-by-jvm-shutdown-hook":"off","terminate-actor-system":"on"},"daemonic":"off","extensions":[],"home":"","http":{"client":{"connecting-timeout":"10s","idle-timeout":"60 s","log-unencrypted-network-bytes":"off","parsing":{},"request-header-size-hint":512,"socket-options":{"so-receive-buffer-size":"undefined","so-reuse-address":"undefined","so-send-buffer-size":"undefined","so-traffic-class":"undefined","tcp-keep-alive":"undefined","tcp-no-delay":"undefined","tcp-oob-inline":"undefined"},"user-agent-header":"akka-http/10.0.13"},"host-connection-pool":{"client":{},"idle-timeout":"30 s","max-connections":4,"max-open-requests":32,"max-retries":5,"min-connections":0,"pipelining-limit":1,"pool-implementation":"legacy","response-entity-subscription-timeout":"1.second"},"parsing":{"cookie-parsing-mode":"rfc6265","error-logging-verbosity":"full","header-cache":{"Content-MD5":0,"Date":0,"If-Match":0,"If-Modified-Since":0,"If-None-Match":0,"If-Range":0,"If-Unmodified-Since":0,"User-Agent":32,"default":12},"illegal-header-warnings":"on","illegal-response-header-value-processing-mode":"error","max-chunk-ext-length":256,"max-chunk-size":"1m","max-content-length":"8m","max-header-count":64,"max-header-name-length":64,"max-header-value-length":"8k","max-method-length":16,"max-response-reason-length":64,"max-uri-length":"16k","modeled-header-parsing":"on","tls-session-info-header":"off","uri-parsing-mode":"strict"},"server":{"backlog":100,"bind-timeout":"1s","default-host-header":"","default-http-port":80,"default-https-port":443,"http2":{"incoming-connection-level-buffer-size":"10 MB","incoming-stream-level-buffer-size":"512kB","request-entity-chunk-size":"65536 b"},"idle-timeout":"60 s","linger-timeout":"1 min","log-unencrypted-network-bytes":"off","max-connections":1024,"parsing":{},"pipelining-limit":16,"preview":{"enable-http2":"off"},"raw-request-uri-header":"off","remote-address-header":"off","request-timeout":"20 s","response-header-size-hint":512,"server-header":"akka-http/10.0.13","socket-options":{"so-receive-buffer-size":"undefined","so-reuse-address":"undefined","so-send-buffer-size":"undefined","so-traffic-class":"undefined","tcp-keep-alive":"undefined","tcp-no-delay":"undefined","tcp-oob-inline":"undefined"},"transparent-head-requests":"on","verbose-error-messages":"off"},"version":"10.0.13"},"io":{"dns":{"dispatcher":"akka.actor.default-dispatcher","inet-address":{"cache-cleanup-interval":"120s","negative-ttl":"default","positive-ttl":"default","provider-object":"akka.io.InetAddressDnsProvider"},"resolver":"inet-address"},"pinned-dispatcher":{"executor":"thread-pool-executor","thread-pool-executor":{"allow-core-timeout":"off"},"type":"PinnedDispatcher"},"tcp":{"batch-accept-limit":10,"direct-buffer-pool-limit":1000,"direct-buffer-size":"128 KiB","file-io-dispatcher":"akka.actor.default-blocking-io-dispatcher","file-io-transferTo-limit":"512 KiB","finish-connect-retries":5,"management-dispatcher":"akka.actor.default-dispatcher","max-channels":256000,"max-received-message-size":"unlimited","nr-of-selectors":1,"register-timeout":"5s","selector-association-retries":10,"selector-dispatcher":"akka.io.pinned-dispatcher","trace-logging":"off","windows-connection-abort-workaround-enabled":"off","worker-dispatcher":"akka.actor.default-dispatcher"},"udp":{"direct-buffer-pool-limit":1000,"direct-buffer-size":"128 KiB","management-dispatcher":"akka.actor.default-dispatcher","max-channels":4096,"nr-of-selectors":1,"receive-throughput":3,"select-timeout":"infinite","selector-association-retries":10,"selector-dispatcher":"akka.io.pinned-dispatcher","trace-logging":"off","worker-dispatcher":"akka.actor.default-dispatcher"},"udp-connected":{"direct-buffer-pool-limit":1000,"direct-buffer-size":"128 KiB","management-dispatcher":"akka.actor.default-dispatcher","max-channels":4096,"nr-of-selectors":1,"receive-throughput":3,"select-timeout":"infinite","selector-association-retries":10,"selector-dispatcher":"akka.io.pinned-dispatcher","trace-logging":"off","worker-dispatcher":"akka.actor.default-dispatcher"}},"jvm-exit-on-fatal-error":true,"jvm-shutdown-hooks":"off","library-extensions":["akka.serialization.SerializationExtension"],"log-config-on-start":"off","log-dead-letters":"off","log-dead-letters-during-shutdown":"on","logger-startup-timeout":"5s","loggers":["akka.event.slf4j.Slf4jLogger"],"loggers-dispatcher":"akka.actor.default-dispatcher","logging-filter":"akka.event.slf4j.Slf4jLoggingFilter","loglevel":"DEBUG","scheduler":{"implementation":"akka.actor.LightArrayRevolverScheduler","shutdown-timeout":"5s","tick-duration":"10ms","ticks-per-wheel":512},"ssl-config":{"protocol":"TLSv1.2"},"stdout-loglevel":"WARNING","stream":{"blocking-io-dispatcher":"akka.stream.default-blocking-io-dispatcher","default-blocking-io-dispatcher":{"executor":"thread-pool-executor","thread-pool-executor":{"fixed-pool-size":16},"throughput":1,"type":"Dispatcher"},"materializer":{"auto-fusing":"on","blocking-io-dispatcher":"akka.stream.default-blocking-io-dispatcher","debug":{"fuzzing-mode":"off"},"debug-logging":"off","dispatcher":"","initial-input-buffer-size":4,"io":{"tcp":{"write-buffer-size":"16 KiB"}},"max-fixed-buffer-size":1000000000,"max-input-buffer-size":16,"output-burst-limit":1000,"stream-ref":{"buffer-capacity":32,"demand-redelivery-interval":"1 second","subscription-timeout":"30 seconds"},"subscription-timeout":{"mode":"cancel","timeout":"5s"},"sync-processing-limit":1000}},"version":"2.5.11"},"aws":{"accessKeyId":"teaching-dummy","fileNamePrefix":"teaching/","region":"us-east-1","s3":{"bucketName":"teaching-bucket"},"secretAccessKey":"teaching-dummy"},"awt":{"toolkit":"sun.lwawt.macosx.LWCToolkit"},"db":{"default":{"driver":"com.mysql.cj.jdbc.Driver","password":"","url":"jdbc:mysql://localhost:3306/scihub_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true","username":"root"}},"ebean":{"default":["models.*"]},"file":{"encoding":{"pkg":"sun.io"},"separator":"/"},"ftp":{"nonProxyHosts":"local|*.local|169.254/16|*.169.254/16"},"gopherProxySet":"false","http":{"nonProxyHosts":"local|*.local|169.254/16|*.169.254/16"},"java":{"awt":{"graphicsenv":"sun.awt.CGraphicsEnvironment","printerjob":"sun.lwawt.macosx.CPrinterJob"},"class":{"path":"/Users/loganchoi/.sbt/launchers/1.3.13/sbt-launch.jar","version":"52.0"},"endorsed":{"dirs":"/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre/lib/endorsed"},"ext":{"dirs":"/Users/loganchoi/Library/Java/Extensions:/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"},"home":"/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre","io":{"tmpdir":"/var/folders/k6/vh9m1qvx7s37pn22yfvrbc3c0000gn/T/"},"library":{"path":"/Users/loganchoi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."},"runtime":{"name":"OpenJDK Runtime Environment","version":"1.8.0_482-b08"},"specification":{"maintenance":{"version":"6"},"name":"Java Platform API Specification","vendor":"Oracle Corporation","version":"1.8"},"vendor":{"url":{"bug":"https://github.com/corretto/corretto-8/issues/"}},"version":"1.8.0_482","vm":{"info":"mixed mode","name":"OpenJDK 64-Bit Server VM","specification":{"name":"Java Virtual Machine Specification","vendor":"Oracle Corporation","version":"1.8"},"vendor":"Amazon.com Inc.","version":"25.482-b08"}},"jdk":{"tls":{"client":{"protocols":"TLSv1.2"}}},"jline":{"esc":{"timeout":"0"},"shutdownhook":"false"},"jna":{"nosys":"true"},"jnidispatch":{"path":"/Users/loganchoi/Library/Caches/JNA/temp/jna9153939232762391471.tmp"},"line":{"separator":"\n"},"log4j":{"ignoreTCL":"true"},"os":{"arch":"aarch64","name":"Mac OS X","version":"14.4"},"parsers":{"anyContent":{"maxLength":"100MB"}},"path":{"separator":":"},"play":{"akka":{"actor-system":"application","blockingIoDispatcher":{"fork-join-executor":{"parallelism-factor":3}},"config":"akka","dev-mode":{"akka":{"http":{"parsing":{"max-uri-length":"20480"}},"log-dead-letters":"off"},"coordinated-shutdown":{"exit-jvm":"off","run-by-jvm-shutdown-hook":"off","terminate-actor-system":"on"},"http":{"server":{"transparent-head-requests":false}},"log-dead-letters":"off"},"run-cs-from-phase":"actor-system-terminate","shutdown-timeout":"infinite"},"allowGlobalApplication":true,"application":{"loader":"play.api.inject.guice.GuiceApplicationLoader"},"assets":{"aggressiveCache":"public, max-age=31536000, immutable","checkForMinified":null,"default":{"charset":"utf-8"},"defaultCache":"public, max-age=3600","digest":{"algorithm":"md5"},"encodings":[{"accept":"br","extension":"br"},{"accept":"gzip","extension":"gz"},{"accept":"xz","extension":"xz"},{"accept":"bz2","extension":"bz2"}],"path":"/public","textContentTypes":["application/json","application/javascript"],"urlPrefix":"/assets"},"cache":{},"db":{"config":"db","default":"default","pool":"default","prototype":{"bonecp":{"acquireIncrement":1,"acquireRetryAttempts":10,"acquireRetryDelay":"1 second","autoCommit":true,"closeOpenStatements":true,"connectionTestStatement":null,"connectionTimeout":"1 second","defaultCatalog":null,"detectUnresolvedTransactions":false,"disableConnectionTracking":true,"disableJMX":true,"idleConnectionTestPeriod":"1 minute","idleMaxAge":"10 minutes","initSQL":null,"isolation":null,"logStatements":false,"maxConnectionAge":"1 hour","maxConnectionsPerPartition":30,"minConnectionsPerPartition":5,"partitionCount":1,"queryExecuteTimeLimit":0,"readOnly":false,"resetConnectionOnClose":false,"statisticsEnabled":false},"driver":null,"hikaricp":{"allowPoolSuspension":false,"autoCommit":true,"catalog":null,"connectionInitSql":null,"connectionTestQuery":null,"connectionTimeout":"30 seconds","dataSource":{},"dataSourceClassName":null,"idleTimeout":"10 minutes","initializationFailTimeout":1,"isolateInternalQueries":false,"leakDetectionThreshold":null,"maxLifetime":"30 minutes","maximumPoolSize":10,"minimumIdle":null,"poolName":null,"readOnly":false,"registerMbeans":false,"transactionIsolation":null,"validationTimeout":"5 seconds"},"jndiName":null,"logSql":false,"password":null,"pool":"default","url":null,"username":null}},"ebean":{"config":"ebean","defaultDatasource":"default"},"evolutions":{"autoApply":false,"autoApplyDowns":false,"autocommit":true,"db":{"default":{"autoApply":true,"enabled":true}},"enabled":true,"schema":"","skipApplyDownsOnly":false,"useLocks":false},"filewatcher":"none","filters":{"cors":{"allowedHttpHeaders":null,"allowedHttpMethods":null,"allowedOrigins":null,"exposedHeaders":[],"pathPrefixes":["/"],"preflightMaxAge":"1 hour","serveForbiddenOrigins":false,"supportsCredentials":true},"csrf":{"body":{"bufferSize":"5MB"},"bypassCorsTrustedOrigins":true,"contentType":{"blackList":[],"whiteList":[]},"cookie":{"httpOnly":false,"name":null,"secure":false},"errorHandler":null,"header":{"bypassHeaders":{},"name":"Csrf-Token","protectHeaders":{"Authorization":"*","Cookie":"*"}},"method":{"blackList":[],"whiteList":["GET","HEAD","OPTIONS"]},"routeModifiers":{"blackList":[],"whiteList":["nocsrf"]},"token":{"name":"csrfToken","sign":true}},"disabled":["play.filters.hosts.AllowedHostsFilter","play.filters.csrf.CSRFFilter","play.filters.headers.SecurityHeadersFilter"],"enabled":["play.filters.csrf.CSRFFilter","play.filters.headers.SecurityHeadersFilter","play.filters.hosts.AllowedHostsFilter","filters.ExampleFilter","play.filters.cors.CORSFilter","play.filters.csrf.CSRFFilter","play.filters.headers.SecurityHeadersFilter","play.filters.hosts.AllowedHostsFilter"],"gzip":{"bufferSize":"8k","chunkedThreshold":"100k","contentType":{"blackList":[],"whiteList":[]}},"headers":{"allowActionSpecificHeaders":false,"contentSecurityPolicy":"default-src 'self'","contentTypeOptions":"nosniff","frameOptions":"DENY","permittedCrossDomainPolicies":"master-only","referrerPolicy":"origin-when-cross-origin, strict-origin-when-cross-origin","xssProtection":"1; mode=block"},"hosts":{"allowed":["localhost",".local"]},"https":{"port":null,"redirectEnabled":null,"redirectStatusCode":308,"strictTransportSecurity":"max-age=31536000; includeSubDomains"}},"http":{"actionComposition":{"controllerAnnotationsFirst":false,"executeActionCreatorActionFirst":false},"actionCreator":null,"context":"/","cookies":{"strict":true},"errorHandler":null,"fileMimeTypes":"\n        3dm=x-world/x-3dmf\n        3dmf=x-world/x-3dmf\n        7z=application/x-7z-compressed\n        a=application/octet-stream\n        aab=application/x-authorware-bin\n        aam=application/x-authorware-map\n        aas=application/x-authorware-seg\n        abc=text/vndabc\n        ace=application/x-ace-compressed\n        acgi=text/html\n        afl=video/animaflex\n        ai=application/postscript\n        aif=audio/aiff\n        aifc=audio/aiff\n        aiff=audio/aiff\n        aim=application/x-aim\n        aip=text/x-audiosoft-intra\n        alz=application/x-alz-compressed\n        ani=application/x-navi-animation\n        aos=application/x-nokia-9000-communicator-add-on-software\n        aps=application/mime\n        arc=application/x-arc-compressed\n        arj=application/arj\n        art=image/x-jg\n        asf=video/x-ms-asf\n        asm=text/x-asm\n        asp=text/asp\n        asx=application/x-mplayer2\n        au=audio/basic\n        avi=video/x-msvideo\n        avs=video/avs-video\n        bcpio=application/x-bcpio\n        bin=application/mac-binary\n        bmp=image/bmp\n        boo=application/book\n        book=application/book\n        boz=application/x-bzip2\n        bsh=application/x-bsh\n        bz2=application/x-bzip2\n        bz=application/x-bzip\n        c++=text/plain\n        c=text/x-c\n        cab=application/vnd.ms-cab-compressed\n        cat=application/vndms-pkiseccat\n        cc=text/x-c\n        ccad=application/clariscad\n        cco=application/x-cocoa\n        cdf=application/cdf\n        cer=application/pkix-cert\n        cha=application/x-chat\n        chat=application/x-chat\n        chrt=application/vnd.kde.kchart\n        class=application/java\n        # ? class=application/java-vm\n        com=text/plain\n        conf=text/plain\n        cpio=application/x-cpio\n        cpp=text/x-c\n        cpt=application/mac-compactpro\n        crl=application/pkcs-crl\n        crt=application/pkix-cert\n        crx=application/x-chrome-extension\n        csh=text/x-scriptcsh\n        css=text/css\n        csv=text/csv\n        cxx=text/plain\n        dar=application/x-dar\n        dcr=application/x-director\n        deb=application/x-debian-package\n        deepv=application/x-deepv\n        def=text/plain\n        der=application/x-x509-ca-cert\n        dfont=application/x-font-ttf\n        dif=video/x-dv\n        dir=application/x-director\n        divx=video/divx\n        dl=video/dl\n        dmg=application/x-apple-diskimage\n        doc=application/msword\n        dot=application/msword\n        dp=application/commonground\n        drw=application/drafting\n        dump=application/octet-stream\n        dv=video/x-dv\n        dvi=application/x-dvi\n        dwf=drawing/x-dwf=(old)\n        dwg=application/acad\n        dxf=application/dxf\n        dxr=application/x-director\n        el=text/x-scriptelisp\n        elc=application/x-bytecodeelisp=(compiled=elisp)\n        eml=message/rfc822\n        env=application/x-envoy\n        eot=application/vnd.ms-fontobject\n        eps=application/postscript\n        es=application/x-esrehber\n        etx=text/x-setext\n        evy=application/envoy\n        exe=application/octet-stream\n        f77=text/x-fortran\n        f90=text/x-fortran\n        f=text/x-fortran\n        fdf=application/vndfdf\n        fif=application/fractals\n        fli=video/fli\n        flo=image/florian\n        flv=video/x-flv\n        flx=text/vndfmiflexstor\n        fmf=video/x-atomic3d-feature\n        for=text/x-fortran\n        fpx=image/vndfpx\n        frl=application/freeloader\n        funk=audio/make\n        g3=image/g3fax\n        g=text/plain\n        gif=image/gif\n        gl=video/gl\n        gsd=audio/x-gsm\n        gsm=audio/x-gsm\n        gsp=application/x-gsp\n        gss=application/x-gss\n        gtar=application/x-gtar\n        gz=application/x-compressed\n        gzip=application/x-gzip\n        h=text/x-h\n        hdf=application/x-hdf\n        help=application/x-helpfile\n        hgl=application/vndhp-hpgl\n        hh=text/x-h\n        hlb=text/x-script\n        hlp=application/hlp\n        hpg=application/vndhp-hpgl\n        hpgl=application/vndhp-hpgl\n        hqx=application/binhex\n        hta=application/hta\n        htc=text/x-component\n        htm=text/html\n        html=text/html\n        htmls=text/html\n        htt=text/webviewhtml\n        htx=text/html\n        ice=x-conference/x-cooltalk\n        ico=image/x-icon\n        ics=text/calendar\n        icz=text/calendar\n        idc=text/plain\n        ief=image/ief\n        iefs=image/ief\n        iges=application/iges\n        igs=application/iges\n        ima=application/x-ima\n        imap=application/x-httpd-imap\n        inf=application/inf\n        ins=application/x-internett-signup\n        ip=application/x-ip2\n        isu=video/x-isvideo\n        it=audio/it\n        iv=application/x-inventor\n        ivr=i-world/i-vrml\n        ivy=application/x-livescreen\n        jam=audio/x-jam\n        jav=text/x-java-source\n        java=text/x-java-source\n        jcm=application/x-java-commerce\n        jfif-tbnl=image/jpeg\n        jfif=image/jpeg\n        jnlp=application/x-java-jnlp-file\n        jpe=image/jpeg\n        jpeg=image/jpeg\n        jpg=image/jpeg\n        jps=image/x-jps\n        js=application/javascript\n        json=application/json\n        jut=image/jutvision\n        kar=audio/midi\n        karbon=application/vnd.kde.karbon\n        kfo=application/vnd.kde.kformula\n        flw=application/vnd.kde.kivio\n        kml=application/vnd.google-earth.kml+xml\n        kmz=application/vnd.google-earth.kmz\n        kon=application/vnd.kde.kontour\n        kpr=application/vnd.kde.kpresenter\n        kpt=application/vnd.kde.kpresenter\n        ksp=application/vnd.kde.kspread\n        kwd=application/vnd.kde.kword\n        kwt=application/vnd.kde.kword\n        ksh=text/x-scriptksh\n        la=audio/nspaudio\n        lam=audio/x-liveaudio\n        latex=application/x-latex\n        lha=application/lha\n        lhx=application/octet-stream\n        list=text/plain\n        lma=audio/nspaudio\n        log=text/plain\n        lsp=text/x-scriptlisp\n        lst=text/plain\n        lsx=text/x-la-asf\n        ltx=application/x-latex\n        lzh=application/octet-stream\n        lzx=application/lzx\n        m1v=video/mpeg\n        m2a=audio/mpeg\n        m2v=video/mpeg\n        m3u=audio/x-mpegurl\n        m=text/x-m\n        man=application/x-troff-man\n        manifest=text/cache-manifest\n        map=application/x-navimap\n        mar=text/plain\n        mbd=application/mbedlet\n        mc$=application/x-magic-cap-package-10\n        mcd=application/mcad\n        mcf=text/mcf\n        mcp=application/netmc\n        me=application/x-troff-me\n        mht=message/rfc822\n        mhtml=message/rfc822\n        mid=application/x-midi\n        midi=application/x-midi\n        mif=application/x-frame\n        mime=message/rfc822\n        mjf=audio/x-vndaudioexplosionmjuicemediafile\n        mjpg=video/x-motion-jpeg\n        mm=application/base64\n        mme=application/base64\n        mod=audio/mod\n        moov=video/quicktime\n        mov=video/quicktime\n        movie=video/x-sgi-movie\n        mp2=audio/mpeg\n        mp3=audio/mpeg\n        mp4=video/mp4\n        mpa=audio/mpeg\n        mpc=application/x-project\n        mpe=video/mpeg\n        mpeg=video/mpeg\n        mpg=video/mpeg\n        mpga=audio/mpeg\n        mpp=application/vndms-project\n        mpt=application/x-project\n        mpv=application/x-project\n        mpx=application/x-project\n        mrc=application/marc\n        ms=application/x-troff-ms\n        mv=video/x-sgi-movie\n        my=audio/make\n        mzz=application/x-vndaudioexplosionmzz\n        nap=image/naplps\n        naplps=image/naplps\n        nc=application/x-netcdf\n        ncm=application/vndnokiaconfiguration-message\n        nif=image/x-niff\n        niff=image/x-niff\n        nix=application/x-mix-transfer\n        nsc=application/x-conference\n        nvd=application/x-navidoc\n        o=application/octet-stream\n        oda=application/oda\n        odb=application/vnd.oasis.opendocument.database\n        odc=application/vnd.oasis.opendocument.chart\n        odf=application/vnd.oasis.opendocument.formula\n        odg=application/vnd.oasis.opendocument.graphics\n        odi=application/vnd.oasis.opendocument.image\n        odm=application/vnd.oasis.opendocument.text-master\n        odp=application/vnd.oasis.opendocument.presentation\n        ods=application/vnd.oasis.opendocument.spreadsheet\n        odt=application/vnd.oasis.opendocument.text\n        oga=audio/ogg\n        ogg=audio/ogg\n        ogv=video/ogg\n        omc=application/x-omc\n        omcd=application/x-omcdatamaker\n        omcr=application/x-omcregerator\n        otc=application/vnd.oasis.opendocument.chart-template\n        otf=application/vnd.oasis.opendocument.formula-template\n        otg=application/vnd.oasis.opendocument.graphics-template\n        oth=application/vnd.oasis.opendocument.text-web\n        oti=application/vnd.oasis.opendocument.image-template\n        otm=application/vnd.oasis.opendocument.text-master\n        otp=application/vnd.oasis.opendocument.presentation-template\n        ots=application/vnd.oasis.opendocument.spreadsheet-template\n        ott=application/vnd.oasis.opendocument.text-template\n        p10=application/pkcs10\n        p12=application/pkcs-12\n        p7a=application/x-pkcs7-signature\n        p7c=application/pkcs7-mime\n        p7m=application/pkcs7-mime\n        p7r=application/x-pkcs7-certreqresp\n        p7s=application/pkcs7-signature\n        p=text/x-pascal\n        part=application/pro_eng\n        pas=text/pascal\n        pbm=image/x-portable-bitmap\n        pcl=application/vndhp-pcl\n        pct=image/x-pict\n        pcx=image/x-pcx\n        pdb=chemical/x-pdb\n        pdf=application/pdf\n        pfunk=audio/make\n        pgm=image/x-portable-graymap\n        pic=image/pict\n        pict=image/pict\n        pkg=application/x-newton-compatible-pkg\n        pko=application/vndms-pkipko\n        pl=text/x-scriptperl\n        plx=application/x-pixclscript\n        pm4=application/x-pagemaker\n        pm5=application/x-pagemaker\n        pm=text/x-scriptperl-module\n        png=image/png\n        pnm=application/x-portable-anymap\n        pot=application/mspowerpoint\n        pov=model/x-pov\n        ppa=application/vndms-powerpoint\n        ppm=image/x-portable-pixmap\n        pps=application/mspowerpoint\n        ppt=application/mspowerpoint\n        ppz=application/mspowerpoint\n        pre=application/x-freelance\n        prt=application/pro_eng\n        ps=application/postscript\n        psd=application/octet-stream\n        pvu=paleovu/x-pv\n        pwz=application/vndms-powerpoint\n        py=text/x-scriptphyton\n        pyc=application/x-bytecodepython\n        qcp=audio/vndqcelp\n        qd3=x-world/x-3dmf\n        qd3d=x-world/x-3dmf\n        qif=image/x-quicktime\n        qt=video/quicktime\n        qtc=video/x-qtc\n        qti=image/x-quicktime\n        qtif=image/x-quicktime\n        ra=audio/x-pn-realaudio\n        ram=audio/x-pn-realaudio\n        rar=application/x-rar-compressed\n        ras=application/x-cmu-raster\n        rast=image/cmu-raster\n        rdf=application/rdf+xml\n        rexx=text/x-scriptrexx\n        rf=image/vndrn-realflash\n        rgb=image/x-rgb\n        rm=application/vndrn-realmedia\n        rmi=audio/mid\n        rmm=audio/x-pn-realaudio\n        rmp=audio/x-pn-realaudio\n        rng=application/ringing-tones\n        rnx=application/vndrn-realplayer\n        roff=application/x-troff\n        rp=image/vndrn-realpix\n        rpm=audio/x-pn-realaudio-plugin\n        rt=text/vndrn-realtext\n        rtf=application/rtf\n        rtx=application/rtx\n        rv=video/vndrn-realvideo\n        s=text/x-asm\n        s3m=audio/s3m\n        s7z=application/x-7z-compressed\n        saveme=application/octet-stream\n        sbk=application/x-tbook\n        scm=text/x-scriptscheme\n        sdml=text/plain\n        sdp=application/sdp\n        sdr=application/sounder\n        sea=application/sea\n        set=application/set\n        sgm=text/x-sgml\n        sgml=text/x-sgml\n        sh=text/x-scriptsh\n        shar=application/x-bsh\n        shtml=text/x-server-parsed-html\n        sid=audio/x-psid\n        skd=application/x-koan\n        skm=application/x-koan\n        skp=application/x-koan\n        skt=application/x-koan\n        sit=application/x-stuffit\n        sitx=application/x-stuffitx\n        sl=application/x-seelogo\n        smi=application/smil\n        smil=application/smil\n        snd=audio/basic\n        sol=application/solids\n        spc=text/x-speech\n        spl=application/futuresplash\n        spr=application/x-sprite\n        sprite=application/x-sprite\n        spx=audio/ogg\n        src=application/x-wais-source\n        ssi=text/x-server-parsed-html\n        ssm=application/streamingmedia\n        sst=application/vndms-pkicertstore\n        step=application/step\n        stl=application/sla\n        stp=application/step\n        sv4cpio=application/x-sv4cpio\n        sv4crc=application/x-sv4crc\n        svf=image/vnddwg\n        svg=image/svg+xml\n        svr=application/x-world\n        swf=application/x-shockwave-flash\n        t=application/x-troff\n        talk=text/x-speech\n        tar=application/x-tar\n        tbk=application/toolbook\n        tcl=text/x-scripttcl\n        tcsh=text/x-scripttcsh\n        tex=application/x-tex\n        texi=application/x-texinfo\n        texinfo=application/x-texinfo\n        text=text/plain\n        tgz=application/gnutar\n        tif=image/tiff\n        tiff=image/tiff\n        tr=application/x-troff\n        tsi=audio/tsp-audio\n        tsp=application/dsptype\n        tsv=text/tab-separated-values\n        turbot=image/florian\n        tte=application/x-font-ttf\n        ttf=application/x-font-ttf\n        ttl=text/turtle\n        txt=text/plain\n        uil=text/x-uil\n        uni=text/uri-list\n        unis=text/uri-list\n        unv=application/i-deas\n        uri=text/uri-list\n        uris=text/uri-list\n        ustar=application/x-ustar\n        uu=text/x-uuencode\n        uue=text/x-uuencode\n        vcd=application/x-cdlink\n        vcf=text/x-vcard\n        vcard=text/x-vcard\n        vcs=text/x-vcalendar\n        vda=application/vda\n        vdo=video/vdo\n        vew=application/groupwise\n        viv=video/vivo\n        vivo=video/vivo\n        vmd=application/vocaltec-media-desc\n        vmf=application/vocaltec-media-file\n        voc=audio/voc\n        vos=video/vosaic\n        vox=audio/voxware\n        vqe=audio/x-twinvq-plugin\n        vqf=audio/x-twinvq\n        vql=audio/x-twinvq-plugin\n        vrml=application/x-vrml\n        vrt=x-world/x-vrt\n        vsd=application/x-visio\n        vst=application/x-visio\n        vsw=application/x-visio\n        w60=application/wordperfect60\n        w61=application/wordperfect61\n        w6w=application/msword\n        wav=audio/wav\n        wb1=application/x-qpro\n        wbmp=image/vnd.wap.wbmp\n        web=application/vndxara\n        webm=video/webm\n        wiz=application/msword\n        wk1=application/x-123\n        wmf=windows/metafile\n        wml=text/vnd.wap.wml\n        wmlc=application/vnd.wap.wmlc\n        wmls=text/vnd.wap.wmlscript\n        wmlsc=application/vnd.wap.wmlscriptc\n        woff=application/font-woff\n        woff2=application/font-woff2\n        word=application/msword\n        wp5=application/wordperfect\n        wp6=application/wordperfect\n        wp=application/wordperfect\n        wpd=application/wordperfect\n        wq1=application/x-lotus\n        wri=application/mswrite\n        wrl=application/x-world\n        wrz=model/vrml\n        wsc=text/scriplet\n        wsrc=application/x-wais-source\n        wtk=application/x-wintalk\n        x-png=image/png\n        xbm=image/x-xbitmap\n        xdr=video/x-amt-demorun\n        xgz=xgl/drawing\n        xif=image/vndxiff\n        xl=application/excel\n        xla=application/excel\n        xlb=application/excel\n        xlc=application/excel\n        xld=application/excel\n        xlk=application/excel\n        xll=application/excel\n        xlm=application/excel\n        xls=application/excel\n        xlt=application/excel\n        xlv=application/excel\n        xlw=application/excel\n        xm=audio/xm\n        xml=application/xml\n        xmz=xgl/movie\n        xpi=application/x-xpinstall\n        xpix=application/x-vndls-xpix\n        xpm=image/x-xpixmap\n        xsr=video/x-amt-showrun\n        xwd=image/x-xwd\n        xyz=chemical/x-pdb\n        z=application/x-compress\n        zip=application/zip\n        zoo=application/octet-stream\n        zsh=text/x-scriptzsh\n\n        # Office 2007 mess - http://wdg.uncc.edu/Microsoft_Office_2007_MIME_Types_for_Apache_and_IIS\n        docx=application/vnd.openxmlformats-officedocument.wordprocessingml.document\n        docm=application/vnd.ms-word.document.macroEnabled.12\n        dotx=application/vnd.openxmlformats-officedocument.wordprocessingml.template\n        dotm=application/vnd.ms-word.template.macroEnabled.12\n        xlsx=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\n        xlsm=application/vnd.ms-excel.sheet.macroEnabled.12\n        xltx=application/vnd.openxmlformats-officedocument.spreadsheetml.template\n        xltm=application/vnd.ms-excel.template.macroEnabled.12\n        xlsb=application/vnd.ms-excel.sheet.binary.macroEnabled.12\n        xlam=application/vnd.ms-excel.addin.macroEnabled.12\n        pptx=application/vnd.openxmlformats-officedocument.presentationml.presentation\n        pptm=application/vnd.ms-powerpoint.presentation.macroEnabled.12\n        ppsx=application/vnd.openxmlformats-officedocument.presentationml.slideshow\n        ppsm=application/vnd.ms-powerpoint.slideshow.macroEnabled.12\n        potx=application/vnd.openxmlformats-officedocument.presentationml.template\n        potm=application/vnd.ms-powerpoint.template.macroEnabled.12\n        ppam=application/vnd.ms-powerpoint.addin.macroEnabled.12\n        sldx=application/vnd.openxmlformats-officedocument.presentationml.slide\n        sldm=application/vnd.ms-powerpoint.slide.macroEnabled.12\n        thmx=application/vnd.ms-officetheme\n        onetoc=application/onenote\n        onetoc2=application/onenote\n        onetmp=application/onenote\n        onepkg=application/onenote\n        # koffice\n\n        # iWork\n        key=application/x-iwork-keynote-sffkey\n        kth=application/x-iwork-keynote-sffkth\n        nmbtemplate=application/x-iwork-numbers-sfftemplate\n        numbers=application/x-iwork-numbers-sffnumbers\n        pages=application/x-iwork-pages-sffpages\n        template=application/x-iwork-pages-sfftemplate\n\n        # Extensions for Mozilla apps (Firefox and friends)\n        xpi=application/x-xpinstall\n      ","filters":null,"flash":{"cookieName":"PLAY_FLASH","domain":null,"httpOnly":true,"jwt":{"clockSkew":"5 minutes","dataClaim":"data","expiresAfter":null,"signatureAlgorithm":"HS256"},"path":"/","sameSite":"lax","secure":false},"forwarded":{"trustedProxies":["127.0.0.1","::1"],"version":"x-forwarded"},"parser":{"maxDiskBuffer":"100MB","maxMemoryBuffer":"5MB"},"requestHandler":null,"router":null,"secret":{"key":"changeme","provider":null},"session":{"cookieName":"PLAY_SESSION","domain":null,"httpOnly":true,"jwt":{"clockSkew":"5 minutes","dataClaim":"data","expiresAfter":null,"signatureAlgorithm":"HS256"},"maxAge":null,"path":"/","sameSite":"lax","secure":false}},"i18n":{"langCookieHttpOnly":false,"langCookieName":"PLAY_LANG","langCookieSecure":false,"langs":["en"],"path":null},"logger":{"includeConfigProperties":false},"modules":{"disabled":[],"enabled":["play.api.db.DBModule","play.api.db.HikariCPModule","play.inject.BuiltInModule","play.core.ObjectMapperModule","play.routing.RoutingDslModule","play.api.inject.BuiltinModule","play.api.i18n.I18nModule","play.api.mvc.CookiesModule","controllers.AssetsModule","play.api.db.evolutions.EvolutionsModule","play.api.libs.ws.ahc.AhcWSModule","play.libs.ws.ahc.AhcWSModule","play.db.DBModule","play.filters.csrf.CSRFModule","play.filters.cors.CORSModule","play.filters.headers.SecurityHeadersModule","play.filters.hosts.AllowedHostsModule","play.filters.gzip.GzipFilterModule","play.filters.https.RedirectHttpsModule","play.data.FormFactoryModule","play.data.format.FormattersModule","play.data.validation.ValidatorsModule","play.db.ebean.EbeanModule","play.filters.csrf.CSRFModule","play.filters.cors.CORSModule","play.filters.headers.SecurityHeadersModule","play.filters.hosts.AllowedHostsModule","play.filters.gzip.GzipFilterModule","play.filters.https.RedirectHttpsModule"]},"server":{"akka":{"bindTimeout":"5 seconds","default-host-header":"","illegal-response-header-value-processing-mode":"warn","max-content-length":"infinite","requestTimeout":"infinite","server-header":null,"tls-session-info-header":"on","transparent-head-requests":"off"},"debug":{"addDebugInfoToRequests":false},"dir":"/Users/loganchoi/Desktop/scihub/backend","http":{"address":"0.0.0.0","idleTimeout":"75 seconds","port":"9037"},"https":{"address":"0.0.0.0","engineProvider":"play.core.server.ssl.DefaultSSLEngineProvider","idleTimeout":"75 seconds","keyStore":{"password":"","type":"JKS"},"needClientAuth":false,"trustStore":{"noCaVerification":false},"wantClientAuth":false},"netty":{},"pidfile":{"path":"/Users/loganchoi/Desktop/scihub/backend/RUNNING_PID"},"provider":"play.core.server.AkkaHttpServerProvider","websocket":{"frame":{"maxLength":"64k"}}},"temporaryFile":{"reaper":{"enabled":true,"initialDelay":"5 minutes","interval":"30 seconds","olderThan":"30 minutes"}},"ws":{"ahc":{"disableUrlEncoding":false,"idleConnectionInPoolTimeout":"1 minute","keepAlive":true,"maxConnectionLifetime":null,"maxConnectionsPerHost":-1,"maxConnectionsTotal":-1,"maxNumberOfRedirects":5,"maxRequestRetry":5},"cache":{"cacheManagerResource":null,"cacheManagerURI":null,"cachingProviderName":"","enabled":false,"heuristics":{"enabled":false},"name":"play-ws-cache"},"compressionEnabled":false,"followRedirects":true,"ssl":{"checkRevocation":null,"debug":{"all":false,"certpath":false,"data":false,"defaultctx":false,"handshake":false,"keygen":false,"keymanager":false,"ocsp":false,"packet":false,"plaintext":false,"pluggability":false,"record":false,"session":false,"sessioncache":false,"ssl":false,"sslctx":false,"trustmanager":false,"verbose":false},"default":false,"disabledKeyAlgorithms":["RSA keySize < 2048","DSA keySize < 2048","EC keySize < 224"],"disabledSignatureAlgorithms":["MD2","MD4","MD5"],"enabledCipherSuites":[],"enabledProtocols":["TLSv1.2","TLSv1.1","TLSv1"],"hostnameVerifierClass":null,"keyManager":{"algorithm":null,"prototype":{"stores":{"data":null,"password":null,"path":null,"type":null}},"stores":[]},"loose":{"acceptAnyCertificate":false,"allowLegacyHelloMessages":null,"allowUnsafeRenegotiation":null,"allowWeakCiphers":false,"allowWeakProtocols":false,"disableHostnameVerification":false,"disableSNI":false},"protocol":"TLSv1.2","revocationLists":[],"sslParameters":{"clientAuth":"default","protocols":[]},"trustManager":{"algorithm":null,"prototype":{"stores":{"data":null,"path":null,"type":null}},"stores":[]}},"timeout":{"connection":"2 minutes","idle":"2 minutes","request":"2 minutes"},"useProxyProperties":true,"useragent":null}},"promise":{"akka":{"actor":{"typed":{"timeout":"5s"}}}},"socksNonProxyHosts":"local|*.local|169.254/16|*.169.254/16","spray-can":{"parser":{"max-uri-length":"16k"}},"ssl-config":{"checkRevocation":null,"debug":{"all":false,"certpath":false,"data":false,"defaultctx":false,"handshake":false,"keygen":false,"keymanager":false,"ocsp":false,"packet":false,"plaintext":false,"pluggability":false,"record":false,"session":false,"sessioncache":false,"ssl":false,"sslctx":false,"trustmanager":false,"verbose":false},"default":false,"disabledKeyAlgorithms":["RSA keySize < 2048","DSA keySize < 2048","EC keySize < 224"],"disabledSignatureAlgorithms":["MD2","MD4","MD5"],"enabledCipherSuites":[],"enabledProtocols":["TLSv1.2","TLSv1.1","TLSv1"],"hostnameVerifierClass":null,"keyManager":{"algorithm":null,"prototype":{"stores":{"data":null,"password":null,"path":null,"type":null}},"stores":[]},"logger":"com.typesafe.sslconfig.akka.util.AkkaLoggerBridge","loose":{"acceptAnyCertificate":false,"allowLegacyHelloMessages":null,"allowUnsafeRenegotiation":null,"allowWeakCiphers":false,"allowWeakProtocols":false,"disableHostnameVerification":false,"disableSNI":false},"protocol":"TLSv1.2","revocationLists":[],"sslParameters":{"clientAuth":"default","protocols":[]},"trustManager":{"algorithm":null,"prototype":{"stores":{"data":null,"path":null,"type":null}},"stores":[]}},"sun":{"arch":{"data":{"model":"64"}},"boot":{"class":{"path":"/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre/lib/resources.jar:/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre/lib/rt.jar:/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre/lib/sunrsasign.jar:/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre/lib/jsse.jar:/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre/lib/jce.jar:/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre/lib/charsets.jar:/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre/lib/jfr.jar:/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre/classes"},"library":{"path":"/Users/loganchoi/Library/Java/JavaVirtualMachines/corretto-1.8.0_482/Contents/Home/jre/lib"}},"cpu":{"endian":"little","isalist":""},"io":{"unicode":{"encoding":"UnicodeBig"}},"java":{"command":"/Users/loganchoi/.sbt/launchers/1.3.13/sbt-launch.jar shell","launcher":"SUN_STANDARD"},"jnu":{"encoding":"UTF-8"},"management":{"compiler":"HotSpot 64-Bit Tiered Compilers"},"os":{"patch":{"level":"unknown"}}},"swoval":{"tmpdir":"/Users/loganchoi/.sbt/1.0"},"system":{"backend":{"host":"localhost","port":9037,"protocol":"http","rest-host":"localhost","rest-port":9037,"rest-protocol":"http"},"frontend":{"host":"localhost","port":9036,"protocol":"https","rest-host":"localhost","rest-port":9036,"rest-protocol":"http"},"system":{"mail":{"auth":false,"broadcast":{"enabled":false},"enabled":false,"host":"localhost","password":"","port":25,"ssl":{"enabled":false},"starttls":{"enabled":false},"user":""}}},"user":{"country":"US","dir":"/Users/loganchoi/Desktop/scihub/backend","home":"/Users/loganchoi","language":"en","name":"loganchoi","timezone":"America/Chicago"}}))
+2026-05-02 01:04:02,452 [INFO] from application in application-akka.actor.default-dispatcher-5 - sendIndividualEmail: Recipient = lschoi@smu.edu
+2026-05-02 01:04:02,452 [INFO] from application in application-akka.actor.default-dispatcher-5 - sendIndividualEmail: Subject = No-reply: Registration Verify
+2026-05-02 01:04:02,452 [INFO] from application in application-akka.actor.default-dispatcher-5 - sendIndividualEmail: Body = Hi, 
+
+Thank you for your registration!
+Now the last step is to verify your email address. 
+Please click the link below to finish the registration process.
+http://localhost:9036/users/OjyEqTSzRF9uka406iJs3g
+
+Best Regards, 
+SMU-Lyle-Sci-Hub Group
+2026-05-02 01:04:02,452 [INFO] from application in application-akka.actor.default-dispatcher-5 - Generated recipients - To: [lschoi@smu.edu], CC: [], BCC: []
+2026-05-02 01:04:02,452 [INFO] from application in application-akka.actor.default-dispatcher-5 - sendIndividualEmail: Calling sendMail method.
+2026-05-02 01:04:02,454 [ERROR] from application in application-akka.actor.default-dispatcher-5 - 
+
+! @8d8gmhj8j - Internal server error, for (POST) [/user/validate] ->
+ 
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[CompletionException: com.typesafe.config.ConfigException$Missing: No configuration setting found for key 'system.mail']]
+	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
+	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:343)
+	at play.core.server.AkkaHttpServer$$anonfun$2.applyOrElse(AkkaHttpServer.scala:341)
+	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:417)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
+	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:43)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+Caused by: java.util.concurrent.CompletionException: com.typesafe.config.ConfigException$Missing: No configuration setting found for key 'system.mail'
+	at java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:292)
+	at java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:308)
+	at java.util.concurrent.CompletableFuture.uniApply(CompletableFuture.java:607)
+	at java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:591)
+	at java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:488)
+	at java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:1990)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.apply(FutureConvertersImpl.scala:21)
+	at scala.concurrent.java8.FuturesConvertersImpl$CF.apply(FutureConvertersImpl.scala:18)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at scala.concurrent.BatchingExecutor$Batch.processBatch$1(BatchingExecutor.scala:67)
+	at scala.concurrent.BatchingExecutor$Batch.$anonfun$run$1(BatchingExecutor.scala:82)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:85)
+	at scala.concurrent.BatchingExecutor$Batch.run(BatchingExecutor.scala:59)
+	at scala.concurrent.Future$InternalCallbackExecutor$.unbatchedExecute(Future.scala:875)
+	at scala.concurrent.BatchingExecutor.execute(BatchingExecutor.scala:110)
+	at scala.concurrent.BatchingExecutor.execute$(BatchingExecutor.scala:107)
+	at scala.concurrent.Future$InternalCallbackExecutor$.execute(Future.scala:873)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:288)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:288)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:288)
+	at scala.concurrent.Promise.complete(Promise.scala:53)
+	at scala.concurrent.Promise.complete$(Promise.scala:52)
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:187)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at play.api.libs.streams.Execution$trampoline$.executeScheduled(Execution.scala:109)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:71)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1(Promise.scala:288)
+	at scala.concurrent.impl.Promise$DefaultPromise.$anonfun$tryComplete$1$adapted(Promise.scala:288)
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:288)
+	at scala.concurrent.impl.Promise$DefaultPromise.link(Promise.scala:341)
+	at scala.concurrent.impl.Promise$DefaultPromise.linkRootOf(Promise.scala:326)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:43)
+	... 12 common frames omitted
+Caused by: com.typesafe.config.ConfigException$Missing: No configuration setting found for key 'system.mail'
+	at com.typesafe.config.impl.SimpleConfig.findKeyOrNull(SimpleConfig.java:156)
+	at com.typesafe.config.impl.SimpleConfig.findKey(SimpleConfig.java:149)
+	at com.typesafe.config.impl.SimpleConfig.findOrNull(SimpleConfig.java:176)
+	at com.typesafe.config.impl.SimpleConfig.findOrNull(SimpleConfig.java:180)
+	at com.typesafe.config.impl.SimpleConfig.find(SimpleConfig.java:188)
+	at com.typesafe.config.impl.SimpleConfig.find(SimpleConfig.java:193)
+	at com.typesafe.config.impl.SimpleConfig.getString(SimpleConfig.java:250)
+	at utils.EmailUtils.getHost(EmailUtils.java:67)
+	at utils.EmailUtils.sendMail(EmailUtils.java:114)
+	at utils.EmailUtils.sendIndividualEmail(EmailUtils.java:213)
+	at controllers.UserController.sendRegisterEmail(UserController.java:1234)
+	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$286(Routes.scala:5094)
+	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:134)
+	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:133)
+	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.invocation(HandlerInvoker.scala:108)
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:88)
+	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:31)
+	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:138)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:659)
+	at scala.util.Success.$anonfun$map$1(Try.scala:255)
+	at scala.util.Success.map(Try.scala:213)
+	at scala.concurrent.Future.$anonfun$map$1(Future.scala:292)
+	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:33)
+	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:33)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
+	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:72)
+	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:372)
+	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:371)
+	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:379)
+	at scala.concurrent.impl.Promise.transform(Promise.scala:33)
+	at scala.concurrent.impl.Promise.transform$(Promise.scala:31)
+	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:379)
+	at scala.concurrent.Future.map(Future.scala:292)
+	at scala.concurrent.Future.map$(Future.scala:292)
+	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:379)
+	at scala.concurrent.Future$.apply(Future.scala:659)
+	at play.core.j.JavaAction.apply(JavaAction.scala:138)
+	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:96)
+	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:307)
+	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:41)
+	... 12 common frames omitted
+2026-05-02 01:04:09,255 [INFO] from application in application-akka.actor.default-dispatcher-5 - UserController.checkNewUserEmailAvailability the email cannot be used: lschoi@smu.edu

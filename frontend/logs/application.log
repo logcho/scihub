@@ -1,7 +1,141 @@
-2026-04-25 17:31:06,392 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
-2026-04-25 17:31:06,769 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2026-04-25T22:31:06.769Z
-2026-04-25 17:31:07,055 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-4 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2026-04-25 17:31:07,096 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2026-05-02 00:47:40,673 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-7 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2026-05-02 00:47:41,080 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-7 - ApplicationTimer demo: Starting application at 2026-05-02T05:47:41.080Z
+2026-05-02 00:47:41,375 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-7 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2026-05-02 00:47:41,411 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
 
-2026-04-25 17:31:07,099 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev)
+2026-05-02 00:47:41,414 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev)
+2026-05-02 00:47:41,498 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-7 - Optional.empty
+2026-05-02 00:47:41,707 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-7 - RESTfulCalls.postAPI(): get API exception: java.util.concurrent.ExecutionException: java.net.UnknownHostException: host.docker.internal: nodename nor servname provided, or not known
+2026-05-02 00:47:41,708 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-7 - http://freegeoip.net/json/0:0:0:0:0:0:0:1
+2026-05-02 00:47:41,840 [INFO] from application in ForkJoinPool.commonPool-worker-9 - 500
+2026-05-02 00:47:41,840 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-7 - RESTfulCalls.postAPI(): get API exception: java.util.concurrent.ExecutionException: java.net.UnknownHostException: host.docker.internal
+2026-05-02 00:47:57,626 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-31 - http://host.docker.internal:9037/organization/organizationList
+2026-05-02 00:47:57,629 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-31 - 
+2026-05-02 00:48:02,295 [DEBUG] from application in application-akka.actor.default-dispatcher-3 - RESTfulCalls.postAPI(): get API exception: java.util.concurrent.ExecutionException: java.net.UnknownHostException: host.docker.internal
+2026-05-02 00:48:02,299 [WARN] from play in application-akka.actor.default-dispatcher-3 - You are using status code '200' with flashing, which should only be used with a redirect status!
+2026-05-02 00:55:30,957 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - http://host.docker.internal:9037/organization/organizationList
+2026-05-02 00:55:30,958 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-4 - 
+2026-05-02 00:55:33,825 [DEBUG] from application in application-akka.actor.default-dispatcher-4 - RESTfulCalls.postAPI(): get API exception: java.util.concurrent.ExecutionException: java.net.UnknownHostException: host.docker.internal
+2026-05-02 00:55:33,826 [WARN] from play in application-akka.actor.default-dispatcher-4 - You are using status code '200' with flashing, which should only be used with a redirect status!
+2026-05-02 01:03:31,259 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-32 - ApplicationTimer demo: Stopping application at 2026-05-02T06:03:31.259Z after 950s.
+2026-05-02 01:03:31,281 [WARN] from application in play-dev-mode-akka.actor.default-dispatcher-32 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2026-05-02 01:03:31,304 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-32 - ApplicationTimer demo: Starting application at 2026-05-02T06:03:31.304Z
+2026-05-02 01:03:31,449 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-32 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2026-05-02 01:03:31,458 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-32 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+
+2026-05-02 01:03:31,458 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-32 - Application started (Dev)
+2026-05-02 01:03:31,471 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-32 - http://localhost:9037/organization/organizationList
+2026-05-02 01:03:32,613 [INFO] from application in ForkJoinPool.commonPool-worker-4 - 404
+2026-05-02 01:03:32,615 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-32 - 
+2026-05-02 01:03:37,125 [WARN] from play in application-akka.actor.default-dispatcher-2 - You are using status code '200' with flashing, which should only be used with a redirect status!
+2026-05-02 01:04:02,360 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Final JSON being sent to backend: {"hiddenOrganization":"","studentType":"Undergraduate","lastName":"Choi","highestDegree":"","hiddenUserType":"4","researchFields":"","studentMajor":"Computer Science","userTypes":"4","orcid":"","studentEnrollDate":"2023-08-21","studentYear":"First","firstName":"Logan","password":"Test123!","repassword":"Test123!","phoneNumber":"9722345638","middleInitial":"","school":"","mailingAddress":"4621 Blackshear Trail","organization":"-1","studentIdNumber":"49239443","department":"","email":"lschoi@smu.edu","homepage":""}
+2026-05-02 01:04:02,426 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Created JSON data from form: {"hiddenOrganization":"","studentType":"Undergraduate","lastName":"Choi","highestDegree":"","hiddenUserType":"4","researchFields":"","studentMajor":"Computer Science","userTypes":"4","orcid":"","studentEnrollDate":"2023-08-21","studentYear":"First","firstName":"Logan","password":"Test123!","repassword":"Test123!","phoneNumber":"9722345638","middleInitial":"","school":"","mailingAddress":"4621 Blackshear Trail","organization":"-1","studentIdNumber":"49239443","department":"","email":"lschoi@smu.edu","homepage":"","userName":"Logan Choi","level":"normal"}
+2026-05-02 01:04:02,426 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - sendRegisterEmail: Received email = lschoi@smu.edu, id = 1
+2026-05-02 01:04:02,427 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - sendRegisterEmail: JSON payload = {"email":"lschoi@smu.edu","id":1,"url":"http://localhost:9036/users/"}
+2026-05-02 01:04:02,455 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - sendRegisterEmail: Received response from validation API = {"error":"Cannot be saved. The data must be invalid!"}
+2026-05-02 01:04:02,455 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - sendRegisterEmail: Redirecting to updatePassword for email = lschoi@smu.edu
+2026-05-02 01:04:09,279 [WARN] from play in application-akka.actor.default-dispatcher-5 - You are using status code '200' with flashing, which should only be used with a redirect status!
+2026-05-02 01:04:12,448 [INFO] from application in application-akka.actor.default-dispatcher-5 - {"success":true,"challenge_ts":"2026-05-02T06:04:12Z","hostname":"testkey.google.com"}
+2026-05-02 01:04:12,509 [INFO] from application in application-akka.actor.default-dispatcher-5 - login response: {"id":1,"userName":"Logan Choi","password":"2168ad5e463d9accb215edaafa31c8d9","firstName":"Logan","lastName":"Choi","middleInitial":"","organization":"","email":"lschoi@smu.edu","mailingAddress":"4621 Blackshear Trail","phoneNumber":"9722345638","level":"normal","rating":0.0,"ratingCount":0,"recommendRating":0.0,"recommendRatingCount":0,"homepage":"","avatar":null,"serviceProvider":false,"expertises":null,"categories":null,"detail":null,"userType":4,"service_execution_counts":0,"serviceUser":false,"createTime":"Sat May 02 01:04:02 CDT 2026","isActive":"True","token":"OjyEqTSzRF9uka406iJs3g","researcherInfo":null,"studentInfo":null,"projectZone":null,"participatedProjects":[],"publishedJobs":[],"reportedBugReports":[],"fixedBugReports":[],"reportedSuggestions":[],"implementedSuggestions":[],"sentMail":[],"receivedMail":[],"principalInvestigatedProjects":[],"sponsoredProjects":[],"createdChallenges":[],"unreadMention":false,"researcher":false,"sponsor":false,"student":true,"researchFields":"","highestDegree":""}
+2026-05-02 01:04:12,550 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-57 - Optional.empty
+2026-05-02 01:04:12,561 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-57 - http://freegeoip.net/json/0:0:0:0:0:0:0:1
+2026-05-02 01:04:12,639 [INFO] from application in ForkJoinPool.commonPool-worker-6 - 500
+2026-05-02 01:04:12,818 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Path: https://ecopro-aws-bucket.s3.amazonaws.com/teaching//user/user.png
+2026-05-02 01:04:12,818 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Original input path: https://ecopro-aws-bucket.s3.amazonaws.com/teaching//user/user.png
+2026-05-02 01:04:12,818 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - url: https://ecopro-aws-bucket.s3.amazonaws.com/teaching//user/user.png
+2026-05-02 01:04:12,818 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Extracted S3 Key: /teaching//user/user.png
+2026-05-02 01:04:12,818 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Extracted Bucket Name: ecopro-aws-bucket
+2026-05-02 01:04:12,818 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Extracted S3 Key: teaching//user/user.png
+2026-05-02 01:04:12,916 [WARN] from com.amazonaws.util.VersionInfoUtils in play-dev-mode-akka.actor.default-dispatcher-35 - The AWS SDK for Java 1.x entered maintenance mode starting July 31, 2024 and will reach end of support on December 31, 2025. For more information, see https://aws.amazon.com/blogs/developer/the-aws-sdk-for-java-1-x-is-in-maintenance-mode-effective-july-31-2024/
+You can print where on the file system the AWS SDK for Java 1.x core runtime is located by setting the AWS_JAVA_V1_PRINT_LOCATION environment variable or aws.java.v1.printLocation system property to 'true'.
+This message can be disabled by setting the AWS_JAVA_V1_DISABLE_DEPRECATION_ANNOUNCEMENT environment variable or aws.java.v1.disableDeprecationAnnouncement system property to 'true'.
+The AWS SDK for Java 1.x is being used here:
+at java.lang.Thread.getStackTrace(Thread.java:1564)
+at com.amazonaws.util.VersionInfoUtils.printDeprecationAnnouncement(VersionInfoUtils.java:81)
+at com.amazonaws.util.VersionInfoUtils.<clinit>(VersionInfoUtils.java:59)
+at com.amazonaws.internal.EC2ResourceFetcher.<clinit>(EC2ResourceFetcher.java:44)
+at com.amazonaws.auth.InstanceMetadataServiceCredentialsFetcher.<init>(InstanceMetadataServiceCredentialsFetcher.java:38)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:111)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:91)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<init>(InstanceProfileCredentialsProvider.java:75)
+at com.amazonaws.auth.InstanceProfileCredentialsProvider.<clinit>(InstanceProfileCredentialsProvider.java:58)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.initializeProvider(EC2ContainerCredentialsProviderWrapper.java:66)
+at com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper.<init>(EC2ContainerCredentialsProviderWrapper.java:55)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<init>(DefaultAWSCredentialsProviderChain.java:60)
+at com.amazonaws.auth.DefaultAWSCredentialsProviderChain.<clinit>(DefaultAWSCredentialsProviderChain.java:54)
+at com.amazonaws.services.s3.AmazonS3ClientBuilder.standard(AmazonS3ClientBuilder.java:46)
+at configs.AwsS3ClientConfig.getS3Client(AwsS3ClientConfig.java:32)
+at utils.S3Utils.getObject(S3Utils.java:111)
+at controllers.Application.getImageFromPath(Application.java:379)
+at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$36(Routes.scala:4764)
+at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:134)
+at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:133)
+at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.invocation(HandlerInvoker.scala:108)
+at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:76)
+at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:31)
+at play.core.j.JavaAction.$anonfun$apply$2(JavaAction.scala:111)
+at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:653)
+at scala.util.Success.$anonfun$map$1(Try.scala:251)
+at scala.util.Success.map(Try.scala:209)
+at scala.concurrent.Future.$anonfun$map$1(Future.scala:287)
+at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:29)
+at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
+at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
+at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
+at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
+at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
+at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
+at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:368)
+at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:367)
+at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:375)
+at scala.concurrent.impl.Promise.transform(Promise.scala:29)
+at scala.concurrent.impl.Promise.transform$(Promise.scala:27)
+at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:375)
+at scala.concurrent.Future.map(Future.scala:287)
+at scala.concurrent.Future.map$(Future.scala:287)
+at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:375)
+at scala.concurrent.Future$.apply(Future.scala:653)
+at play.core.j.JavaAction.apply(JavaAction.scala:111)
+at play.api.mvc.Action.$anonfun$apply$2(Action.scala:96)
+at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$4(Accumulator.scala:174)
+at scala.util.Try$.apply(Try.scala:209)
+at play.api.libs.streams.StrictAccumulator.$anonfun$mapFuture$3(Accumulator.scala:174)
+at scala.Function1.$anonfun$andThen$1(Function1.scala:52)
+at scala.Function1.$anonfun$andThen$1(Function1.scala:52)
+at play.api.libs.streams.StrictAccumulator.run(Accumulator.scala:207)
+at play.core.server.AkkaHttpServer.executeAction(AkkaHttpServer.scala:297)
+at play.core.server.AkkaHttpServer.executeHandler(AkkaHttpServer.scala:254)
+at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:200)
+at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$3(AkkaHttpServer.scala:106)
+at akka.stream.impl.fusing.MapAsync$$anon$23.onPush(Ops.scala:1172)
+at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:499)
+at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:462)
+at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:368)
+at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:571)
+at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:457)
+at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:546)
+at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:725)
+at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:740)
+at akka.actor.Actor.aroundReceive(Actor.scala:514)
+at akka.actor.Actor.aroundReceive$(Actor.scala:512)
+at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:650)
+at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2026-05-02 01:04:13,363 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Amazon service error: The AWS Access Key Id you provided does not exist in our records. (Service: Amazon S3; Status Code: 403; Error Code: InvalidAccessKeyId; Request ID: XKPK7MHJFF0RM3JF; S3 Extended Request ID: SPLmMensjfQpDJ9UllPermXfOrCls/e0uudKRcl7irS/5RvnSe5VtulO8kdgTiqhs3XFoI6y2W+2V1qt4iWrCO/x8XEc4A/U; Proxy: null)
+2026-05-02 01:04:16,492 [DEBUG] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Optional.empty
+2026-05-02 01:04:16,664 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Path: https://ecopro-aws-bucket.s3.amazonaws.com/teaching//user/user.png
+2026-05-02 01:04:16,664 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Original input path: https://ecopro-aws-bucket.s3.amazonaws.com/teaching//user/user.png
+2026-05-02 01:04:16,664 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - url: https://ecopro-aws-bucket.s3.amazonaws.com/teaching//user/user.png
+2026-05-02 01:04:16,664 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Extracted S3 Key: /teaching//user/user.png
+2026-05-02 01:04:16,664 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Extracted Bucket Name: ecopro-aws-bucket
+2026-05-02 01:04:16,664 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Extracted S3 Key: teaching//user/user.png
+2026-05-02 01:04:16,709 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Amazon service error: The AWS Access Key Id you provided does not exist in our records. (Service: Amazon S3; Status Code: 403; Error Code: InvalidAccessKeyId; Request ID: HKQZPJQVNETZBWNH; S3 Extended Request ID: 73hh30+264J5oX1F8Rzm+3uaj7D4l+iab6ZpkluEt58VUoCErvfq+EALbggt525dapWTQycY4fUD5p4B8sSz/00jz3Z8gufK; Proxy: null)
