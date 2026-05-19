@@ -1,6 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0mAcquiring lock on file /Users/loganchoi/Desktop/CSHub-Fall2025/backend/project/target/.sbt-compilation-infos/root-compile/.sbt-idea-lock ...[0m
-[0m[[0m[0minfo[0m] [0m[0m/Users/loganchoi/Desktop/CSHub-Fall2025/backend/app/configs/AwsS3ClientConfig.java: Some input files use or override a deprecated API.[0m
-[0m[[0m[0minfo[0m] [0m[0m/Users/loganchoi/Desktop/CSHub-Fall2025/backend/app/configs/AwsS3ClientConfig.java: Recompile with -Xlint:deprecation for details.[0m
-[0m[[0m[0minfo[0m] [0m[0m/Users/loganchoi/Desktop/CSHub-Fall2025/backend/app/controllers/PaperController.java: PaperController.java uses unchecked or unsafe operations.[0m
-[0m[[0m[0minfo[0m] [0m[0m/Users/loganchoi/Desktop/CSHub-Fall2025/backend/app/controllers/PaperController.java: Recompile with -Xlint:unchecked for details.[0m
-[0m[[0m[0mdebug[0m] [0m[0mReleasing lock on file /Users/loganchoi/Desktop/CSHub-Fall2025/backend/project/target/.sbt-compilation-infos/root-compile/.sbt-idea-lock.[0m

@@ -18,7 +18,6 @@ import static play.test.Helpers.contentAsString;
  * https://www.playframework.com/documentation/latest/JavaTest
  */
 public class UnitTest {
-@Ignore
     @Test
     public void simpleCheck() {
         int a = 1 + 1;
@@ -26,7 +25,6 @@ public class UnitTest {
     }
 
     // Unit test a controller
-    @Ignore
     @Test
     public void testCount() {
         final CountController controller = new CountController(() -> 49);
@@ -35,7 +33,6 @@ public class UnitTest {
     }
 
     // Unit test a controller with async return
-    @Ignore
     @Test
     public void testAsync() {
         final ActorSystem actorSystem = ActorSystem.create("test");
@@ -45,7 +42,7 @@ public class UnitTest {
             final CompletionStage<Result> future = controller.message();
 
             // Block until the result is completed
-            await().until(() -> {
+            await().untilAsserted(() -> {
                 assertThat(future.toCompletableFuture()).isCompletedWithValueMatching(result -> {
                     return contentAsString(result).equals("Hi!");
                 });

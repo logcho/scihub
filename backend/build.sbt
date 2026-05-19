@@ -32,9 +32,16 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += filters
 
+libraryDependencies ++= Seq(
+  "org.assertj" % "assertj-core" % "3.24.2" % Test,
+  "org.awaitility" % "awaitility" % "4.2.0" % Test
+)
+
 PlayKeys.devSettings := Seq("play.akka.dev-mode.akka.http.parsing.max-uri-length" -> "20480")
 PlayKeys.devSettings += "play.filewatcher" -> "none"
 PlayKeys.devSettings += "play.server.http.port" -> "9037"
+
+PlayKeys.fileWatchService := play.dev.filewatch.FileWatchService.jdk7(play.sbt.run.toLoggerProxy(sLog.value))
 
 fork in run := true
 javaOptions += "-Djdk.tls.client.protocols=TLSv1.2"

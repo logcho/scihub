@@ -916,4 +916,123 @@ public class RAJobController extends Controller {
             return ok(editError.render("RAJobapplication"));
         }
     }
+
+    @With(OperationLoggingAction.class)
+    public Result raInterviewSchedulePage(Long jobId) {
+        checkLoginStatus();
+        List<RAJobApplication> applications = new ArrayList<>();
+        try {
+            JsonNode response = RESTfulCalls.getAPI(RESTfulCalls.getBackendAPIUrl(config,
+                    Constants.STR_BACKEND_URL_JOB_APPLICATIONS + "rajob/" + jobId + "?offset=0&pageLimit=100&sortCriteria=id&pageNum=1"));
+            
+            if (response != null && response.has("items") && response.get("items").isArray()) {
+                JsonNode items = response.get("items");
+                for (JsonNode node : items) {
+                    try {
+                        applications.add(RAJobApplication.deserialize(node));
+                    } catch (Exception e) {
+                        Logger.error("Error deserializing RAJobApplication", e);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            Logger.error("Error fetching applicants for job " + jobId, e);
+        }
+
+        List<JsonNode> interviews = new ArrayList<>();
+        try {
+            JsonNode interviewResponse = RESTfulCalls.getAPI(RESTfulCalls.getBackendAPIUrl(config, "/rajob/interview/job/" + jobId));
+            if (interviewResponse != null && interviewResponse.isArray()) {
+                for (JsonNode node : interviewResponse) {
+                    if (node.isObject() && node.has("proposedTimes")) {
+                        try {
+                            JsonNode parsedArray = Json.parse(node.get("proposedTimes").asText());
+                            // Handle double-stringified arrays
+                            if (parsedArray.isTextual()) {
+                                parsedArray = Json.parse(parsedArray.asText());
+                            }
+                            ((ObjectNode) node).set("proposedTimesList", parsedArray);
+                        } catch(Exception ex) {
+                            Logger.error("Error parsing proposedTimes", ex);
+                        }
+                    }
+                    interviews.add(node);
+                }
+            }
+        } catch (Exception e) {
+            Logger.error("Error fetching scheduled interviews for job " + jobId, e);
+        }
+        
+        return ok(views.html.raInterviewSchedule.render(jobId, applications, interviews));
+    }
+
+    public Result scheduleInterviewPOST(Long jobId) {
+        checkLoginStatus();
+        DynamicForm form = myFactory.form().bindFromRequest();
+        String applicantId = form.get("applicantId");
+        String date1 = form.get("date1");
+        String time1 = form.get("time1");
+        String date2 = form.get("date2");
+        String time2 = form.get("time2");
+        String date3 = form.get("date3");
+        String time3 = form.get("time3");
+
+        java.time.LocalDate today = java.time.LocalDate.now();
+        try {
+            if (date1 != null && !date1.isEmpty() && java.time.LocalDate.parse(date1).isBefore(today)) {
+                flash("error", "Proposed Date 1 cannot be in the past.");
+                return redirect(routes.RAJobController.raInterviewSchedulePage(jobId));
+            }
+            if (date2 != null && !date2.isEmpty() && java.time.LocalDate.parse(date2).isBefore(today)) {
+                flash("error", "Proposed Date 2 cannot be in the past.");
+                return redirect(routes.RAJobController.raInterviewSchedulePage(jobId));
+            }
+            if (date3 != null && !date3.isEmpty() && java.time.LocalDate.parse(date3).isBefore(today)) {
+                flash("error", "Proposed Date 3 cannot be in the past.");
+                return redirect(routes.RAJobController.raInterviewSchedulePage(jobId));
+            }
+        } catch (Exception e) {
+            flash("error", "Invalid date format submitted.");
+            return redirect(routes.RAJobController.raInterviewSchedulePage(jobId));
+        }
+
+        List<String> proposedTimes = new ArrayList<>();
+        if (date1 != null && !date1.isEmpty() && time1 != null && !time1.isEmpty()) proposedTimes.add(date1 + " " + time1);
+        if (date2 != null && !date2.isEmpty() && time2 != null && !time2.isEmpty()) proposedTimes.add(date2 + " " + time2);
+        if (date3 != null && !date3.isEmpty() && time3 != null && !time3.isEmpty()) proposedTimes.add(date3 + " " + time3);
+
+        if (applicantId == null || applicantId.trim().isEmpty()) {
+            flash("error", "Error: Applicant ID is missing. Please try opening the schedule modal again.");
+            return redirect(routes.RAJobController.raInterviewSchedulePage(jobId));
+        }
+
+        ObjectNode json = Json.newObject();
+        json.put("rajobApplicationId", Long.parseLong(applicantId));
+        json.put("createdByUserId", Long.parseLong(session("id")));
+        json.put("proposedTimes", Json.toJson(proposedTimes).toString());
+
+        try {
+            JsonNode response = RESTfulCalls.postAPI(RESTfulCalls.getBackendAPIUrl(config, "/rajob/interview/schedule"), json);
+            if (response != null && response.has("id")) {
+                flash("success", "Interview schedule proposed and applicant notified successfully!");
+            } else {
+                flash("error", "Failed to schedule interview. Please try again.");
+            }
+        } catch (Exception e) {
+            Logger.error("Failed to schedule interview", e);
+            flash("error", "An error occurred while scheduling the interview.");
+        }
+
+        return redirect(routes.RAJobController.raInterviewSchedulePage(jobId));
+    }
+
+    public Result rescheduleInterviewPOST(Long id) {
+        checkLoginStatus();
+        return ok("Rescheduled");
+    }
+
+    public Result cancelInterviewPOST(Long id) {
+        checkLoginStatus();
+        return ok("Cancelled");
+    }
 }

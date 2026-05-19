@@ -1,0 +1,29 @@
+2026-05-02 14:41:08,763 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2026-05-02 14:41:08,873 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:mysql://localhost:3306/scihub_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2026-05-02 14:41:09,229 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - ApplicationTimer demo: Starting application at 2026-05-02T19:41:09.229Z
+2026-05-02 14:41:09,411 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    filters.ExampleFilter
+    play.filters.cors.CORSFilter
+
+2026-05-02 14:41:09,473 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev)
+2026-05-02 14:41:09,797 [WARN] from application in application-akka.actor.default-dispatcher-6 - CheckFile: No record found for tableName=rajob, fileType=rajob, tableRecorderId=1
+2026-05-02 14:41:29,155 [INFO] from application in application-akka.actor.default-dispatcher-2 - UserController.checkNewUserEmailAvailability the email cannot be used: falculty@test.com
+2026-05-02 14:41:36,844 [WARN] from application in application-akka.actor.default-dispatcher-2 - CheckFile: No record found for tableName=rajob, fileType=rajob, tableRecorderId=1
+2026-05-02 14:42:15,251 [INFO] from application in application-akka.actor.default-dispatcher-2 - UserController.checkNewUserEmailAvailability the email cannot be used: lschoi@smu.edu
+2026-05-02 14:42:20,866 [WARN] from application in application-akka.actor.default-dispatcher-2 - CheckFile: No record found for tableName=rajob, fileType=rajob, tableRecorderId=1
+2026-05-02 14:43:12,573 [INFO] from application in application-akka.actor.default-dispatcher-5 - UserController.checkNewUserEmailAvailability the email cannot be used: falculty@test.com
+2026-05-02 14:43:17,456 [WARN] from application in application-akka.actor.default-dispatcher-5 - CheckFile: No record found for tableName=rajob, fileType=rajob, tableRecorderId=1
+2026-05-02 14:53:15,483 [INFO] from application in application-akka.actor.default-dispatcher-3 - ApplicationTimer demo: Stopping application at 2026-05-02T19:53:15.483Z after 726s.
+2026-05-02 14:53:15,483 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2026-05-02 14:53:15,531 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-14 - Creating Pool for datasource 'default'
+2026-05-02 14:53:15,535 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-14 - Database [default] connected at jdbc:mysql://localhost:3306/scihub_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+2026-05-02 14:53:15,604 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-14 - ApplicationTimer demo: Starting application at 2026-05-02T19:53:15.604Z
+2026-05-02 14:53:15,732 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-14 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    filters.ExampleFilter
+    play.filters.cors.CORSFilter
+
+2026-05-02 14:53:15,736 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-14 - Application started (Dev)
+2026-05-02 14:58:48,126 [INFO] from application in application-akka.actor.default-dispatcher-8 - UserController.checkNewUserEmailAvailability the email cannot be used: falculty@test.com
+2026-05-02 14:58:55,165 [WARN] from application in application-akka.actor.default-dispatcher-6 - CheckFile: No record found for tableName=rajob, fileType=rajob, tableRecorderId=1

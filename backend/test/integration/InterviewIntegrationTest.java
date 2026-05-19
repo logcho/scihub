@@ -1,0 +1,122 @@
+package integration;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import models.Interview;
+import models.RAJobApplication;
+import models.User;
+import org.junit.After;
+import org.junit.Assume;
+import org.junit.Before;
+import org.junit.Test;
+import play.Application;
+import play.libs.Json;
+import play.mvc.Result;
+import play.test.Helpers;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+import static org.junit.Assert.*;
+import static play.mvc.Http.Status.OK;
+import static play.test.Helpers.*;
+
+public class InterviewIntegrationTest {
+
+    private static final String RAW_PASSWORD = "interview-pass";
+    private static final String PROPOSED_TIMES = "[\"2026-05-01T15:00:00Z\"]";
+
+    private Application application;
+    private User professor;
+    private RAJobApplication rajobApplication;
+    private Interview interview;
+
+    @Before
+    public void startApplication() {
+        Assume.assumeTrue("Set DB_URL, DB_USER, and DB_PASS to run database integration tests.", hasDatabaseConfig());
+
+        try {
+            application = Helpers.fakeApplication(databaseConfig());
+            Helpers.start(application);
+        } catch (RuntimeException e) {
+            Assume.assumeNoException("Database integration test skipped because the configured database is unavailable.", e);
+        }
+    }
+
+    @After
+    public void stopApplication() {
+        if (interview != null && interview.getId() != 0L) {
+            interview.delete();
+        }
+        if (rajobApplication != null && rajobApplication.getId() != 0L) {
+            rajobApplication.delete();
+        }
+        if (professor != null && professor.getId() != 0L) {
+            professor.delete();
+        }
+        if (application != null) {
+            Helpers.stop(application);
+        }
+    }
+
+    @Test
+    public void authenticatedUserCanPersistAndLoadInterview() {
+        professor = createActiveUser("interview-integration-" + UUID.randomUUID() + "@example.edu");
+        rajobApplication = new RAJobApplication("Integration applicant");
+        rajobApplication.save();
+
+        Result loginResult = route(application, fakeRequest(POST, "/user/userLogin").bodyJson(loginJson(professor.getEmail(), RAW_PASSWORD)));
+
+        assertEquals(OK, loginResult.status());
+        JsonNode loggedInUser = Json.parse(contentAsString(loginResult));
+        assertEquals(professor.getEmail(), loggedInUser.get("email").asText());
+
+        interview = new Interview(rajobApplication, professor, PROPOSED_TIMES, "proposed");
+        interview.setLocation("Lab 301");
+        interview.setNotes("Integration test interview");
+        interview.save();
+
+        Interview loaded = Interview.find.byId(interview.getId());
+        assertNotNull(loaded);
+        assertEquals("proposed", loaded.getStatus());
+        assertEquals("Lab 301", loaded.getLocation());
+        assertEquals(professor.getId(), loaded.getCreatedBy().getId());
+        assertEquals(rajobApplication.getId(), loaded.getRajobApplication().getId());
+    }
+
+    private static User createActiveUser(String email) {
+        User user = new User("Interview Professor", email);
+        user.setPassword(controllers.UserController.MD5Hashing(RAW_PASSWORD));
+        user.setIsActive("True");
+        user.save();
+        return user;
+    }
+
+    private static ObjectNode loginJson(String email, String password) {
+        ObjectNode json = Json.newObject();
+        json.put("email", email);
+        json.put("password", password);
+        json.put("isResearcher", "true");
+        return json;
+    }
+
+    private static boolean hasDatabaseConfig() {
+        return getenv("DB_URL") != null && getenv("DB_USER") != null && getenv("DB_PASS") != null;
+    }
+
+    private static Map<String, Object> databaseConfig() {
+        Map<String, Object> config = new HashMap<>();
+        config.put("play.http.secret.key", "interview-integration-test-secret");
+        config.put("db.default.driver", "com.mysql.cj.jdbc.Driver");
+        config.put("db.default.url", getenv("DB_URL"));
+        config.put("db.default.username", getenv("DB_USER"));
+        config.put("db.default.password", getenv("DB_PASS"));
+        config.put("play.evolutions.enabled", "false");
+        return config;
+    }
+
+    private static String getenv(String name) {
+        return System.getenv(name);
+    }
+}

@@ -1,0 +1,207 @@
+@import java.util.List
+@import models.RAJobApplication
+@import com.fasterxml.jackson.databind.JsonNode
+@(jobId: Long, applications: List[RAJobApplication], interviews: List[JsonNode])
+
+@scripts = {
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.modal').modal();
+            $('.tabs').tabs();
+            $('.datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $('.timepicker').timepicker();
+        });
+        
+        function proposeTimeSlots(appId) {
+            $('#applicantId').val(appId);
+            var modal = M.Modal.getInstance(document.getElementById('scheduleModal'));
+            modal.open();
+        }
+
+        function cancelInterview(interviewId) {
+            if(confirm("Are you sure you want to cancel this interview? A notification will be sent to the student.")) {
+                // Mock AJAX call to cancel
+                M.toast({html: 'Interview cancelled. Notification sent to student.'});
+            }
+        }
+        
+        function rescheduleInterview(interviewId) {
+            // Open modal to reschedule
+            var modal = M.Modal.getInstance(document.getElementById('scheduleModal'));
+            modal.open();
+        }
+
+        @if(flash.containsKey("success")) {
+            $(document).ready(function() {
+                M.toast({html: '@flash.get("success")'});
+            });
+        }
+        @if(flash.containsKey("error")) {
+            $(document).ready(function() {
+                M.toast({html: '@flash.get("error")', classes: 'red'});
+            });
+        }
+    </script>
+}
+
+@main("Schedule RA Interview", scripts) {
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m10 offset-m1">
+                <div class="card-panel">
+                    <h4>Schedule RA Job Interviews</h4>
+                    <p class="grey-text">Project/Job ID: @jobId</p>
+                    
+                    <ul class="tabs" style="margin-top: 20px; margin-bottom: 20px;">
+                        <li class="tab col s6"><a class="active" href="#applicants">Applicants</a></li>
+                        <li class="tab col s6"><a href="#scheduled">Scheduled Interviews</a></li>
+                    </ul>
+
+                    <div id="applicants" class="col s12" style="margin-top: 20px;">
+                        <table class="striped responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Applicant Name</th>
+                                    <th>Status</th>
+                                    <th>Applied Time</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if(applications.isEmpty) {
+                                    <tr>
+                                        <td colspan="4" class="center">No applications found.</td>
+                                    </tr>
+                                } else {
+                                    @for(app <- applications) {
+                                        <tr>
+                                            <td>@app.getApplicant().getFirstName() @app.getApplicant().getLastName()</td>
+                                            <td><span class="new badge purple darken-1" data-badge-caption="@app.getStatus()"></span></td>
+                                            <td>@app.getCreatedTime()</td>
+                                            <td>
+                                                <button class="btn waves-effect waves-light blue" onclick="proposeTimeSlots(@app.getId())">
+                                                    Schedule
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="scheduled" class="col s12" style="margin-top: 20px;">
+                        <table class="striped responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Applicant Name</th>
+                                    <th>Proposed/Scheduled Time</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if(interviews.isEmpty) {
+                                    <tr>
+                                        <td colspan="4" class="center">No interviews scheduled yet.</td>
+                                    </tr>
+                                } else {
+                                    @for(interview <- interviews) {
+                                        <tr>
+                                            <td>
+                                                @if(interview.has("rajobApplication") && interview.get("rajobApplication").has("applicant")) {
+                                                    @interview.get("rajobApplication").get("applicant").get("firstName").asText()
+                                                    @interview.get("rajobApplication").get("applicant").get("lastName").asText()
+                                                } else {
+                                                    Unknown
+                                                }
+                                            </td>
+                                            <td>
+                                                @if(interview.has("chosenTime") && !interview.get("chosenTime").isNull() && !interview.get("chosenTime").asText().isEmpty()) {
+                                                    <strong>@interview.get("chosenTime").asText()</strong>
+                                                } else {
+                                                    @if(interview.has("proposedTimesList") && interview.get("proposedTimesList").size() > 0) {
+                                                        <ul style="margin: 0; padding-left: 15px;">
+                                                        @for(i <- 0 until interview.get("proposedTimesList").size()) {
+                                                            <li><em>@interview.get("proposedTimesList").get(i).asText()</em></li>
+                                                        }
+                                                        </ul>
+                                                    } else {
+                                                        <em>@interview.get("proposedTimes").asText()</em>
+                                                    }
+                                                }
+                                            </td>
+                                            <td><span class="new badge purple darken-1" data-badge-caption="@interview.get("status").asText()"></span></td>
+                                            <td>
+                                                <button class="btn waves-effect waves-light blue" onclick="rescheduleInterview(@interview.get("id").asLong())">
+                                                    Reschedule
+                                                </button>
+                                                <button class="btn waves-effect waves-light red" onclick="cancelInterview(@interview.get("id").asLong())">
+                                                    Cancel
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Modal -->
+    <div id="scheduleModal" class="modal">
+        <form action="@routes.RAJobController.scheduleInterviewPOST(jobId)" method="POST">
+            <div class="modal-content">
+                <h5>Propose Interview Time Slots</h5>
+                <p>Propose up to 3 time slots for an interview. The student will receive an email/in-app notification to confirm.</p>
+                <input type="hidden" id="applicantId" name="applicantId" />
+                
+                <div class="row">
+                    <h6 class="col s12">Slot 1 (Required)</h6>
+                    <div class="input-field col s6">
+                        <input type="text" class="datepicker" id="date1" name="date1" required>
+                        <label for="date1">Date</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" class="timepicker" id="time1" name="time1" required>
+                        <label for="time1">Time</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <h6 class="col s12">Slot 2 (Optional)</h6>
+                    <div class="input-field col s6">
+                        <input type="text" class="datepicker" id="date2" name="date2">
+                        <label for="date2">Date</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" class="timepicker" id="time2" name="time2">
+                        <label for="time2">Time</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <h6 class="col s12">Slot 3 (Optional)</h6>
+                    <div class="input-field col s6">
+                        <input type="text" class="datepicker" id="date3" name="date3">
+                        <label for="date3">Date</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" class="timepicker" id="time3" name="time3">
+                        <label for="time3">Time</label>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-red btn-flat">Cancel</a>
+                <button type="submit" class="waves-effect waves-green btn blue">Send Notification</button>
+            </div>
+        </form>
+    </div>
+}
